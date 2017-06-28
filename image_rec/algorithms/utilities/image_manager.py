@@ -1,18 +1,16 @@
 '''
  image_manager.py
 '''
-import ImageTransformer
+from .image_transformer import ImageTransformer
 import numpy as np
 import os
 from os import listdir
 from os.path import isfile, join
 
-class DataManager(object):
+class ImageManager(object):
     
     def __init__(self):
-        # Set by config
         self.db_name = None
-        self.grey_scale = False
         self.flatten = False
         self.output_shape = None
         self.query_folder = None
@@ -26,6 +24,9 @@ class DataManager(object):
         self.vectors = None  # load_train_data
         self.f_idx = {}  # set by build_mapping
         self.idx_f = {}  # set by build_mapping
+
+    def register_encoder(self, encoder=None):
+        self.encoder = encoder
 
     def get_file_name(self, idx):
         return self.idx_f[idx]
@@ -58,10 +59,6 @@ class DataManager(object):
         self.train_db_paths = config['train_db_paths']
         self.train_bin_db_paths = config['train_bin_db_paths']
         self.encoder_filename = config['encoder_filename']
-
-
-    def register_encoder(self, encoder=None):
-        self.encoder = encoder
 
     def load_raw_data(self, batch_size=5000):
         self.counter = 0

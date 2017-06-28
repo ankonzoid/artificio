@@ -14,37 +14,36 @@
   6) Compute a score for each inventory encoding relative to our query encoding (centroid/closest)
   7) Make k-recommendations by cloning top-k inventory images into 'answer'
 '''
-import os, shutil, glob
+import sys, os, shutil, glob
 import numpy as np
 
-from algorithms.utilities.image_manager import ImageManager
-from algorithms.utilities.image_transformer import ImageTransformer
+from .algorithms.utilities.image_manager import ImageManager
+from .algorithms.utilities.image_transformer import ImageTransformer
 from algorithms.utilities.sorting import find_topk_unique
 from algorithms.clustering.KNN import KNearestNeighbours
-
-from algorithms.autoencoder import simpleAE
-from algorithms.autoencoder import ConvAE
+from algorithms.autoencoders import simpleAE
+from algorithms.autoencoders import ConvAE
 
 from keras.models import load_model
 
 def main():
+    project_root = os.path.dirname(__file__)
+    sys.path.append(project_root)
+    print("Project root: {0}".format(project_root))
     # ========================================
     # Set run settings
     # ========================================
-    company_name = 'plenty'  # company db name in db_folder
-    img_type_name = 'raw'  # use raw images files (we have image transformer)
     if 1:
-        model_name = 'simpleAE_rgb_resized'  # model folder
+        model_name = 'simpleAE'  # model folder
         flatten = True  # needs flattening for simpleAE encoder input
     elif 0:
-        model_name = 'ConvAE_rgb_resized'  # model folder
+        model_name = 'ConvAE'  # model folder
         flatten = False  # no need to flatten for ConvAE encoder input
     else:
         raise Exception("Invalid model name which is not simpleAE nor ConvAE")
 
     model_extension_tag = '_encoder.h5'  # encoder model h5 tag
-    output_shape = (100, 100)  # force resize of raw images
-    grey_scale = False
+    io_img_shape = (100, 100)  # force resize of raw images to (ypixels, xpixels)
 
     n_neighbors = 5  # number of nearest neighbours
     metric = "cosine"  # kNN metric (cosine only compatible with brute force)
@@ -55,6 +54,80 @@ def main():
     # 2 = nearest to any transaction point
     rec_mode = 2
 
+
+
+
+    # ========================================
+    # Generate expected file/folder paths and settings
+    # ========================================
+    # Assume project root directory to be directory of file
+    project_root = os.path.dirname(__file__)
+
+    # Query and answer folder
+    query_dir = os.path.join(project_root, 'query')
+    answer_dir = os.path.join(project_root, 'answer')
+
+    # In database folder
+    img_training_raw_dir = os.path.join(project_root, 'db/img_training_raw')
+    img_inventory_raw_dir = os.path.join(project_root, 'db/img_inventory_raw')
+    img_training_dir = os.path.join(project_root, 'db/img_training')
+    img_inventory_dir = os.path.join(project_root, 'db/img_inventory')
+    bin_training_dir = os.path.join(project_root, 'db/bin_training')
+    bin_inventory_dir = os.path.join(project_root, 'db/bin_inventory')
+    models_dir = os.path.join(project_root, 'db/models')
+
+    # In algorithms folder
+    autoencoders_dir = os.path.join(project_root, 'algorithms/autoencoders')
+    clustering_dir = os.path.join(project_root, 'algorithms/clustering')
+    IO_dir = os.path.join(project_root, 'algorithms/IO')
+    utilities_dir = os.path.join(project_root, 'algorithms/utilities')
+
+    encoder_filename = os.path.join(models_dir, model_name + model_extension_tag)
+
+    # Set info file
+    info = {
+        "io_img_shape": io_img_shape,
+
+        "query_dir": query_dir,
+        "answer_dir": answer_dir,
+
+        "img_training_raw_dir": img_training_raw_dir,
+        "img_inventory_raw_dir": img_inventory_raw_dir,
+        "img_training_dir": img_training_dir,
+        "img_inventory_dir": img_inventory_dir,
+        "bin_training_dir": bin_training_dir,
+        "bin_inventory_dir": bin_inventory_dir,
+
+        "autoencoders_dir": autoencoders_dir,
+        "clustering_dir": clustering_dir,
+        "IO_dir": IO_dir,
+        "utilities_dir": utilities_dir,
+
+        "encoder_filename": encoder_filename
+    }
+
+    exit()
+
+    # ========================================
+    #
+    # Perform image processing
+    #
+    # ========================================
+
+    # Initialize image transformer (and register encoder)
+    print("Initializing ImageTransformer...")
+    TR = ImageTransformer()  # provides functions for processing
+    TR.configure(output_shape = info['output_shape'])
+
+    # Initialize data manager (and register encoder)
+    print("Initializing DataManager...")
+    DM = ImageManager()  # provides functions for IO
+    DM.configure(info)
+
+
+
+    exit()
+
     # ========================================
     #
     # Train autoencoder
@@ -62,107 +135,30 @@ def main():
     # ========================================
     train_autoencoder = True
     if train_autoencoder:
-
+        pass
 
     # ========================================
     #
     # Perform clustering recommendation
     #
     # ========================================
-    load_encoder = True
-    if load_encoder:
 
-
-
-
-
-    # ========================================
-    # Generate expected file/folder paths and settings
-    # ========================================
-    cur_dir = os.path.dirname(__file__)  # supposedly imageKNN and KNN folder
-    project_root = os.path.join(cur_dir, '..', '..')  # rex_framework directory (project root directory)
-    prototype_folder = os.path.join(project_root, 'prototype')
-
-    app_folder = os.path.join(prototype_folder, 'image_knn')  # imageKNN and KNN folder
-    db_folder = os.path.join(prototype_folder, 'db')  # database folder of kNN training data
-    query_folder = os.path.join(prototype_folder, 'query')  # folder of query images
-    answer_folder = os.path.join(prototype_folder, 'answer')  # folder of answer images
-
-    db_company_folder = os.path.join(db_folder, company_name)  # e.g. plenty
-    train_db_folder = os.path.join(db_company_folder, 'train', img_type_name)  # training data for kNN (inventory images)
-    model_db_folder = os.path.join(db_company_folder, 'models', model_name)
-
-    train_db_paths = [train_db_folder]  # list of raw kNN training images
-    train_bin_db_paths = [train_bin_db_folder]  # list of binary kNN training images
-    encoder_filename = os.path.join(model_db_folder, model_name + model_extension_tag)
-
-    # Set config file to be used for the remainder of code
-    config = {
-        'db_name': company_name,
-        'grey_scale': grey_scale,
-        'flatten': flatten,
-        'output_shape': output_shape,
-        'query_folder': query_folder,
-        'answer_folder': answer_folder,
-        'train_db_paths': train_db_paths,
-        'train_bin_db_paths': train_bin_db_paths,
-        'encoder_filename': encoder_filename
-    }
-
-    # Make tests before proceeding
-    if len(train_db_paths) != len(train_bin_db_paths):
-        raise Exception("len(train_db_paths) != len(train_bin_db_paths)")
-
-    # Initialize encoder
+    # Load encoder
     encoder = load_model(encoder_filename)
-    encoder.compile(optimizer = 'adam', loss = 'binary_crossentropy')  # set loss and optimizer
+    encoder.compile(optimizer='adam', loss='binary_crossentropy')  # set loss and optimizer
 
-    # Initialize image transformer (and register encoder)
-    print("Initializing ImageTransformer...")
-    t = ImageTransformer()
-    t.configure(output_shape = config['output_shape'])
-    t.register_encoder(encoder)
-
-    # Initialize data manager (and register encoder)
-    print("Initializing DataManager...")
-    dm = DataManager()
-    dm.configure(config)
-    dm.register_encoder(encoder)
 
     # Read raw image data, then forced resize them
     print("Load raw image data and resize them...")
-    x_train_raw = dm.load_raw_data(batch_size = 5000)  # resizes -> (n_train, y_img, x_img, n_channels_img)
+    x_train_raw = DM.load_raw_data(batch_size = 5000)
+
     print("x_train_raw.shape = {0}".format(x_train_raw.shape))
-    dm.build_mapping()
-
-    # Make sure itemids are all unique
-    check_unique_itemids = True
-    if check_unique_itemids:
-        # Collect itemids from their names
-        itemids_check = np.empty(shape=(0), dtype=int)
-        for path in train_db_paths:
-            filenames_list = glob.glob(path + "/*")
-
-            # Get itemids from this path
-            itemids_path = np.zeros((len(filenames_list)), dtype=int)
-            for i, filename_i in enumerate(filenames_list):
-                name, tag = dm.extract_name_tag_filename(filename_i)
-                #print("i = {0}, name = {1}, tag = {2}".format(i, name, tag))
-                itemids_path[i] = int(name)
-
-            # Append these itemids to global itemids
-            itemids_check = np.append(itemids_check, itemids_path)
-
-        # Make checks that there are no duplicate itemids
-        n_itemids = len(itemids_check)
-        n_itemids_unique = len(np.unique(itemids_check))
-        if n_itemids != n_itemids_unique:
-            raise Exception("The set of global itemids has duplicate itemids!")
+    DM.build_mapping()
 
 
     # Encode raw data, then flatten the encoding dimensions
     print("Encoding resized raw image data and flatten encoding dimensions...")
-    x_train_enc_flatten = dm.encode_raw(x_train_raw)  # takes raw data input, outputs flattened encoding
+    x_train_enc_flatten = DM.encode_raw(x_train_raw)  # takes raw data input, outputs flattened encoding
     print("x_train_enc_flatten.shape = {0}".format(x_train_enc_flatten.shape))
 
     # =================================
@@ -179,13 +175,13 @@ def main():
     while True:
         # Read items in query folder
         print("Reading query images from query folder: {0}".format(query_folder))
-        for j, batch in enumerate(t.transform_all(query_folder, grey_scale = grey_scale)):
+        for j, batch in enumerate(TR.transform_all(query_folder, grey_scale = False)):
             x_query_raw = batch
 
             # Encode all raw query images in query folder
             print("[batch {0}]".format(j))
             print("x_query_raw.shape = {0}".format(x_query_raw.shape))
-            x_query_enc_flatten = dm.encode_raw(x_query_raw)
+            x_query_enc_flatten = DM.encode_raw(x_query_raw)
 
 
             # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -220,7 +216,7 @@ def main():
             for i, (index, distance) in enumerate(zip(indices, distances)):
                 print("({0}.{1}): indices = {2}".format(j, i, index))
                 print("({0}.{1}): score = {2}".format(j, i, distance))
-                answer_file_list = [dm.get_file_name(x) for x in index]
+                answer_file_list = [DM.get_file_name(x) for x in index]
                 print(answer_file_list)
 
                 # Go through the answer filenames, and clone recommended training images to answer folder
@@ -231,8 +227,8 @@ def main():
                 for k_rec, answer_file in enumerate(answer_file_list):
 
                     # Extract answer filename
-                    itemid_k_str, tag = dm.extract_name_tag_filename(answer_file)  # filename with real itemid
-                    internalid_k = dm.get_index(answer_file)
+                    itemid_k_str, tag = DM.extract_name_tag_filename(answer_file)  # filename with real itemid
+                    internalid_k = DM.get_index(answer_file)
                     #answer_filename = os.path.join(answer_folder, str(internalid_k)+'.jpg')  # filename with internal id
                     answer_filename = os.path.join(answer_folder, itemid_k_str+'.jpg')  # filename with item id
 
@@ -259,6 +255,35 @@ def main():
         c = input('Continue? Type `q` to break\n')
         if c == 'q':
             break
+
+# ==========================
+# Side functions
+# ==========================
+def check_unique_itemids(img_training_raw_dir, IDM):
+    # Make sure itemids are all unique
+    if check_unique_itemids:
+        # Collect itemids from their names
+        itemids_check = np.empty(shape=(0), dtype=int)
+        for path in [img_training_raw_dir]:
+            filenames_list = glob.glob(path + "/*")
+
+            # Get itemids from this path
+            itemids_path = np.zeros((len(filenames_list)), dtype=int)
+            for i, filename_i in enumerate(filenames_list):
+                name, tag = IDM.extract_name_tag_filename(filename_i)
+                #print("i = {0}, name = {1}, tag = {2}".format(i, name, tag))
+                itemids_path[i] = int(name)
+
+            # Append these itemids to global itemids
+            itemids_check = np.append(itemids_check, itemids_path)
+
+        # Make checks that there are no duplicate itemids
+        n_itemids = len(itemids_check)
+        n_itemids_unique = len(np.unique(itemids_check))
+        if n_itemids != n_itemids_unique:
+            raise Exception("The set of global itemids has duplicate itemids!")
+
+
 
 # Driver
 if __name__ == "__main__":

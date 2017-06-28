@@ -21,32 +21,18 @@ class ImageTransformer(TransformerBase):
         self.encoder = None
         super().__init__()
 
-    def configure(self, output_shape):
-        self.output_shape = output_shape
-
     def register_encoder(self, encoder=None):
         self.encoder = encoder
 
+    def configure(self, output_shape):
+        self.output_shape = output_shape
+
     def transform_one(self, file_path, grey_scale=False, flatten=True):
-        '''
-        Input is file name or numpy array
-        :param args:
-        :param kwargs:
-        :return:
-        '''
         if self.output_shape is None:
             raise Exception("output shape is not configured")
         ret = self._read_data_parallel([file_path], gray_scale=grey_scale, flatten=flatten)
         if self.encoder is not None:
             return self.encoder.predict(ret)
-        return ret
-
-    def transform_many(self, file_path_list, grey_scale=False, flatten=True):
-        if self.output_shape is None:
-            raise Exception("output shape is not configured")
-        ret = self._read_data_parallel(file_path_list,  gray_scale=grey_scale, flatten=flatten)
-        #if self.encoder is not None:
-        #    return self.encoder.predict(ret)
         return ret
 
     def transform_all(self, folder_name, grey_scale=False, batch_size=256, multi_thread=True, flatten=False):
@@ -58,7 +44,6 @@ class ImageTransformer(TransformerBase):
                 # Read the data without flattening it, as we want to feed it into encoder
                 data = self._read_data_parallel(chunk, gray_scale=grey_scale, batch_size=batch_size, flatten=flatten)
                 yield data  # do not apply encoder to this, output raw data
-
 
     def _read_data_parallel(self, onlyfiles, gray_scale=False, batch_size=256, flatten=True):
         patch = zip(onlyfiles, [gray_scale]*len(onlyfiles), [self.output_shape]*len(onlyfiles))

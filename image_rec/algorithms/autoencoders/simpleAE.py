@@ -1,12 +1,12 @@
 """
- wsimpleAE.py  (author: Anson Wong / github: ankonzoid)
+ simpleAE.py  (author: Anson Wong / github: ankonzoid)
 
+ Trains a simple autoencoder and saves its autoencoder, encoder, and decoder to file.
 """
 # Set path for use on external servers
-import os, sys
-cur_dir = os.path.dirname(__file__)
-project_root = os.path.join(cur_dir, '..')
-sys.path.append(project_root)
+import os, sys, time, platform, datetime, pylab
+import numpy as np
+import matplotlib.pyplot as plt
 
 from keras.models import load_model
 from keras.datasets import mnist
@@ -14,20 +14,15 @@ from keras.layers import Input, Dense, Conv2D, MaxPooling2D, UpSampling2D
 from keras.models import Model
 from keras.callbacks import ModelCheckpoint
 
-import pylab
-import numpy as np
-import matplotlib.pyplot as plt
-import time
-import platform
-import datetime
-
-from utilities import normalize_flatten_img_data
-from utilities import load_images_from_dir
-from utilities import load_images_from_dir_parallel
-from utilities import make_path
-from naming_conventions import make_folder_filename_conventions
+from ..utilities.IO import normalize_flatten_img_data
+from ..utilities.IO import load_images_from_dir
+from ..utilities.IO import load_images_from_dir_parallel
+from ..utilities.IO import make_path
+from ..utilities import naming_conventions
 
 def main():
+    project_root = os.path.dirname(__file__)
+    sys.path.append(project_root)
     name_algo = "simpleAE"
     # =================================================
     # Set run parameters

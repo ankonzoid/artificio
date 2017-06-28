@@ -8,8 +8,7 @@ import os, sys, time, platform, datetime, pylab
 import numpy as np
 import matplotlib.pyplot as plt
 
-cur_dir = os.path.dirname(__file__)
-project_root = os.path.join(cur_dir, '..')
+project_root = os.path.dirname(__file__)
 sys.path.append(project_root)
 
 from keras.models import load_model
@@ -18,11 +17,11 @@ from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D
 from keras.models import Model
 from keras.callbacks import ModelCheckpoint
 
-from utilities import normalize_reshape_img_data
-from utilities import load_images_from_dir
-from utilities import load_images_from_dir_parallel
-from utilities import make_path
-from naming_conventions import make_folder_filename_conventions
+from ..utilities.IO import normalize_reshape_img_data
+from ..utilities.IO import load_images_from_dir
+from ..utilities.IO import load_images_from_dir_parallel
+from ..utilities.IO import make_path
+from ..utilities import naming_conventions
 
 def main():
     name_algo = "ConvAE"

@@ -16,6 +16,17 @@ def normalize_flatten_img_data(x_data):
     x_data = x_data.reshape((n_data, n_flatten_dim))  # flatten (ypixels, xpixels) -> (ypixels*xpixels)
     return x_data
 
+
+
+
+
+
+
+
+
+
+
+
 # normalize image and reshapes (for Conv AE) to:
 # - (n, ypixels, xpixels, n_channels)
 def normalize_reshape_img_data(x_data, n_channels):
