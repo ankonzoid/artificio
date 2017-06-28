@@ -68,11 +68,11 @@ def main():
     answer_dir = os.path.join(project_root, 'answer')
 
     # In database folder
-    img_training_raw_dir = os.path.join(project_root, 'db/img_training_raw')
+    img_train_raw_dir = os.path.join(project_root, 'db/img_train_raw')
     img_inventory_raw_dir = os.path.join(project_root, 'db/img_inventory_raw')
-    img_training_dir = os.path.join(project_root, 'db/img_training')
+    img_train_dir = os.path.join(project_root, 'db/img_train')
     img_inventory_dir = os.path.join(project_root, 'db/img_inventory')
-    bin_training_dir = os.path.join(project_root, 'db/bin_training')
+    bin_train_dir = os.path.join(project_root, 'db/bin_train')
     bin_inventory_dir = os.path.join(project_root, 'db/bin_inventory')
     models_dir = os.path.join(project_root, 'db/models')
 
@@ -91,11 +91,11 @@ def main():
         "query_dir": query_dir,
         "answer_dir": answer_dir,
 
-        "img_training_raw_dir": img_training_raw_dir,
+        "img_train_raw_dir": img_train_raw_dir,
         "img_inventory_raw_dir": img_inventory_raw_dir,
-        "img_training_dir": img_training_dir,
+        "img_train_dir": img_train_dir,
         "img_inventory_dir": img_inventory_dir,
-        "bin_training_dir": bin_training_dir,
+        "bin_train_dir": bin_train_dir,
         "bin_inventory_dir": bin_inventory_dir,
 
         "autoencoders_dir": autoencoders_dir,
@@ -106,7 +106,6 @@ def main():
         "encoder_filename": encoder_filename
     }
 
-    exit()
 
     # ========================================
     #

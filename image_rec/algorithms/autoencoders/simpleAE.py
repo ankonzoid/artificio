@@ -15,6 +15,7 @@ from keras.models import Model
 from keras.callbacks import ModelCheckpoint
 
 from ..utilities.IO import normalize_flatten_img_data
+
 from ..utilities.IO import load_images_from_dir
 from ..utilities.IO import load_images_from_dir_parallel
 from ..utilities.IO import make_path
@@ -24,12 +25,11 @@ def main():
     project_root = os.path.dirname(__file__)
     sys.path.append(project_root)
     name_algo = "simpleAE"
+
     # =================================================
     # Set run parameters
     # =================================================
-    training_heaven_dir = "/home/qileap/Desktop/training_heaven"
-    name_data = "women"
-    name_trainingset = "rgb_resized"
+    training_dir = os.path.join(project_root, "bin", "")
     gray_scale = 0
     train_model = False  # train and save model?
     n_epochs = 20
