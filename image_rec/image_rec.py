@@ -14,11 +14,13 @@
   6) Compute a score for each inventory encoding relative to our query encoding (centroid/closest)
   7) Make k-recommendations by cloning top-k inventory images into 'answer'
 '''
-import sys, os, shutil, glob
+import sys, os
+print('Python %s on %s' % (sys.version, sys.platform))
+import shutil, glob
 import numpy as np
 
-from .algorithms.utilities.image_manager import ImageManager
-from .algorithms.utilities.image_transformer import ImageTransformer
+from algorithms.utilities.image_manager import ImageManager
+from algorithms.utilities.image_transformer import ImageTransformer
 from algorithms.utilities.sorting import find_topk_unique
 from algorithms.clustering.KNN import KNearestNeighbours
 from algorithms.autoencoders import simpleAE
