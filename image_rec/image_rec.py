@@ -15,7 +15,7 @@
   7) Make k-recommendations by cloning top-k inventory images into 'answer'
 '''
 import sys, os
-print('Python %s on %s' % (sys.version, sys.platform))
+print("Python {0} on {1}".format(sys.version, sys.platform))
 import shutil, glob
 import numpy as np
 
@@ -55,8 +55,6 @@ def main():
     # 1 = nearest to centroid
     # 2 = nearest to any transaction point
     rec_mode = 2
-
-
 
 
     # ========================================
