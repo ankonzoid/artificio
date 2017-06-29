@@ -16,7 +16,9 @@ def main():
     print(indices)
     print(distances)
 
-# Finds the first unique k elements of values_sorted and their indices
+"""
+ Finds the first unique k elements (based on lowest distance) of lists 'indices' and 'distances'
+"""
 def find_topk_unique(indices, distances, k):
 
     # Sort by ascending distance
@@ -48,6 +50,15 @@ def find_topk_unique(indices, distances, k):
     indices_top_k_unique = indices_sorted_window[u_sort].reshape((1, -1))
 
     return indices_top_k_unique, distances_top_k_unique
+
+"""
+ Checks if a list has unique elements
+"""
+def is_unique(vec):
+    n_vec = len(vec)
+    n_vec_unique = len(np.unique(vec))
+    return (n_vec == n_vec_unique)
+
 
 # Main driver
 if __name__ == "main":
