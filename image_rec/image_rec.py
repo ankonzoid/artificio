@@ -1,13 +1,13 @@
 '''
- imageKNN.py (author: Anson Wong / github: ankonzoid)
+ imageKNN.py (author: Anson Wong / git: ankonzoid)
  
  Image similarity recommender system using an autoencoder-clustering model.
  
- Autoencoder Method:
+ Autoencoder method:
   1) Train an autoencoder (simple/Conv) on training images in 'db/images_training' 
   2) Saves trained autoencoder, encoder, and decoder to 'db/models'
 
- Clustering Method:
+ Clustering method:
   3) Using our trained encoder in 'db/models', we encode inventory images in 'db/images_inventory'
   4) Train kNN model using encoded inventory images
   5) Encode query images in 'query', and predict their NN using our trained kNN model
@@ -20,9 +20,6 @@ import numpy as np
 
 from algo.utilities.image_utilities import ImageUtils
 from algo.utilities.sorting import find_topk_unique
-from algo.clustering.KNN import KNearestNeighbours
-#from algo.autoencoders import simpleAE
-#from algo.autoencoders import ConvAE
 
 from keras.models import load_model
 
@@ -73,15 +70,7 @@ def main():
     img_inventory_raw_dir = os.path.join(db_dir, 'img_inventory_raw')
     img_train_dir = os.path.join(db_dir, 'img_train')
     img_inventory_dir = os.path.join(db_dir, 'img_inventory')
-    bin_train_dir = os.path.join(db_dir, 'bin_train')
-    bin_inventory_dir = os.path.join(db_dir, 'bin_inventory')
     models_dir = os.path.join(db_dir, 'models')
-
-    # In algorithms folder
-    algo_dir = os.path.join(project_root, 'algo')
-    autoencoders_dir = os.path.join(algo_dir, 'autoencoders')
-    clustering_dir = os.path.join(algo_dir, 'clustering')
-    utilities_dir = os.path.join(algo_dir, 'utilities')
 
     # Model encoder filename
     encoder_filename = os.path.join(models_dir, model_name + model_extension_tag)
@@ -91,6 +80,7 @@ def main():
         # Run settings
         "img_shape": img_shape,
         "flatten_before_encode": flatten_before_encode,
+        "flatten_after_encode": flatten_after_encode,
 
         # Directories
         "query_dir": query_dir,
@@ -130,15 +120,50 @@ def main():
     # Train autoencoder
     #
     # ========================================
-    train_autoencoder = False
+    train_autoencoder = True
     if train_autoencoder:
+
+        from algo.autoencoders.simpleAE import SimpleAE
+        #from algo.autoencoders import ConvAE
+
         print("Training the autoencoder...")
 
         # Load training images to memory (resizes when necessary)
-        x_data_train, train_filenames = \
-            IU.raw2resizednorm_load(raw_dir=img_train_dir,
-                                    img_shape=img_shape)
+        x_data_all, train_filenames = \
+            IU.raw2resizednorm_load(raw_dir=img_train_dir, img_shape=img_shape)
+
+        print("x_data_all.shape = {0}".format(x_data_all.shape))
+
+        # Split images to training and validation set
+        ratio_train_test = 0.8
+        seed = 100
+        x_data_train, x_data_test, index_train, index_test = \
+            IU.split_train_test(x_data_all, ratio_train_test, seed)
+
         print("x_data_train.shape = {0}".format(x_data_train.shape))
+        print("x_data_test.shape = {0}".format(x_data_test.shape))
+
+        # Flatten data if necessary
+        if flatten_before_encode:
+            x_data_train = IU.flatten_img_data(x_data_train)
+            x_data_test = IU.flatten_img_data(x_data_test)
+
+        print("x_data_train.shape = {0}".format(x_data_train.shape))
+        print("x_data_test.shape = {0}".format(x_data_test.shape))
+
+        exit()
+
+        # Set up model
+        MODEL = SimpleAE()
+        MODEL.configure(info)
+
+        MODEL.fit(x_data_train, x_data_test)
+
+        # Train model
+
+        # Save model
+
+    exit()
 
 
     # ========================================
@@ -146,6 +171,7 @@ def main():
     # Perform clustering recommendation
     #
     # ========================================
+    from algo.clustering.KNN import KNearestNeighbours
 
     # Load inventory images to memory (resizes when necessary)
     x_data_inventory, inventory_filenames = \

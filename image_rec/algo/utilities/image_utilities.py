@@ -28,7 +28,9 @@ class ImageUtils(object):
 
     ############################################################
     ###
+    ###
     ### External functions
+    ###
     ###
     ############################################################
 
@@ -126,17 +128,58 @@ class ImageUtils(object):
 
         return img_list, raw_filenames_list
 
+    """
+     Split image data set to training and test set using a seeded psuedo 
+     random number generator
+    """
+    def split_train_test(self, x_data, ratio_train_test, seed):
+
+        # Find number of examples we have
+        n = len(x_data)
+
+        # Generate a list of random [0,1] numbers
+        random.seed(a = seed)
+        r_list = [random.random() for x in range(n)]
+
+        # Perform splitting given our splitting ratio
+        x_data_train = []; x_data_test = []
+        index_train = []; index_test = []
+        for i in range(n):
+
+            # Assign to training if: r_list[i] < ratio_train_test
+            # Assign to test data if: r_list[i] >= ratio_train_test
+            if r_list[i] < ratio_train_test:
+                x_data_train.append(x_data[i])
+                index_train.append(i)
+            else:
+                x_data_test.append(x_data[i])
+                index_test.append(i)
+
+        # Convert to numpy arrays
+        x_data_train = np.array(x_data_train, dtype=float)
+        x_data_test = np.array(x_data_test, dtype=float)
+        index_train = np.array(index_train, dtype=int)
+        index_test = np.array(index_test, dtype=int)
+
+        # Make checks that the sets are not empty
+        if len(x_data_train) == 0:
+            raise Exception("Split train set is empty!")
+        if len(x_data_test) == 0:
+            raise Exception("Split test set is empty!")
+
+        return x_data_train, x_data_test, index_train, index_test
+
     ############################################################
     ###
+    ###
     ### Internal functions
+    ###
     ###
     ############################################################
 
 
     ### =============================================
-    ###
     ### Load image IO
-    ###
     ### =============================================
 
     """
@@ -148,66 +191,6 @@ class ImageUtils(object):
         else:
             img = np.array(scipy.misc.imread(img_filename, mode='RGB'))
         return img
-
-    """
-     Loads all images from a given directory:
-      - image numpy array format
-        gray_scale: (n, ypixels, xpixels) 
-        RGB: (n, ypixels, xpixels, 3)
-      -  
-     
-    """
-    def load_images(self, dir, ratio_training_test, seed):
-        frac_training_use = 1
-        gray_scale = False
-        index_train = []; index_test = []
-        x_train = []; x_test = []
-        ypixels_data = None; xpixels_data = None
-
-        # Extract filenames from dir
-        filenames_list, n_files = self.extract_filenames(dir, frac_training_use)
-
-        # Set up seed, and create a list of pseudo random numbers in [0,1]'s
-        random.seed(a = seed)
-        r_list = [random.random() for x in range(n_files)]
-
-        # Run for loo
-        for i, full_filename_i in enumerate(filenames_list):
-            # Read single image:
-            # - if gray_scale, we get (ypixels, xpixels)
-            # - if rgb, we get (ypixels, xpixels, n_channels)
-            img = self.read_img(full_filename_i, gray_scale=gray_scale)  # greyscale image (img.shape[0]=y, img.shape[1]=x)
-
-            print("[{0}/{1}] Reading image {2}...".format(i + 1, n_files, full_filename_i))
-            # Take ypixels_data and xpixels_data from 1st image
-            if i == 0:
-                ypixels_data = img.shape[0]
-                xpixels_data = img.shape[1]
-            else:
-                if img.shape[0] != ypixels_data or img.shape[1] != xpixels_data:
-                    raise Exception("Inconsistent image sizes in {0}!".format(dir))
-
-            # Assign to training or test set
-            if r_list[i] < ratio_training_test:
-                x_train.append(img)
-                index_train.append(i)
-            else:
-                x_test.append(img)
-                index_test.append(i)
-
-        # Depending on gray_scale, we reshape to 3 or 4 dimensional array
-        if gray_scale:
-            x_train = np.array(x_train).reshape((-1, ypixels_data, xpixels_data))
-            x_test = np.array(x_test).reshape((-1, ypixels_data, xpixels_data))
-        else:
-            x_train = np.array(x_train).reshape((-1, ypixels_data, xpixels_data, 3))
-            x_test = np.array(x_test).reshape((-1, ypixels_data, xpixels_data, 3))
-
-        index_train = np.array(index_train, dtype=int)
-        index_test = np.array(index_test, dtype=int)
-        return x_train, x_test, index_train, index_test, filenames_list
-
-
 
     """
      This function is to be paired with Pool
@@ -265,9 +248,7 @@ class ImageUtils(object):
 
 
     ### =============================================
-    ###
     ### Save image IO
-    ###
     ### =============================================
 
     """
@@ -280,9 +261,7 @@ class ImageUtils(object):
         return
 
     ### =============================================
-    ###
     ### Image processing
-    ###
     ### =============================================
 
     """
@@ -310,9 +289,7 @@ class ImageUtils(object):
 
 
     ### =============================================
-    ###
     ### Filename IO
-    ###
     ### =============================================
 
     """
@@ -348,9 +325,7 @@ class ImageUtils(object):
         return filenames_list, n_files
 
     ### =============================================
-    ###
     ### Directory IO
-    ###
     ### =============================================
 
     """

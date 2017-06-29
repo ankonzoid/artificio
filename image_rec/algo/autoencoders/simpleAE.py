@@ -1,28 +1,324 @@
 """
  simpleAE.py  (author: Anson Wong / github: ankonzoid)
 
- Trains a simple autoencoder and saves its autoencoder, encoder, and decoder to file.
+ Simple autoencoder class
 """
-# Set path for use on external servers
-import datetime
-import os
-import platform
-import pylab
-import sys
-import time
+from .embedding_base import EmbeddingBase
 
-import matplotlib.pyplot as plt
+import datetime, os, platform, pylab, sys, time
 import numpy as np
+import matplotlib.pyplot as plt
+
 from keras.callbacks import ModelCheckpoint
 from keras.datasets import mnist
 from keras.layers import Input, Dense
 from keras.models import Model
 from keras.models import load_model
 
-from ..utilities.image_utilities import load_images_from_dir
-from ..utilities.image_utilities import load_images_from_dir_parallel
-from ..utilities.image_utilities import make_path
-from ..utilities.image_utilities import normalize_flatten_img_data
+class SimpleAE(EmbeddingBase):
+
+    def __init__(self):
+
+        # For model architecture and weights (used for load/save)
+        self.autoencoder = None
+        self.autoencoder_input_shape = None
+        self.autoencoder_output_shape = None
+
+        self.encoder = None
+        self.encoder_input_shape = None
+        self.encoder_output_shape = None
+
+        self.decoder = None
+        self.decoder_input_shape = None
+        self.decoder_output_shape = None
+
+        # Some sanity parameters to be used in the middle of the run
+        self.is_compiled = None
+
+        # From custom information json file
+        self.training_image_shape = None
+
+        # User-parameters for run
+        self.name = None
+        self.train_model = None
+
+        # User-parameters for task data set
+        self.task_data_filename = None
+
+        # User-parameters for training/test data set
+        self.ypixels = None
+        self.xpixels = None
+
+        # User-parameters for architecture
+        self.n_epochs = None
+        self.batch_size = None
+        self.optimizer = None
+        self.loss = None
+
+        super().__init__()
+
+    """
+     Configure
+    """
+    def configure(self, info):
+
+
+
+        # Available user-parameters for architecture
+        self.loss = info["loss"]  # pick model loss function
+        self.optimizer = info["optimizer"]  # pick model optimizer
+        self.n_epochs = info["n_epochs"]  # number of training epochs
+        self.batch_size = info["batch_size"]  # training batch size
+
+    """
+     Check info file
+    """
+    def check_info(self, info):
+        for param in info:
+            print(param)
+
+    ### ====================================================================
+    ###
+    ### Training
+    ###
+    ### ====================================================================
+
+    """
+     Train the autoencoder
+    """
+    def fit(self, x_train, x_test):
+        self.autoencoder.fit(x_train, x_train,
+                             epochs = self.n_epochs,
+                             batch_size = self.batch_size,
+                             shuffle = True,
+                             validation_data = (x_test, x_test))
+    
+    ### ====================================================================
+    ###
+    ### Testing
+    ###
+    ### ====================================================================
+
+    """
+     Encode the image (using trained encoder)
+    """
+    def encode(self, img):
+        if not self.is_compiled:
+            raise Exception("Not compiled yet!")
+        x_encoded = self.encoder.predict(img)
+        return x_encoded
+
+    """
+     Decode the encoded image (using trained decoder)
+    """
+    def decode(self, x_encoded):
+        if not self.is_compiled:
+            raise Exception("Not compiled yet!")
+        img_decoded = self.decoder.predict(x_encoded)
+        return img_decoded
+
+    ### ====================================================================
+    ###
+    ### Data IO
+    ###
+    ### ====================================================================
+
+    """
+     Set the training data
+    """
+    def set_training_data(self, userparam_filename):
+        # =================================================
+        # Read user parameter file
+        # =================================================
+        with open(userparam_filename, 'r') as json_file:
+            userparam = json.load(json_file)
+
+        self.use_existing_training_resized = userparam["training_data_parameters"]["use_existing_resized"]
+        self.ratio_of_training_data_used = userparam["training_data_parameters"]["ratio_used"]
+        self.training_data_dir = userparam["training_data_parameters"]["data_dir"]
+        self.training_data_resized_dir = userparam["training_data_parameters"]["data_resized_dir"]
+        self.ypixels_force_resize = userparam["training_data_parameters"]["ypixels_force_resize"]
+        self.xpixels_force_resize = userparam["training_data_parameters"]["xpixels_force_resize"]
+        self.image_tag = userparam["training_data_parameters"]["image_tag"]
+
+    """
+     Set the testing data
+    """
+    def set_test_data(self, info):
+        # =================================================
+        # Read user parameter file
+        # =================================================
+        self.task_data_filename = info["task_data_parameters"]["data_filename"]
+
+
+
+    ### ====================================================================
+    ###
+    ### Model IO
+    ###
+    ### ====================================================================
+
+    """
+     Load model architecture and weights of autoencoder, encoder, and decoded
+    """
+    def load(self, autoencoder_filename, encoder_filename, decoder_filename, info):
+
+        # Load custom information
+        self.training_image_shape = info['training_image_shape']  # training image shape (n, ypixels, xpixels)
+
+        # Load autoencoder architecture + weights + shapes
+        self.autoencoder = load_model(autoencoder_filename)
+        self.autoencoder_input_shape = self.autoencoder.input_shape  # set input shape from loaded model
+        self.autoencoder_output_shape = self.autoencoder.output_shape  # set output shape from loaded model
+
+        # Load encoder architecture + weights + shapes
+        self.encoder = load_model(encoder_filename)
+        self.encoder_input_shape = self.encoder.input_shape  # set input shape from loaded model
+        self.encoder_output_shape = self.encoder.output_shape  # set output shape from loaded model
+
+        # Load decoder architecture + weights + shapes
+        self.decoder = load_model(decoder_filename)
+        self.decoder_input_shape = self.decoder.input_shape  # set input shape from loaded model
+        self.decoder_output_shape = self.decoder.output_shape  # set output shape from loaded model
+
+    """
+     Save model architecture and weights of autoencoder, encoder, and decoder
+    """
+    def save(self, autoencoder_filename, encoder_filename, decoder_filename):
+        self.autoencoder.save(autoencoder_filename)
+        self.encoder.save(encoder_filename)
+        self.decoder.save(decoder_filename)
+
+
+    ### ====================================================================
+    ###
+    ### Architecture compilation
+    ###
+    ### ====================================================================
+
+    """
+     Set NN architecture
+    """
+    def arch(self, info):
+
+            # =================================================
+            # Set training parameters
+            # =================================================
+
+            # =================================================
+            # Create neural network architecture
+            # =================================================
+            input_shape =
+            output_shape =
+
+
+            # =================================
+            # Create hidden layers
+            # =================================
+
+            # Encoding hidden layers
+            input_img = Input(shape=(x_train.shape[1],))
+            encoded = Dense(encode_dim, activation='relu')(input_img)
+
+            # Decoding hidden layers
+            decoded = Dense(x_train.shape[1], activation='sigmoid')(encoded)
+
+            # =================================
+            # Create models
+            # =================================
+
+            # ~~~~~~~~~~~~~~~~~~~
+            # Create autoencoder model
+            # ~~~~~~~~~~~~~~~~~~~
+            autoencoder = Model(input_img, decoded)
+            print(autoencoder.summary())
+            # Set encoder input/output dimensions
+            input_autoencoder_shape = autoencoder.layers[0].input_shape[1:]
+            output_autoencoder_shape = autoencoder.layers[-1].output_shape[1:]
+
+            # ~~~~~~~~~~~~~~~~~~~
+            # Create encoder model
+            # ~~~~~~~~~~~~~~~~~~~
+            encoder = Model(input_img, encoded)  # set encoder
+            print(encoder.summary())
+            # Set encoder input/output dimensions
+            input_encoder_shape = encoder.layers[0].input_shape[1:]
+            output_encoder_shape = encoder.layers[-1].output_shape[1:]
+
+            # ~~~~~~~~~~~~~~~~~~~
+            # Create decoder model
+            # ~~~~~~~~~~~~~~~~~~~
+            decoded_input = Input(shape=output_encoder_shape)
+            decoded_output = autoencoder.layers[-1](decoded_input)
+            decoder = Model(decoded_input, decoded_output)
+            print(decoder.summary())
+            # Set encoder input/output dimensions
+            input_decoder_shape = decoder.layers[0].input_shape[1:]
+            output_decoder_shape = decoder.layers[-1].output_shape[1:]
+
+            # =================================================
+            # Set models
+            # =================================================
+            self.autoencoder = autoencoder  # untrained
+            self.encoder = encoder  # untrained
+            self.decoder = decoder  # untrained
+
+            # =================================================
+            # Set model input/output dimensions
+            # We provide two options for getting these numbers:
+            # - via the individual layers
+            # - via the models
+            # =================================================
+            if 1:
+                self.autoencoder_input_shape = input_autoencoder_shape
+                self.autoencoder_output_shape = output_autoencoder_shape
+                self.encoder_input_shape = input_encoder_shape
+                self.encoder_output_shape = output_encoder_shape
+                self.decoder_input_shape = input_decoder_shape
+                self.decoder_output_shape = output_decoder_shape
+            else:
+                self.autoencoder_input_shape = autoencoder.input_shape
+                self.autoencoder_output_shape = autoencoder.output_shape
+                self.encoder_input_shape = encoder.input_shape
+                self.encoder_output_shape = encoder.output_shape
+                self.decoder_input_shape = decoder.input_shape
+                self.decoder_output_shape = decoder.output_shape
+
+
+
+
+    """
+     Compile the model before training
+    """
+    def compile(self):
+        ypixels_model = self.training_image_shape[1]
+        xpixels_model = self.training_image_shape[2]
+        if ypixels_model * xpixels_model != self.encoder_input_shape[1]:
+            raise Exception("Invalid input size! height * width != encoder_input_shape[1], current input shape is {0} * {1} and encoder_input_shape is {2}".format(ypixels_model, xpixels_model, self.encoder_input_shape))
+        self.autoencoder.compile(optimizer = self.optimizer, loss = self.loss)
+        self.is_compiled = True
+
+
+    """
+     Retrieve input and output dimensions
+    """
+    def get_encoder_input_shape(self):
+        return self.input_enc_shape
+    def get_encoder_output_shape(self):
+        return self.output_enc_shape
+    def get_decoder_input_shape(self):
+        return self.input_dec_shape
+    def get_decoder_output_shape(self):
+        return self.output_dec_shape
+
+
+
+# ======================================================================
+# ======================================================================
+# ======================================================================
+# ======================================================================
+# ======================================================================
+
 
 
 def main():
@@ -50,71 +346,6 @@ def main():
     optimizer = 'adam'
     loss = 'binary_crossentropy'
 
-    # =================================================
-    # Read and pre-process data
-    # =================================================
-    save_models = train_model # save the model?
-    dir_dict = make_folder_filename_conventions(name_algo, training_heaven_dir, name_data, name_trainingset)
-    if 0:
-        for row in dir_dict:
-            print(row, ":", dir_dict[row])
-    training_dir = dir_dict["training_dir"]
-    model_dir = dir_dict["model_dir"]
-    model_subdir = dir_dict["model_subdir"]
-    autoencoder_filename = dir_dict["autoencoder_filename"]
-    autoencoder_checkpoint_filename = dir_dict["autoencoder_checkpoint_filename"]
-    encoder_filename = dir_dict["encoder_filename"]
-    decoder_filename = dir_dict["decoder_filename"]
-    plot_filename_pdf = dir_dict["plot_filename_pdf"]
-    plot_filename_png = dir_dict["plot_filename_png"]
-    run_report_filename = dir_dict["run_report_filename"]
-    embedding_matrix_filename = dir_dict["embedding_matrix_filename"]
-    embedding_images_filename = dir_dict["embedding_images_filename"]
-
-    autoencoder_arch_filename = dir_dict["autoencoder_arch_filename"]
-    encoder_arch_filename = dir_dict["encoder_arch_filename"]
-    decoder_arch_filename = dir_dict["decoder_arch_filename"]
-    autoencoder_weights_filename = dir_dict["autoencoder_weights_filename"]
-    encoder_weights_filename = dir_dict["encoder_weights_filename"]
-    decoder_weights_filename = dir_dict["decoder_weights_filename"]
-
-    make_path(model_dir)  # make general model path
-    make_path(model_subdir)  # make specific model path
-
-    print("Reading and normalizing training/test images...")
-    if use_mnist:
-        (x_train, _), (x_test, _) = mnist.load_data()
-    elif train_model:
-        # Assumes images are all of same size
-        if parallelize:
-            x_train, x_test, index_train, index_test, filenames_list = \
-                load_images_from_dir_parallel(training_dir, ratio_training_test, frac_training_use,
-                                              n_clone, seed, gray_scale, n_cores)
-        else:
-            x_train, x_test, index_train, index_test, filenames_list = \
-                load_images_from_dir(training_dir, ratio_training_test, frac_training_use,
-                                     n_clone, seed, gray_scale)
-    else:  # custom random IO
-        krandom_seed = 101
-        frac_training_use = 0.01
-        ratio_training_test = 0.2
-        n_clone = 1
-        x_train, x_test, index_train, index_test, filenames_list = \
-            load_images_from_dir(training_dir, ratio_training_test, frac_training_use,
-                                 n_clone, krandom_seed, gray_scale)
-
-    ypixels = x_train.shape[1]
-    xpixels = x_train.shape[2]
-    if gray_scale:
-        n_channels = 1
-    else:
-        n_channels = 3
-    print(" x_train.shape = {0}".format(x_train.shape))
-    print(" x_test.shape = {0}".format(x_test.shape))
-    x_train = normalize_flatten_img_data(x_train)  # (n, total pixels)
-    x_test = normalize_flatten_img_data(x_test)  # (n, total pixels)
-    print(" x_train.shape (normalized) = {0}".format(x_train.shape))
-    print(" x_test.shape (normalized) = {0}".format(x_test.shape))
 
     # =================================================
     # Train model (or load it)
@@ -123,7 +354,7 @@ def main():
         start_time = time.time()  # start timer
 
         # Start the report
-        run_report = open(run_report_filename, "w")  # write report
+        run_report = open(report_filename, "w")  # write report
         run_report.write(datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y"))
         run_report.write("\n\n")
         run_report.close()  # close report
@@ -156,7 +387,6 @@ def main():
         run_report.write(" model_dir: {0}\n".format(model_dir))
         run_report.write(" model_subdir: {0}\n".format(model_subdir))
         run_report.write(" autoencoder_filename: {0}\n".format(autoencoder_filename))
-        run_report.write(" autoencoder_checkpoint_filename: {0}\n".format(autoencoder_checkpoint_filename))
         run_report.write(" encoder_filename: {0}\n".format(encoder_filename))
         run_report.write(" decoder_filename: {0}\n".format(decoder_filename))
         run_report.write(" plot_filename_png: {0}\n".format(plot_filename_png))
@@ -169,11 +399,16 @@ def main():
         run_report = open(run_report_filename, "a")  # append report
         run_report.write("\n--- build model architecture start time = {0} ---\n\n".format(time.time() - start_time))
         run_report.close()  # close report
-        if 1:
-            # Create layers (x_train.shape = (n_train, flattened dim))
-            input_img = Input(shape=(x_train.shape[1],))  # input layer
-            encoded = Dense(encode_dim, activation='relu')(input_img)  # last encoded layer
-            decoded = Dense(x_train.shape[1], activation='sigmoid')(encoded)  # last decoded layer
+
+        # ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        # Create layers
+        # ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        # Create hidden encoding layers
+        input_img = Input(shape=(x_train.shape[1],))
+        encoded = Dense(encode_dim, activation='relu')(input_img)
+
+        # Create hidden decoding layers
+        decoded = Dense(x_train.shape[1], activation='sigmoid')(encoded)
 
         # ~~~~~~~~~~~~~~~~~~~~~~~~~~
         # Set models
