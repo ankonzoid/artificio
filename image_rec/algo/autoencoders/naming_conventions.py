@@ -21,12 +21,11 @@ def make_folder_filename_conventions(name_algo, training_heaven_dir, name_data, 
         "model_dir": model_dir,
         "model_subdir": model_subdir,
         "autoencoder_filename": autoencoder_filename,
-        "autoencoder_checkpoint_filename": autoencoder_checkpoint_filename,
         "encoder_filename": encoder_filename,
         "decoder_filename": decoder_filename,
         "plot_filename_pdf": plot_filename_pdf,
         "plot_filename_png": plot_filename_png,
-        "train_report_filename": run_report_filename
+        "train_report_filename": train_report_filename
     }
 
     return dict

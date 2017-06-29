@@ -4,9 +4,15 @@
  Trains a convolutional autoencoder and saves its autoencoder, encoder, and decoder to file.
 """
 # Set path for use on external servers
-import os, sys, time, platform, datetime, pylab
-import numpy as np
+import datetime
+import os
+import platform
+import pylab
+import sys
+import time
+
 import matplotlib.pyplot as plt
+import numpy as np
 
 project_root = os.path.dirname(__file__)
 sys.path.append(project_root)
@@ -17,11 +23,11 @@ from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D
 from keras.models import Model
 from keras.callbacks import ModelCheckpoint
 
-from ..utilities.IO import normalize_reshape_img_data
-from ..utilities.IO import load_images_from_dir
-from ..utilities.IO import load_images_from_dir_parallel
-from ..utilities.IO import make_path
-from ..utilities import naming_conventions
+from ..utilities.image_utilities import normalize_reshape_img_data
+from ..utilities.image_utilities import load_images_from_dir
+from ..utilities.image_utilities import load_images_from_dir_parallel
+from ..utilities.image_utilities import make_path
+
 
 def main():
     name_algo = "ConvAE"
