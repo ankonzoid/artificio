@@ -1,5 +1,5 @@
 """
- image_utilities.py (author: Anson Wong / github: ankonzoid)
+ image_utilities.py (author: Anson Wong / git: ankonzoid)
 
  Image utilities class that helps with image data IO and processing.
 """
@@ -183,7 +183,7 @@ class ImageUtils(object):
     ### =============================================
 
     """
-     Read image
+     Read image (grayscale/RGB)
     """
     def read_img(self, img_filename, gray_scale=False):
         if gray_scale:

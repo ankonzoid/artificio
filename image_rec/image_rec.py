@@ -1,5 +1,5 @@
 '''
- imageKNN.py (author: Anson Wong / git: ankonzoid)
+ image_rec.py (author: Anson Wong / git: ankonzoid)
  
  Image similarity recommender system using an autoencoder-clustering model.
  
@@ -18,40 +18,56 @@ import sys, os, shutil
 print("Python {0} on {1}".format(sys.version, sys.platform))
 import numpy as np
 
+from algo.autoencoders.AE import AE
+from algo.clustering.KNN import KNearestNeighbours
 from algo.utilities.image_utilities import ImageUtils
 from algo.utilities.sorting import find_topk_unique
 
-from keras.models import load_model
-
 def main():
-    project_root = os.path.dirname(__file__)
-    sys.path.append(project_root)
-    print("Project root: {0}".format(project_root))
     # ========================================
     # Set run settings
     # ========================================
-    if 1:
-        model_name = 'simpleAE'  # model folder
+    #################################
+    #################################
+    if 0:
+        model_name = 'simpleAE'
         flatten_before_encode = True
         flatten_after_encode = False
-    elif 0:
-        model_name = 'ConvAE'  # model folder
+    elif 1:
+        model_name = 'convAE'
         flatten_before_encode = False
         flatten_after_encode = True
     else:
-        raise Exception("Invalid model name which is not simpleAE nor ConvAE")
+        raise Exception("Invalid model name which is not simpleAE/convAE")
 
-    model_extension_tag = '_encoder.h5'  # encoder model h5 tag
-    img_shape = (100, 100)  # force resize of raw images to (ypixels, xpixels)
+    ############################
+    ###   Image processing   ###
+    ############################
+    process_and_save_images = False
 
+    ###########################################
+    ###   Autoencoder training parameters   ###
+    ###########################################
+    train_autoencoder = False
+    img_shape = (100, 100)  # force resize -> (ypixels, xpixels)
+    ratio_train_test = 0.8
+    seed = 100
+
+    loss = "binary_crossentropy"
+    optimizer = "adam"
+    n_epochs = 100
+    batch_size = 256
+
+    save_reconstruction_on_load_model = True
+
+    ###################################
+    ###   KNN training parameters   ###
+    ###################################
     n_neighbors = 5  # number of nearest neighbours
     metric = "cosine"  # kNN metric (cosine only compatible with brute force)
     algorithm = "brute"  # search algorithm
+    recommendation_method = 2  # 1 = centroid kNN, 2 = all points kNN
 
-    # Recommender mode:
-    # 1 = nearest to centroid
-    # 2 = nearest to any transaction point
-    rec_mode = 2
 
 
     # ========================================
@@ -59,6 +75,7 @@ def main():
     # ========================================
     # Assume project root directory to be directory of file
     project_root = os.path.dirname(__file__)
+    print("Project root: {0}".format(project_root))
 
     # Query and answer folder
     query_dir = os.path.join(project_root, 'query')
@@ -70,10 +87,9 @@ def main():
     img_inventory_raw_dir = os.path.join(db_dir, 'img_inventory_raw')
     img_train_dir = os.path.join(db_dir, 'img_train')
     img_inventory_dir = os.path.join(db_dir, 'img_inventory')
-    models_dir = os.path.join(db_dir, 'models')
 
-    # Model encoder filename
-    encoder_filename = os.path.join(models_dir, model_name + model_extension_tag)
+    # Run output
+    models_dir = os.path.join(db_dir, 'models')
 
     # Set info file
     info = {
@@ -90,6 +106,9 @@ def main():
         "img_inventory_raw_dir": img_inventory_raw_dir,
         "img_train_dir": img_train_dir,
         "img_inventory_dir": img_inventory_dir,
+
+        # Run output
+        "models_dir": models_dir
     }
 
     # Initialize image utilities (and register encoder)
@@ -103,8 +122,8 @@ def main():
     # ========================================
 
     # Process and save
-    process_save_images = False
-    if process_save_images:
+    if process_and_save_images:
+
         # Training images
         IU.raw2resized_load_save(raw_dir=img_train_raw_dir,
                                  processed_dir=img_train_dir,
@@ -120,79 +139,104 @@ def main():
     # Train autoencoder
     #
     # ========================================
-    train_autoencoder = True
-    if train_autoencoder:
 
-        from algo.autoencoders.simpleAE import SimpleAE
-        #from algo.autoencoders import ConvAE
+    # Set up autoencoder base class
+    MODEL = AE()
+
+    MODEL.configure(model_name=model_name)
+
+    if train_autoencoder:
 
         print("Training the autoencoder...")
 
-        # Load training images to memory (resizes when necessary)
-        x_data_all, train_filenames = \
-            IU.raw2resizednorm_load(raw_dir=img_train_dir, img_shape=img_shape)
+        # Generate naming conventions
+        dictfn = MODEL.generate_naming_conventions(model_name, models_dir)
+        MODEL.start_report(dictfn)  # start report
 
-        print("x_data_all.shape = {0}".format(x_data_all.shape))
+        # Load training images to memory (resizes when necessary)
+        x_data_all, all_filenames = \
+            IU.raw2resizednorm_load(raw_dir=img_train_dir, img_shape=img_shape)
+        print("\nAll data:")
+        print(" x_data_all.shape = {0}\n".format(x_data_all.shape))
 
         # Split images to training and validation set
-        ratio_train_test = 0.8
-        seed = 100
         x_data_train, x_data_test, index_train, index_test = \
             IU.split_train_test(x_data_all, ratio_train_test, seed)
-
+        print("\nSplit data:")
         print("x_data_train.shape = {0}".format(x_data_train.shape))
-        print("x_data_test.shape = {0}".format(x_data_test.shape))
+        print("x_data_test.shape = {0}\n".format(x_data_test.shape))
 
         # Flatten data if necessary
         if flatten_before_encode:
             x_data_train = IU.flatten_img_data(x_data_train)
             x_data_test = IU.flatten_img_data(x_data_test)
+            print("\nFlattened data:")
+            print("x_data_train.shape = {0}".format(x_data_train.shape))
+            print("x_data_test.shape = {0}\n".format(x_data_test.shape))
 
-        print("x_data_train.shape = {0}".format(x_data_train.shape))
-        print("x_data_test.shape = {0}".format(x_data_test.shape))
-
-        exit()
-
-        # Set up model
-        MODEL = SimpleAE()
-        MODEL.configure(info)
-
-        MODEL.fit(x_data_train, x_data_test)
+        # Set up architecture and compile model
+        MODEL.set_arch(input_shape=x_data_train.shape[1:],
+                       output_shape=x_data_train.shape[1:])
+        MODEL.compile(loss=loss, optimizer=optimizer)
+        MODEL.append_arch_report(dictfn)  # append to report
 
         # Train model
+        MODEL.append_message_report(dictfn, "Start training")  # append to report
+        MODEL.train(x_data_train, x_data_test,
+                    n_epochs=n_epochs, batch_size=batch_size)
+        MODEL.append_message_report(dictfn, "End training")  # append to report
 
-        # Save model
+        # Save model to file
+        MODEL.save_model(dictfn)
 
-    exit()
+        # Save reconstructions to file
+        MODEL.plot_save_reconstruction(x_data_test, img_shape, dictfn, n_plot=10)
 
+    else:
+
+        # Generate naming conventions
+        dictfn = MODEL.generate_naming_conventions(model_name, models_dir)
+
+        # Load models
+        MODEL.load_model(dictfn)
+
+        # Compile model
+        MODEL.compile(loss=loss, optimizer=optimizer)
+
+        # Save reconstructions to file
+        if save_reconstruction_on_load_model:
+            x_data_all, all_filenames = \
+                IU.raw2resizednorm_load(raw_dir=img_train_dir, img_shape=img_shape)
+            if flatten_before_encode:
+                x_data_all = IU.flatten_img_data(x_data_all)
+            MODEL.plot_save_reconstruction(x_data_all, img_shape, dictfn, n_plot=10)
 
     # ========================================
     #
     # Perform clustering recommendation
     #
     # ========================================
-    from algo.clustering.KNN import KNearestNeighbours
 
     # Load inventory images to memory (resizes when necessary)
     x_data_inventory, inventory_filenames = \
-        IU.raw2resizednorm_load(raw_dir=img_inventory_dir,
-                                img_shape=img_shape)
-    print("x_data_inventory.shape = {0}".format(x_data_inventory.shape))
+        IU.raw2resizednorm_load(raw_dir=img_inventory_dir, img_shape=img_shape)
+    print("\nx_data_inventory.shape = {0}\n".format(x_data_inventory.shape))
 
-    # Load encoder
-    encoder = load_model(encoder_filename)
-    encoder.compile(optimizer='adam', loss='binary_crossentropy')  # set loss and optimizer
+    # Explictly assign loaded encoder
+    encoder = MODEL.encoder
 
     # Encode our data, then flatten to encoding dimensions
     # We switch names for simplicity: inventory -> train, query -> test
     print("Encoding data and flatten its encoding dimensions...")
     if flatten_before_encode:  # Flatten the data before encoder prediction
         x_data_inventory = IU.flatten_img_data(x_data_inventory)
+
     x_train_kNN = encoder.predict(x_data_inventory)
+
     if flatten_after_encode:  # Flatten the data after encoder prediction
         x_train_kNN = IU.flatten_img_data(x_train_kNN)
 
-    print("x_train_kNN.shape = {0}".format(x_train_kNN.shape))
+    print("\nx_train_kNN.shape = {0}\n".format(x_train_kNN.shape))
 
 
     # =================================
@@ -200,7 +244,7 @@ def main():
     # =================================
     print("Performing kNN to locate nearby items to user centroid points...")
     EMB = KNearestNeighbours()  # initialize embedding kNN class
-    EMB.compile(n_neighbors = n_neighbors, algorithm = algorithm, metric = metric)  # compile kNN model
+    EMB.compile(n_neighbors=n_neighbors, algorithm=algorithm, metric=metric)  # compile kNN model
     EMB.fit(x_train_kNN)  # fit kNN
 
 
@@ -216,28 +260,30 @@ def main():
         x_data_query, query_filenames = \
             IU.raw2resizednorm_load(raw_dir=query_dir,
                                     img_shape=img_shape)
-        print("x_data_query.shape = {0}".format(x_data_query.shape))
+        print("\nx_data_query.shape = {0}\n".format(x_data_query.shape))
 
         # Encode query images
         if flatten_before_encode:  # Flatten the data before encoder prediction
             x_data_query = IU.flatten_img_data(x_data_query)
+
         x_test_kNN = encoder.predict(x_data_query)
+
         if flatten_after_encode:  # Flatten the data after encoder prediction
             x_test_kNN = IU.flatten_img_data(x_test_kNN)
 
-        print("x_test_kNN.shape = {0}".format(x_test_kNN.shape))
+        print("\nx_test_kNN.shape = {0}\n".format(x_test_kNN.shape))
 
 
         # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         # Compute distances and indices for recommendation
         # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        if rec_mode == 1:  # kNN centroid transactions
+        if recommendation_method == 1:  # kNN centroid transactions
             # Compute centroid point of the query encoding vectors (equal weights)
             x_test_kNN_centroid = np.mean(x_test_kNN, axis = 0)
             # Find nearest neighbours to centroid point
             distances, indices = EMB.predict(np.array([x_test_kNN_centroid]))
 
-        elif rec_mode == 2:  # kNN all transactions
+        elif recommendation_method == 2:  # kNN all transactions
             # Find k nearest neighbours to all transactions, then flatten the distances and indices
             distances, indices = EMB.predict(x_test_kNN)
             distances = distances.flatten()
@@ -248,14 +294,14 @@ def main():
         else:
             raise Exception("Invalid method for making recommendations")
 
-        print("distances.shape = {0}".format(distances.shape))
-        print("indices.shape = {0}".format(indices.shape))
+        print("\ndistances.shape = {0}".format(distances.shape))
+        print("indices.shape = {0}\n".format(indices.shape))
 
         # Make k-recommendations and clone most similar inventory images to answer dir
         print("Cloning k-recommended inventory images to answer folder '{0}'...".format(answer_dir))
         for i, (index, distance) in enumerate(zip(indices, distances)):
-            print("({0}): index = {1}".format(i, index))
-            print("({0}): distance = {1}".format(i, distance))
+            print("\n({0}): index = {1}".format(i, index))
+            print("({0}): distance = {1}\n".format(i, distance))
 
             for k_rec, ind in enumerate(index):
 
@@ -271,9 +317,12 @@ def main():
                 shutil.copy(inventory_filename, answer_filename)
 
         # Wait for input (used for predicting other queries)
-        c = input('Continue? Type `q` to break\n')
-        if c == 'q':
+        if 1:
             break
+        else:
+            c = input('Continue? Type `q` to break\n')
+            if c == 'q':
+                break
 
 
 # Driver
