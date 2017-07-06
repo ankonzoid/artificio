@@ -14,6 +14,12 @@ from functions import categorical_matrix as CATMAT  # import categorical matrix
 from functions import similarity_table as SIMTAB  # import similarity table
 
 def main():
+    
+    # ===========================================
+    # Run settings
+    # ============================================
+    k_rec = 3  # number of recommendations to make for each user
+    k_users_aggregate = 30  # hyperparameter for computing scores
 
     # Set data filename, column names, and toggle for categorical features
     data_param_list = \
@@ -52,13 +58,14 @@ def main():
         }
     ]
 
+
     # ================================================
     #
     # Create categorical matrix Xcat
     # Uses above data parameters.
     #
     # ================================================
-    print("Creating categorical matrix...")
+    print("Reading data and creating categorical matrix...")
     X, Xcat, Xheader, Xuse, Xiscat, XNcat, Xcatnames, Xcatind = CATMAT.find_X_Xcat(data_param_list[0])
     Xcat_relevant = CATMAT.construct_Xcat_relevant(Xcat, Xiscat, Xcatind)  # Xcat has non-categorical features, this eliminates them
 
@@ -68,29 +75,24 @@ def main():
 
     # ================================================
     #
-    # Find similarities (between items and between users)
+    # From utility matrix, build uu-similarity matrix
     #
     # ================================================
-    print("Building similarity table...")
     U = np.array(Xcat_relevant)
     [N, d] = U.shape
-
     sim_uu = SIMTAB.build_uu(U)
 
-    print("Printing similarity table")
-    print(sim_uu)
-    print(sim_uu.shape)
+    print("Building uu-similarity table = {0}...".format(sim_uu.shape))
 
     # ================================================
     #
-    # Find scores based on similarities
+    # Compute item scores using uu-similarity table
     #
     # ================================================
-    print("Training... building ui score table SCORE_ui= [%d,%d] with top k_agg= %d similar users...")
-    k_users_aggregate = 30
     score_ui = np.zeros((N, d), dtype=float)
     score_norm_ui = np.zeros((N, d), dtype=float)
     for u in range(0, N):
+
         # Find top k similar users: take min(k_use,N_users) elements, sort ascend, flip to descend, find indices
         ind_topkscore = get_topk(sim_uu[u, :], k_users_aggregate)  # get top k_users score indices
 
@@ -98,6 +100,8 @@ def main():
         score_ui[u, :] = np.sum(U[ind_topkscore, :], axis=0)
         score_norm_ui[u, :] = score_ui[u, :] / np.sum(score_ui[u, :])
 
+
+    print("Building ui-score table = {0} with top k_agg = {1} similar users...".format(score_ui.shape, k_users_aggregate))
     if 0:
         print(score_norm_ui)
         print(score_ui)
@@ -108,23 +112,19 @@ def main():
     """==================================================
          Prediction: Make recommendations for training users
     =================================================="""
-    k_rec = 3
+    print("Making k_rec = {0} recommendations for each training user...".format(k_rec))
     itemindex_train_rec = np.ones((N, k_rec), dtype=int)
     itemid_train_rec = np.ones((N, k_rec), dtype=int)
-    for utrain in range(0, N):
+    for uid_train in range(0, N):
 
         # Make recommendations
-        ind_rec = get_topk(score_ui[utrain, :], k_rec)  # top score indices
-        itemindex_train_rec[utrain, :] = ind_rec
-        itemid_train_rec[utrain, :] = ind_rec + 1
+        ind_rec = get_topk(score_ui[uid_train, :], k_rec)  # top score indices
+        itemindex_train_rec[uid_train, :] = ind_rec
+        itemid_train_rec[uid_train, :] = ind_rec + 1
 
-        if (utrain < 3):
-            print('')
-            print("Item recommendations [training user %d]:" % utrain)
-            print(itemindex_train_rec[utrain, :])
-            print("Corresponding item scores [training user %d]:" % utrain)
-            print(score_ui[utrain, itemindex_train_rec[utrain, :]])
-            print('')
+        print("Itemid rec [userid {0}]: {1}".format(uid_train, itemindex_train_rec[uid_train, :]))
+        #print("Itemid rec scores [user {0}]: {1}".format(uid_train, score_ui[uid_train, itemindex_train_rec[uid_train, :]]))
+        #print("")
 
 
 
@@ -159,30 +159,6 @@ def main():
     #
     # ================================================
 
-
-    # ========================
-    # Split Xcat -> (i) itemid list + (ii) item categorical vector representation
-    # ========================
-    '''
-    itemid_index = CATMAT.find_obj_index("ii_itemid", Xheader)  # itemid column index
-    cat_index = CATMAT.find_obj_index("ii_genre", Xheader)  # interested categorical column index
-    if itemid_index < 0 or cat_index < 0:
-        raise IOError("Error! Could not find itemid_index or cat_index!")
-
-    itemid_list, itemid_vector_list = CATMAT.split_Xcat(Xcat, Xcatind, itemid_index, cat_index)
-
-    # Print
-    if 1:
-        # Print: categorical name objects
-        for row in Xcat:
-            print(row)
-        print(XNcat)
-        print(Xcatnames)
-        print(Xcatind)
-        # Print: itemid_list and itemid_vector_list
-        for i, itemid in enumerate(itemid_list):
-            print("itemid", itemid_list[i], ":", itemid_vector_list[i])
-    '''
 
 
 # ================================================================
