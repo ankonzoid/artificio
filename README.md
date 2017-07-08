@@ -2,7 +2,7 @@
 
 A repository of deep learning codes which are tested and ready for real-world applications.
 
-# Similar image recommendations
+# Similar image recommendations (`image_rec`)
 Given a set of query images (user given) and a set of inventory images (store inventory images), we find the top-k similar inventory images that are the most 'similar' to the set of query images. This can be achieved by training an autoencoder using a set of training images that are of the same domain as the inventory images, and using the encoder to cluster our images in the encoding space to introduce a measure of 'similarity' between the images.
 
 For concreteness, we train a convolutional autoencoder using 36 training food images (6 of each of regular steakhouse food items: steak, potato, french fries, salads, burger, asparagus), then make recommendations based on encoded query image kNN of these items in encoding space. Below are results of querying unseen before images of:
