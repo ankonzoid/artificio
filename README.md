@@ -2,15 +2,24 @@
 
 A repository of deep learning codes which are tested and ready for real-world applications.
 
-# Similar image recommendations (for stores)
-Given a set of query images (user given) and a set of inventory images (store product images), we find the top-k similar inventory images that are most 'similar' to the set of query images. The method we use is:
+# Similar image recommendations
+Given a set of query images (user given) and a set of inventory images (store inventory images), we find the top-k similar inventory images that are the most 'similar' to the set of query images. This can be achieved by training an autoencoder using a set of training images that are of the same domain as the inventory images, and using the encoder to cluster our images in the encoding space to introduce a measure of 'similarity' between the images.
 
-### 1) Create/extract query images
-<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_hamburger.png" width="200%" align="center">
+For concreteness, we train a convolutional autoencoder using 36 training food images (6 of each of regular steakhouse food items: steak, potato, french fries, salads, burger, asparagus), then make recommendations based on encoded query image kNN of these items in encoding space. Below are results of querying unseen before images of:
 
+### A burger
+<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_burger.png" width="200%" align="center">
+
+### A salad
 <img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_salad.png" width="200%" align="center">
 
+### Asparagus
 <img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_asparagus.png" width="200%" align="center">
+
+The model performs fairly well for a vanilla model with minimal fine-tuned training, in the sense that the top similar recommended images tend to be in same food queried (querying burger gives mostly burgers, quering salads gives mostly salads, etc.). There are still different neural network architectures, more training images, hyperparameter tuning that can be done to improve the generality of this model. 
+
+
+### Image autoencoder-knn method
 
 1) Train an autoencoder with training images in hopefully the same domain as the inventory images
 2) Use the encoder to encode both the query images and the inventory images
