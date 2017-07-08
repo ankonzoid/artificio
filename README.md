@@ -6,11 +6,11 @@ A repository of deep learning codes which are tested and ready for real-world ap
 Given a set of query images (user given) and a set of inventory images (store product images), we find the top-k similar inventory images that are most 'similar' to the set of query images. The method we use is:
 
 ### 1) Create/extract query images
-<img src="https://github.com/ankonzoid/artificio/blob/master/query/result_hamburger.png" width="200%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_hamburger.png" width="200%" align="center">
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/query/result_salad.png" width="200%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_salad.png" width="200%" align="center">
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/query/result_asparagus.png" width="200%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_asparagus.png" width="200%" align="center">
 
 1) Train an autoencoder with training images in hopefully the same domain as the inventory images
 2) Use the encoder to encode both the query images and the inventory images
