@@ -13,13 +13,13 @@ Given a set of query images (user given) and a set of inventory images (store in
 For concreteness, we train a convolutional autoencoder using 36 training food images (6 of each of regular steakhouse food items: steak, potato, french fries, salads, burger, asparagus), then make recommendations based on encoded query image kNN of these items in encoding space. Below are results of querying unseen before images of:
 
 ### Query: a burger
-<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_burger.png" width="100%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_burger.png" width="80%" align="center">
 
 ### Query: a salad
-<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_salad.png" width="100%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_salad.png" width="80%" align="center">
 
 ### Query: asparagus
-<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_asparagus.png" width="100%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_asparagus.png" width="80%" align="center">
 
 The model performs fairly well for a vanilla model with minimal fine-tuned training, in the sense that the top similar recommended images tend to be in same food queried (querying burger gives mostly burgers, quering salads gives mostly salads, etc.). There are still different neural network architectures, more training images, hyperparameter tuning that can be done to improve the generality of this model. 
 
