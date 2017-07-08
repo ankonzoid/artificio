@@ -1,4 +1,5 @@
 '''
+
  image_rec.py (author: Anson Wong / git: ankonzoid)
  
  Image similarity recommender system using an autoencoder-clustering model.
@@ -13,6 +14,7 @@
   5) Encode query images in 'query', and predict their NN using our trained kNN model
   6) Compute a score for each inventory encoding relative to our query encoding (centroid/closest)
   7) Make k-recommendations by cloning top-k inventory images into 'answer'
+  
 '''
 import sys, os, shutil
 print("Python {0} on {1}".format(sys.version, sys.platform))
@@ -22,6 +24,7 @@ from algo.autoencoders.AE import AE
 from algo.clustering.KNN import KNearestNeighbours
 from algo.utilities.image_utilities import ImageUtils
 from algo.utilities.sorting import find_topk_unique
+from algo.utilities.plot_utilities import PlotUtils
 
 def main():
     # ========================================
@@ -40,34 +43,31 @@ def main():
     else:
         raise Exception("Invalid model name which is not simpleAE/convAE")
 
-    ############################
+
     ###   Image processing   ###
-    ############################
     process_and_save_images = False
 
-    ###########################################
     ###   Autoencoder training parameters   ###
-    ###########################################
     train_autoencoder = False
+
     img_shape = (100, 100)  # force resize -> (ypixels, xpixels)
     ratio_train_test = 0.8
     seed = 100
 
     loss = "binary_crossentropy"
     optimizer = "adam"
-    n_epochs = 100
+    n_epochs = 3000
     batch_size = 256
 
     save_reconstruction_on_load_model = True
 
-    ###################################
+
     ###   KNN training parameters   ###
-    ###################################
     n_neighbors = 5  # number of nearest neighbours
     metric = "cosine"  # kNN metric (cosine only compatible with brute force)
     algorithm = "brute"  # search algorithm
     recommendation_method = 2  # 1 = centroid kNN, 2 = all points kNN
-
+    output_mode = 1  # 1 = output plot, 2 = output inventory db image clones
 
 
     # ========================================
@@ -114,6 +114,9 @@ def main():
     # Initialize image utilities (and register encoder)
     IU = ImageUtils()
     IU.configure(info)
+
+    # Initialize plot utilities
+    PU = PlotUtils()
 
     # ========================================
     #
@@ -249,24 +252,28 @@ def main():
 
 
     # =================================
-    # Perform kNN to the centroid query point
+    # Perform kNN
     # =================================
-    while True:
+    # Read items in query folder
+    print("Reading query images from query folder: {0}".format(query_dir))
 
-        # Read items in query folder
-        print("Reading query images from query folder: {0}".format(query_dir))
+    # Load query images to memory (resizes when necessary)
+    x_data_query, query_filenames = \
+        IU.raw2resizednorm_load(raw_dir=query_dir,
+                                img_shape=img_shape)
+    n_query = len(x_data_query)
+    print("\nx_data_query.shape = {0}\n".format(x_data_query.shape))
 
-        # Load query images to memory (resizes when necessary)
-        x_data_query, query_filenames = \
-            IU.raw2resizednorm_load(raw_dir=query_dir,
-                                    img_shape=img_shape)
-        print("\nx_data_query.shape = {0}\n".format(x_data_query.shape))
+    # Encode query images
+    if flatten_before_encode:  # Flatten the data before encoder prediction
+        x_data_query = IU.flatten_img_data(x_data_query)
 
-        # Encode query images
-        if flatten_before_encode:  # Flatten the data before encoder prediction
-            x_data_query = IU.flatten_img_data(x_data_query)
+    # Perform kNN on each query image
+    for ind_query in range(n_query):
 
-        x_test_kNN = encoder.predict(x_data_query)
+        newshape = (1,) + x_data_query[ind_query].shape
+        x_query_i_use = x_data_query[ind_query].reshape(newshape)
+        x_test_kNN = encoder.predict(x_query_i_use)
 
         if flatten_after_encode:  # Flatten the data after encoder prediction
             x_test_kNN = IU.flatten_img_data(x_test_kNN)
@@ -297,32 +304,43 @@ def main():
         print("\ndistances.shape = {0}".format(distances.shape))
         print("indices.shape = {0}\n".format(indices.shape))
 
-        # Make k-recommendations and clone most similar inventory images to answer dir
-        print("Cloning k-recommended inventory images to answer folder '{0}'...".format(answer_dir))
-        for i, (index, distance) in enumerate(zip(indices, distances)):
-            print("\n({0}): index = {1}".format(i, index))
-            print("({0}): distance = {1}\n".format(i, distance))
+        # =============================================
+        #
+        # Output results
+        #
+        # =============================================
+        if output_mode == 1:
 
-            for k_rec, ind in enumerate(index):
+            x_query_plot = x_data_query[ind_query].reshape((-1, img_shape[0], img_shape[1], 3))
+            x_answer_plot = x_data_inventory[indices].reshape((-1, img_shape[0], img_shape[1], 3))
+            PU.plot_query_answer(x_query=x_query_plot,
+                                 x_answer=x_answer_plot,
+                                 filename="answer/result_%d.png" % (ind_query+1))
 
-                # Extract inventory filename
-                inventory_filename = inventory_filenames[ind]
+        elif output_mode == 2:
 
-                # Extract answer filename
-                name, tag = IU.extract_name_tag(inventory_filename)
-                answer_filename = os.path.join(answer_dir, name + '.' + tag)
+            # Clone answer file to answer folder
+            # Make k-recommendations and clone most similar inventory images to answer dir
+            print("Cloning k-recommended inventory images to answer folder '{0}'...".format(answer_dir))
+            for i, (index, distance) in enumerate(zip(indices, distances)):
+                print("\n({0}): index = {1}".format(i, index))
+                print("({0}): distance = {1}\n".format(i, distance))
 
-                # Clone answer file to answer folder
-                print("Cloning '{0}' to answer directory...".format(inventory_filename))
-                shutil.copy(inventory_filename, answer_filename)
+                for k_rec, ind in enumerate(index):
 
-        # Wait for input (used for predicting other queries)
-        if 1:
-            break
+                    # Extract inventory filename
+                    inventory_filename = inventory_filenames[ind]
+
+                    # Extract answer filename
+                    name, tag = IU.extract_name_tag(inventory_filename)
+                    answer_filename = os.path.join(answer_dir, name + '.' + tag)
+
+                    print("Cloning '{0}' to answer directory...".format(inventory_filename))
+                    shutil.copy(inventory_filename, answer_filename)
+
         else:
-            c = input('Continue? Type `q` to break\n')
-            if c == 'q':
-                break
+            raise Exception("Invalid output mode given!")
+
 
 
 # Driver

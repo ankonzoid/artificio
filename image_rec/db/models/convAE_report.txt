@@ -1,0 +1,59 @@
+01:44PM on July 07, 2017
+
+Start time = 0
+
+  platform: x86_64
+  version: Darwin Kernel Version 15.6.0: Tue Apr 11 16:00:51 PDT 2017; root:xnu-3248.60.11.5.3~1/RELEASE_X86_64
+  system: Darwin
+  processor: i386
+
+  autoencoder_filename: /Users/ansonwong/Desktop/github/artificio/image_rec/db/models/convAE_autoencoder.h5
+  encoder_filename: /Users/ansonwong/Desktop/github/artificio/image_rec/db/models/convAE_encoder.h5
+  decoder_filename: /Users/ansonwong/Desktop/github/artificio/image_rec/db/models/convAE_decoder.h5
+  plot_filename_png: /Users/ansonwong/Desktop/github/artificio/image_rec/db/models/convAE_plot.png
+  plot_filename_pdf: /Users/ansonwong/Desktop/github/artificio/image_rec/db/models/convAE_plot.pdf
+  report_filename: /Users/ansonwong/Desktop/github/artificio/image_rec/db/models/convAE_report.txt
+
+  autoencoder_input_shape: (100, 100, 3)
+  autoencoder_output_shape: (100, 100, 3)
+    autoencoder.layers[0]: input=(100, 100, 3), output=(100, 100, 3)
+    autoencoder.layers[1]: input=(100, 100, 3), output=(100, 100, 16)
+    autoencoder.layers[2]: input=(100, 100, 16), output=(50, 50, 16)
+    autoencoder.layers[3]: input=(50, 50, 16), output=(50, 50, 8)
+    autoencoder.layers[4]: input=(50, 50, 8), output=(25, 25, 8)
+    autoencoder.layers[5]: input=(25, 25, 8), output=(25, 25, 8)
+    autoencoder.layers[6]: input=(25, 25, 8), output=(13, 13, 8)
+    autoencoder.layers[7]: input=(13, 13, 8), output=(13, 13, 8)
+    autoencoder.layers[8]: input=(13, 13, 8), output=(26, 26, 8)
+    autoencoder.layers[9]: input=(26, 26, 8), output=(26, 26, 8)
+    autoencoder.layers[10]: input=(26, 26, 8), output=(52, 52, 8)
+    autoencoder.layers[11]: input=(52, 52, 8), output=(50, 50, 16)
+    autoencoder.layers[12]: input=(50, 50, 16), output=(100, 100, 16)
+    autoencoder.layers[13]: input=(100, 100, 16), output=(100, 100, 3)
+
+  encoder_input_shape: (100, 100, 3)
+  encoder_output_shape: (13, 13, 8)
+    encoder.layers[0]: input=(100, 100, 3), output=(100, 100, 3)
+    encoder.layers[1]: input=(100, 100, 3), output=(100, 100, 16)
+    encoder.layers[2]: input=(100, 100, 16), output=(50, 50, 16)
+    encoder.layers[3]: input=(50, 50, 16), output=(50, 50, 8)
+    encoder.layers[4]: input=(50, 50, 8), output=(25, 25, 8)
+    encoder.layers[5]: input=(25, 25, 8), output=(25, 25, 8)
+    encoder.layers[6]: input=(25, 25, 8), output=(13, 13, 8)
+
+  decoder_input_shape: (13, 13, 8)
+  decoder_output_shape: (100, 100, 3)
+    decoder.layers[0]: input=(13, 13, 8), output=(13, 13, 8)
+    decoder.layers[1]: input=(13, 13, 8), output=(13, 13, 8)
+    decoder.layers[2]: input=(13, 13, 8), output=(26, 26, 8)
+    decoder.layers[3]: input=(26, 26, 8), output=(26, 26, 8)
+    decoder.layers[4]: input=(26, 26, 8), output=(52, 52, 8)
+    decoder.layers[5]: input=(52, 52, 8), output=(50, 50, 16)
+    decoder.layers[6]: input=(50, 50, 16), output=(100, 100, 16)
+    decoder.layers[7]: input=(100, 100, 16), output=(100, 100, 3)
+
+Start training = 1.2837247848510742
+
+
+End training = 2338.0997886657715
+
