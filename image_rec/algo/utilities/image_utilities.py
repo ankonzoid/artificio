@@ -110,7 +110,7 @@ class ImageUtils(object):
             img_list.append(img_resizednorm)
 
             # Print process progress
-            print("[{0}/{1}] Processed and loaded '{2}'...".format(
+            print("[{0}/{1}] Loaded and processed '{2}'...".format(
                 i + 1, n_files, raw_filename))
 
         # Convert image list to numpy array

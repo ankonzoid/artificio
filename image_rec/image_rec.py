@@ -252,7 +252,7 @@ def main():
 
 
     # =================================
-    # Perform kNN on quey images
+    # Perform kNN on query images
     # =================================
 
     # Read items in query folder
@@ -272,26 +272,30 @@ def main():
     # Perform kNN on each query image
     for ind_query in range(n_query):
 
+        # Encode query image (and flatten if needed)
         newshape = (1,) + x_data_query[ind_query].shape
         x_query_i_use = x_data_query[ind_query].reshape(newshape)
         x_test_kNN = encoder.predict(x_query_i_use)
+        query_filename = query_filenames[ind_query]
+
+        name, tag = IU.extract_name_tag(query_filename)  # extract name and tag
+        print("({0}/{1}) Performing kNN on query '{2}'...".format(ind_query+1, n_query, name))
 
         if flatten_after_encode:  # Flatten the data after encoder prediction
             x_test_kNN = IU.flatten_img_data(x_test_kNN)
-
-        print("\nx_test_kNN.shape = {0}\n".format(x_test_kNN.shape))
-
 
         # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         # Compute distances and indices for recommendation
         # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         if recommendation_method == 1:  # kNN centroid transactions
+
             # Compute centroid point of the query encoding vectors (equal weights)
             x_test_kNN_centroid = np.mean(x_test_kNN, axis = 0)
             # Find nearest neighbours to centroid point
             distances, indices = EMB.predict(np.array([x_test_kNN_centroid]))
 
         elif recommendation_method == 2:  # kNN all transactions
+
             # Find k nearest neighbours to all transactions, then flatten the distances and indices
             distances, indices = EMB.predict(x_test_kNN)
             distances = distances.flatten()
@@ -302,8 +306,10 @@ def main():
         else:
             raise Exception("Invalid method for making recommendations")
 
-        print("\ndistances.shape = {0}".format(distances.shape))
-        print("indices.shape = {0}\n".format(indices.shape))
+
+        print("  x_test_kNN.shape = {0}".format(x_test_kNN.shape))
+        print("  distances = {0}".format(distances))
+        print("  indices = {0}\n".format(indices))
 
         # =============================================
         #
@@ -312,11 +318,13 @@ def main():
         # =============================================
         if output_mode == 1:
 
+            result_filename = os.path.join(answer_dir, "result_" + name + ".png")
+
             x_query_plot = x_data_query[ind_query].reshape((-1, img_shape[0], img_shape[1], 3))
             x_answer_plot = x_data_inventory[indices].reshape((-1, img_shape[0], img_shape[1], 3))
             PU.plot_query_answer(x_query=x_query_plot,
                                  x_answer=x_answer_plot,
-                                 filename="answer/result_%d.png" % (ind_query+1))
+                                 filename=result_filename)
 
         elif output_mode == 2:
 
