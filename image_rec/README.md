@@ -33,3 +33,7 @@ The model performs fairly well as a vanilla model with minimal fine-tuned traini
 * 2) Run `python image_rec.py` from the `image_rec` directory
 
 * 3) When the run is complete, your answer images will be deposited into the `answer` directory
+
+### Required libraries (I used pip to install):
+
+# numpy, matplotlib, pylab, sklearn, keras, h5py, pillow

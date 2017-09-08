@@ -30,25 +30,25 @@ def main():
     # ========================================
     # Set run settings
     # ========================================
-    #################################
-    #################################
-    if 0:
-        model_name = 'simpleAE'
+
+    # Choose autoencoder model
+    #model_name = "simpleAE"
+    model_name = "convAE"
+    process_and_save_images = False  # image preproc: resize images and save?
+    train_autoencoder = False  # train from scratch?
+
+    # ========================================
+    # Automated pre-processing
+    # ========================================
+    ##   Set flatten properties   ###
+    if model_name == "simpleAE":
         flatten_before_encode = True
         flatten_after_encode = False
-    elif 1:
-        model_name = 'convAE'
+    elif model_name == "convAE":
         flatten_before_encode = False
         flatten_after_encode = True
     else:
         raise Exception("Invalid model name which is not simpleAE/convAE")
-
-
-    ###   Image processing   ###
-    process_and_save_images = False
-
-    ###   Autoencoder training parameters   ###
-    train_autoencoder = False
 
     img_shape = (100, 100)  # force resize -> (ypixels, xpixels)
     ratio_train_test = 0.8
