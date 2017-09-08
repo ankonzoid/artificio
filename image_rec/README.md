@@ -28,12 +28,20 @@ The model performs fairly well as a vanilla model with minimal fine-tuned traini
 
 ### Usage:
 
-1) Place your query images into the `query` directory, inventory images into the `db/img_inventory_raw` directory, and training images into the `db/img_train_raw` directory
+The code can be run straight off the bat by executing `python image_rec.py` using our already trained models. This will output your answer images into the `answer` directory. The full procedure on this usage is:
 
-2) Run `python image_rec.py` from the `image_rec` directory
+1) Place your query images into the `query` directory, inventory images into the `db/img_inventory_raw` directory, and training images into the `db/img_train_raw` directory. We already have default steakhouse food item images for you to use already.
 
-3) When the run is complete, your answer images will be deposited into the `answer` directory
+2) Run `python image_rec.py` from the `image_rec` directory. When the run is complete, your answer images will be deposited into the `answer` directory.
 
-### Required libraries (I used pip to install):
+If you would like to train the model from scratch, then open `image_rec.py` and:
+
+* set `model_name` to either `"simpleAE"` (1 FC layer) or `"convAE"` (CNN)
+
+* set `process_and_save_images = True` and use your own images
+
+* set `train_model = True` to instruct code to train the model (and save it once it is trained)
+
+### Required libraries:
 
 * numpy, matplotlib, pylab, sklearn, keras, h5py, pillow
