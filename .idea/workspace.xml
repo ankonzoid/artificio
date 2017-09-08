@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/image_rec/db/models/ConvAE_encoder.h5" afterPath="$PROJECT_DIR$/image_rec/db/models/convAE_encoder.h5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_rec/answer/result_asparagus.png" afterPath="$PROJECT_DIR$/image_rec/answer/result_asparagus.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_rec/answer/result_burger.png" afterPath="$PROJECT_DIR$/image_rec/answer/result_burger.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_rec/answer/result_salad.png" afterPath="$PROJECT_DIR$/image_rec/answer/result_salad.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_rec/db/models/convAE_plot.pdf" afterPath="$PROJECT_DIR$/image_rec/db/models/convAE_plot.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artificio.iml" afterPath="$PROJECT_DIR$/.idea/artificio.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_rec/README.md" afterPath="$PROJECT_DIR$/image_rec/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_rec/image_rec.py" afterPath="$PROJECT_DIR$/image_rec/image_rec.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,34 +14,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="image_rec.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image_rec/image_rec.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image_utilities.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image_rec/algo/utilities/image_utilities.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3572">
-              <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AE.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image_rec/algo/autoencoders/AE.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1416">
-              <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-              <folding>
-                <element signature="e#108#135#0" expanded="true" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="152">
+                <caret line="6" column="94" lean-forward="false" selection-start-line="6" selection-start-column="94" selection-end-line="6" selection-end-column="94" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -58,8 +31,8 @@
         <entry file="file://$PROJECT_DIR$/image_rec/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="233">
-                <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <first_editor relative-caret-position="86">
+                <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -132,50 +105,7 @@
             <path>
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="cat_CF_rec" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
               <item name="image_rec" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="image_rec" type="462c0819:PsiDirectoryNode" />
-              <item name="algo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="image_rec" type="462c0819:PsiDirectoryNode" />
-              <item name="algo" type="462c0819:PsiDirectoryNode" />
-              <item name="autoencoders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="image_rec" type="462c0819:PsiDirectoryNode" />
-              <item name="answer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="image_rec" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="image_rec" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="image_rec" type="462c0819:PsiDirectoryNode" />
-              <item name="query" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -328,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502227710180</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="food image rec bug fixes, as well as documented required libraries">
+      <created>1504843683931</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1504843683931</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -362,7 +299,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="food image rec" />
-    <option name="LAST_COMMIT_MESSAGE" value="food image rec" />
+    <MESSAGE value="food image rec bug fixes, as well as documented required libraries" />
+    <option name="LAST_COMMIT_MESSAGE" value="food image rec bug fixes, as well as documented required libraries" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -383,26 +321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="152">
-            <caret line="6" column="94" lean-forward="false" selection-start-line="6" selection-start-column="94" selection-end-line="6" selection-end-column="94" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image_rec/algo/autoencoders/AE.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1416">
-          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-          <folding>
-            <element signature="e#108#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image_rec/image_rec.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59">
@@ -419,11 +337,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/image_rec/algo/autoencoders/AE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1416">
+          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding>
+            <element signature="e#108#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="152">
+            <caret line="6" column="94" lean-forward="false" selection-start-line="6" selection-start-column="94" selection-end-line="6" selection-end-column="94" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/image_rec/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="233">
-            <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <first_editor relative-caret-position="86">
+            <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
             <folding />
           </first_editor>
           <second_editor />
