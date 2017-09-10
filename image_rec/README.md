@@ -1,6 +1,12 @@
 # Similar image recommendations
 
-Given a set of query images (user) and a set of inventory images (store inventory), we find the top-k similar inventory images that are the most 'similar' to the set of query images using an encoder to encode the images as a vector and perform kNN to find 'similar' images. 
+Given a set of query images (user) and a set of inventory images (store inventory), we find the top-k similar inventory images that are the most 'similar' to the set of query images in an unsupervised way of using an encoder to embed the images, then performing kNN in this embedding space to search for 'similar' images. 
+
+#### Query: a burger
+<figure>
+<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_burger.png" width="80%" align="center">
+<figcaption>Steakhouse image recommendations when querying an image of a burger</figcaption>
+<\figure>
 
 In this code algorithm we:
 
@@ -13,10 +19,6 @@ In this code algorithm we:
 4) Take the top-k closest encoding vectors as the top-k recommendations
 
 Particularly for us, we use a convolutional autoencoder trained on 36 steakhouse food images (6 of each of regular steakhouse food items: steak, potato, french fries, salads, burger, asparagus), then make similar food recommendations based on the above algorithm. Below are results of querying test images of:
-
-
-#### Query: a burger
-<img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_burger.png" width="80%" align="center">
 
 #### Query: a salad
 <img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_salad.png" width="80%" align="center">
