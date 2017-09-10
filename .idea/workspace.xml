@@ -1,9 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
+    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="updating readme and presentation">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/algo/autoencoders/AE.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/algo/autoencoders/AE_base.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/algo/clustering/KNN.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/algo/utilities/image_utilities.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/algo/utilities/plot_utilities.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/algo/utilities/sorting.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/answer/result_asparagus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/answer/result_burger.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/answer/result_salad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/asparagus1_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/asparagus2_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/asparagus3_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/asparagus4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/asparagus5_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/asparagus6_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/burger1_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/burger2_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/burger3_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/burger4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/burger5_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/burger6_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/fries1_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/fries2_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/fries3_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/fries4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/fries5_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/fries6_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/potato1_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/potato2_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/potato3_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/potato4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/potato5_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/potato6_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/salad1_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/salad2_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/salad3_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/salad4_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/salad5_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/salad6_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/steak1_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/steak2_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/steak3_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/steak4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/steak5_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_inventory/steak6_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/asparagus1_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/asparagus2_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/asparagus3_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/asparagus4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/asparagus5_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/asparagus6_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/burger1_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/burger2_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/burger3_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/burger4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/burger5_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/burger6_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/fries1_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/fries2_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/fries3_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/fries4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/fries5_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/fries6_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/potato1_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/potato2_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/potato3_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/potato4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/potato5_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/potato6_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/salad1_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/salad2_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/salad3_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/salad4_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/salad5_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/salad6_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/steak1_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/steak2_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/steak3_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/steak4_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/steak5_resized.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/img_train/steak6_resized.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/models/convAE_autoencoder.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/models/convAE_decoder.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/models/convAE_encoder.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/models/convAE_plot.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/models/convAE_plot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/db/models/convAE_report.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/image_rec.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/query/asparagus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/query/burger.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image_rec/query/salad.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_rec/README.md" afterPath="$PROJECT_DIR$/image_rec/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,12 +106,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rnn_timeseries/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="152">
-                <caret line="6" column="94" lean-forward="false" selection-start-line="6" selection-start-column="94" selection-end-line="6" selection-end-column="94" />
+              <first_editor relative-caret-position="209">
+                <caret line="8" column="66" lean-forward="false" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -54,9 +159,10 @@
       <list>
         <option value="$PROJECT_DIR$/image_rec/algo/utilities/plot_utilities.py" />
         <option value="$PROJECT_DIR$/image_rec/algo/utilities/image_utilities.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/image_rec/image_rec.py" />
         <option value="$PROJECT_DIR$/image_rec/README.md" />
+        <option value="$PROJECT_DIR$/timeseries_prediction/RNN_timeseries.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -81,7 +187,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,21 +197,13 @@
             <path>
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="image_rec" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6.2 (/usr/local/bin/python3.6) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rnn_timeseries" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,25 +435,31 @@
       <option name="project" value="LOCAL" />
       <updated>1505025449569</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updating readme and presentation">
+      <created>1505028746997</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1505028746997</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="721" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26979" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27382874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -444,6 +547,24 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="257">
             <caret line="32" column="55" lean-forward="false" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnn_timeseries/RNN_timeseries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnn_timeseries/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
@@ -453,8 +574,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="152">
-            <caret line="6" column="94" lean-forward="false" selection-start-line="6" selection-start-column="94" selection-end-line="6" selection-end-column="94" />
+          <first_editor relative-caret-position="209">
+            <caret line="8" column="66" lean-forward="false" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
             <folding />
           </first_editor>
           <second_editor />

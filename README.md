@@ -4,4 +4,6 @@ We provide here a suite of deep learning algorithms that can be put to real-worl
 
 Currently we have:
 
-* [Similar image recommendations](https://github.com/ankonzoid/artificio/tree/master/image_rec)
+* [Similar image recommendations](https://github.com/ankonzoid/artificio/tree/master/similar_img_rec)
+
+* [RNN time-series predictions for sinewaves and TSLA stock prices](https://github.com/ankonzoid/artificio/tree/master/rnn_timeseries)
