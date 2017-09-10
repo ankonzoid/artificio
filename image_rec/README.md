@@ -2,6 +2,7 @@
 
 Given a set of query images (user) and a set of inventory images (store inventory), we find the top-k similar inventory images that are the most 'similar' to the set of query images in an unsupervised way of using an encoder to embed the images, then performing kNN in this embedding space to search for 'similar' images. 
 
+#### Query: a burger
 <img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_burger.png" width="80%" align="center" caption="Steakhouse image recommendations when querying an image of a burger">
 
 In this code algorithm we:
@@ -26,7 +27,7 @@ The model performs fairly well as a vanilla model with minimal fine-tuned traini
 
 ### Usage:
 
-The code can be run straight off the bat by executing `python image_rec.py` using our already trained models. This will output your answer images into the `answer` directory. The full procedure on this usage is:
+The code can be run immediately by executing `python image_rec.py` using our pre-existing trained models. This run will output your query answer images into the `answer` directory. The full procedure for this is:
 
 1) Place your query images into the `query` directory, inventory images into the `db/img_inventory_raw` directory, and training images into the `db/img_train_raw` directory. We already have default steakhouse food item images for you to use already.
 

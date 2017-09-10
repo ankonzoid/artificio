@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="updating readme and presentation">
+    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_rec/README.md" afterPath="$PROJECT_DIR$/image_rec/README.md" />
     </list>
@@ -18,8 +18,8 @@
         <entry file="file://$PROJECT_DIR$/image_rec/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-272">
-                <caret line="16" column="313" lean-forward="false" selection-start-line="16" selection-start-column="313" selection-end-line="16" selection-end-column="313" />
+              <first_editor relative-caret-position="373">
+                <caret line="29" column="210" lean-forward="false" selection-start-line="29" selection-start-column="210" selection-end-line="29" selection-end-column="210" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -287,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505022764449</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updating readme and presentation">
+      <created>1505022839520</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1505022839520</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -345,7 +352,8 @@
     <MESSAGE value="food image rec" />
     <MESSAGE value="food image rec bug fixes, as well as documented required libraries" />
     <MESSAGE value="food image rec updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="food image rec updates" />
+    <MESSAGE value="updating readme and presentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating readme and presentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -401,8 +409,8 @@
     <entry file="file://$PROJECT_DIR$/image_rec/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-272">
-            <caret line="16" column="313" lean-forward="false" selection-start-line="16" selection-start-column="313" selection-end-line="16" selection-end-column="313" />
+          <first_editor relative-caret-position="373">
+            <caret line="29" column="210" lean-forward="false" selection-start-line="29" selection-start-column="210" selection-end-line="29" selection-end-column="210" />
             <folding />
           </first_editor>
           <second_editor />
