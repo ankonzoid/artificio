@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cat_CF_rec/cat_CF.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cat_CF_rec/functions/categorical_matrix.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cat_CF_rec/functions/similarity_table.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cat_CF_rec/query/movies.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cat_CF_rec/query/ratings.dat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cat_CF_rec/query/users.dat" afterPath="" />
+    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="updating readme and presentation">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_rec/README.md" afterPath="$PROJECT_DIR$/image_rec/README.md" />
     </list>
@@ -24,8 +18,8 @@
         <entry file="file://$PROJECT_DIR$/image_rec/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="256">
-                <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="92" />
+              <first_editor relative-caret-position="-272">
+                <caret line="16" column="313" lean-forward="false" selection-start-line="16" selection-start-column="313" selection-end-line="16" selection-end-column="313" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -279,7 +273,21 @@
       <option name="project" value="LOCAL" />
       <updated>1504846829778</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="food image rec updates">
+      <created>1505022660378</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1505022660378</updated>
+    </task>
+    <task id="LOCAL-00008" summary="food image rec updates">
+      <created>1505022764449</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1505022764449</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -393,8 +401,8 @@
     <entry file="file://$PROJECT_DIR$/image_rec/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="256">
-            <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="92" />
+          <first_editor relative-caret-position="-272">
+            <caret line="16" column="313" lean-forward="false" selection-start-line="16" selection-start-column="313" selection-end-line="16" selection-end-column="313" />
             <folding />
           </first_editor>
           <second_editor />
