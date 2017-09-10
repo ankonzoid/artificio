@@ -1,6 +1,6 @@
 """
 
- RNN_timeseries.py (author: Anson Wong / git: ankonzoid)
+ rnn_timeseries.py (author: Anson Wong / git: ankonzoid)
 
  Basic RNN time-series prediction by training on multiple random subsequences of a larger sequence of 1D data. We force the unsupervised problem to be supervised by inputting subsequences, and their shifted to the future subsequences as labels.
 
