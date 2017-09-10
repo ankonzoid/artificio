@@ -18,8 +18,8 @@
         <entry file="file://$PROJECT_DIR$/image_rec/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="373">
-                <caret line="29" column="210" lean-forward="false" selection-start-line="29" selection-start-column="210" selection-end-line="29" selection-end-column="210" />
+              <first_editor relative-caret-position="133">
+                <caret line="2" column="308" lean-forward="false" selection-start-line="2" selection-start-column="308" selection-end-line="2" selection-end-column="308" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -91,6 +91,12 @@
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
               <item name="image_rec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="image_rec" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -294,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505022839520</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="updating readme and presentation">
+      <created>1505023012276</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1505023012276</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -409,8 +422,8 @@
     <entry file="file://$PROJECT_DIR$/image_rec/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="373">
-            <caret line="29" column="210" lean-forward="false" selection-start-line="29" selection-start-column="210" selection-end-line="29" selection-end-column="210" />
+          <first_editor relative-caret-position="133">
+            <caret line="2" column="308" lean-forward="false" selection-start-line="2" selection-start-column="308" selection-end-line="2" selection-end-column="308" />
             <folding />
           </first_editor>
           <second_editor />

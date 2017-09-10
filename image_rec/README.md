@@ -1,21 +1,19 @@
 # Similar image recommendations
 
-Given a set of query images (user) and a set of inventory images (store inventory), we find the top-k similar inventory images that are the most 'similar' to the set of query images in an unsupervised way of using an encoder to embed the images, then performing kNN in this embedding space to search for 'similar' images. 
+Given a set of query images and a set of store inventory images, we find the top-k similar inventory images that are the most 'similar' to the set of query images in an unsupervised way of using an encoder to embed the images, then performing kNN in this embedding space to search for 'similar' images. For our example, we find similar steakhouse food images:
 
 #### Query: a burger
 <img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_burger.png" width="80%" align="center" caption="Steakhouse image recommendations when querying an image of a burger">
 
-In this code algorithm we:
+### Algorithm:
 
 1) Train an autoencoder with training images in the same domain as the inventory images
 
-2) Use the encoder to encode both the query images and the inventory images
+2) Use the trained encoder to embed both the query images and the inventory images
 
-3) Perform kNN (euclidean/cosine similarity) to find the nearest encoded inventory images to the encoded query images in the encoding space
+3) Perform kNN (euclidean/cosine similarity) to find the inventory nearest neighbour image embeddings to the query image embeddings, and keep the k closest embeddings as the top-k recommendations
 
-4) Take the top-k closest encoding vectors as the top-k recommendations
-
-Particularly for us, we use a convolutional autoencoder trained on 36 steakhouse food images (6 of each of regular steakhouse food items: steak, potato, french fries, salads, burger, asparagus), then make similar food recommendations based on the above algorithm. Below are more results of querying test images of:
+Particularly for our example code, we train a convolutional autoencoder on 36 steakhouse food images (6 of each of steak, potato, french fries, salads, burger, asparagus), and make similar image food recommendations based on the above algorithm. Below are more results of querying test images of:
 
 #### Query: a salad
 <img src="https://github.com/ankonzoid/artificio/blob/master/image_rec/answer/result_salad.png" width="80%" align="center">
