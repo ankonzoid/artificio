@@ -30,7 +30,7 @@ The code can be run immediately by executing `python image_rec.py` using our pre
 
 If you would like to train the model from scratch, then open `image_rec.py` and:
 
-* set `model_name` to either `"simpleAE"` (1 FC layer) or `"convAE"` (CNN)
+* set `model_name` to either `"simpleAE"` (1 FC hidden layer) or `"convAE"` (CNN)
 
 * set `process_and_save_images = True` and use your own images
 
