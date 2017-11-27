@@ -318,7 +318,7 @@ def main():
         # =============================================
         if output_mode == 1:
 
-            result_filename = os.path.join(answer_dir, "result_" + name + ".png")
+            result_filename = os.path.join(answer_dir, "result_" + os.path.basename(name) + ".png")
 
             x_query_plot = x_data_query[ind_query].reshape((-1, img_shape[0], img_shape[1], 3))
             x_answer_plot = x_data_inventory[indices].reshape((-1, img_shape[0], img_shape[1], 3))
