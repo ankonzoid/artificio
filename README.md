@@ -4,7 +4,7 @@ We provide here a suite of deep learning algorithms that can be put to real-worl
 
 Currently we have:
 
-* [Similar image recommendations](https://github.com/ankonzoid/artificio/tree/master/similar_img_rec)
+* [Similar image finder](https://github.com/ankonzoid/artificio/tree/master/similar_img_rec)
 
 <img src="https://github.com/ankonzoid/artificio/blob/master/similar_img_rec/answer/result_burger.png" width="80%" align="center">
 
