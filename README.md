@@ -10,4 +10,4 @@ Currently we have:
 
 * [Similar image finder (transfer learning)](https://github.com/ankonzoid/artificio/tree/master/sim_img_TL)
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/sim_img_TL/output/tsne.png" width="80%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/sim_img_TL/output/tsne.png" width="60%" align="center">
