@@ -2,100 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/algo/autoencoders/AE.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/algo/autoencoders/AE_base.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/algo/clustering/KNN.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/algo/utilities/image_utilities.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/algo/utilities/plot_utilities.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/algo/utilities/sorting.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/answer/result_asparagus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/answer/result_burger.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/answer/result_salad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/asparagus1_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/asparagus2_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/asparagus3_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/asparagus4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/asparagus5_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/asparagus6_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/burger1_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/burger2_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/burger3_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/burger4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/burger5_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/burger6_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/fries1_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/fries2_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/fries3_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/fries4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/fries5_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/fries6_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/potato1_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/potato2_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/potato3_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/potato4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/potato5_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/potato6_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/salad1_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/salad2_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/salad3_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/salad4_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/salad5_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/salad6_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/steak1_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/steak2_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/steak3_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/steak4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/steak5_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_inventory/steak6_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/asparagus1_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/asparagus2_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/asparagus3_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/asparagus4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/asparagus5_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/asparagus6_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/burger1_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/burger2_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/burger3_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/burger4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/burger5_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/burger6_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/fries1_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/fries2_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/fries3_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/fries4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/fries5_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/fries6_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/potato1_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/potato2_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/potato3_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/potato4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/potato5_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/potato6_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/salad1_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/salad2_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/salad3_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/salad4_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/salad5_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/salad6_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/steak1_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/steak2_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/steak3_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/steak4_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/steak5_resized.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/img_train/steak6_resized.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/models/convAE_autoencoder.h5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/models/convAE_decoder.h5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/models/convAE_encoder.h5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/models/convAE_plot.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/models/convAE_plot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/db/models/convAE_report.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/query/asparagus.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/query/burger.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/query/salad.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_finder_AE/similar_img_rec.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/models_sinewave/RNN_timeseries_sinewave.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/models_sinewave/RNN_timeseries_sinewave.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/models_sinewave/RNN_timeseries_sinewave.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/models_sinewave/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/models_stocks/RNN_timeseries_stocks.data-00000-of-00001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/models_stocks/RNN_timeseries_stocks.index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/models_stocks/RNN_timeseries_stocks.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/models_stocks/checkpoint" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/plots/timeseries_sinewave.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/plots/timeseries_stocks.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rnn_timeseries/rnn_timeseries.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_rec/db/models/convAE_plot.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_img_rec/similar_img_rec.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/similar_img_rec/README.md" afterPath="$PROJECT_DIR$/sim_img_TL/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sim_img_AE/README.md" afterPath="$PROJECT_DIR$/sim_img_AE/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sim_img_AE/sim_img_AE.py" afterPath="$PROJECT_DIR$/sim_img_AE/sim_img_AE.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -106,24 +31,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sim_img_TL.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sim_img_TL/sim_img_TL.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-78">
-              <caret line="47" column="37" lean-forward="false" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
-              <folding>
-                <element signature="e#202#220#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sim_img_AE/README.md">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="42">
-                <caret line="14" column="93" lean-forward="false" selection-start-line="14" selection-start-column="93" selection-end-line="14" selection-end-column="93" />
+              <first_editor relative-caret-position="35">
+                <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -131,14 +44,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tSNE.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sim_img_TL/src/tSNE.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding>
-                <element signature="e#58#76#0" expanded="true" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sim_img_TL/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="167">
+                <caret line="2" column="575" lean-forward="false" selection-start-line="2" selection-start-column="575" selection-end-line="2" selection-end-column="575" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sim_img_AE/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="44" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -184,13 +111,14 @@
         <option value="$PROJECT_DIR$/similar_img_finder_TL/tsne.py" />
         <option value="$PROJECT_DIR$/similar_img_finder_TL/VGG_features.py" />
         <option value="$PROJECT_DIR$/similar_img_finder_TL/tSNE.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/similar_images_TL/tSNE.py" />
         <option value="$PROJECT_DIR$/similar_images_TL/VGG_features.py" />
         <option value="$PROJECT_DIR$/similar_images_TL/run.py" />
-        <option value="$PROJECT_DIR$/sim_img_AE/sim_img_AE.py" />
         <option value="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" />
+        <option value="$PROJECT_DIR$/sim_img_AE/sim_img_AE.py" />
         <option value="$PROJECT_DIR$/sim_img_AE/README.md" />
+        <option value="$PROJECT_DIR$/sim_img_TL/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -221,27 +149,6 @@
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="rnn_timeseries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="sim_img_AE" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="sim_img_TL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="sim_img_TL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -270,6 +177,7 @@
       <recent name="$PROJECT_DIR$/similar_img_finder_TL" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sim_img_TL" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -525,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505044272003</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="update">
+      <created>1511761760176</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1511761760176</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -632,17 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rnn_timeseries/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="360">
-            <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="132" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/similar_img_finder_AE/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -726,17 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="310">
-            <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/keras/preprocessing/image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-233">
@@ -753,29 +646,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sim_img_AE/sim_img_AE.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1444">
-          <caret line="72" column="51" lean-forward="true" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
-          <folding>
-            <element signature="e#756#778#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/rnn_timeseries/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-237">
+            <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="132" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/tSNE.py">
+    <entry file="file://$PROJECT_DIR$/sim_img_AE/sim_img_AE.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="-1421">
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
           <folding>
-            <element signature="e#58#76#0" expanded="true" />
+            <element signature="e#751#773#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sim_img_TL/sim_img_TL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78">
+        <state relative-caret-position="893">
           <caret line="47" column="37" lean-forward="false" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
           <folding>
             <element signature="e#202#220#0" expanded="true" />
@@ -783,11 +677,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/tSNE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#58#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sim_img_AE/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="42">
-            <caret line="14" column="93" lean-forward="false" selection-start-line="14" selection-start-column="93" selection-end-line="14" selection-end-column="93" />
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="44" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sim_img_TL/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="167">
+            <caret line="2" column="575" lean-forward="false" selection-start-line="2" selection-start-column="575" selection-end-line="2" selection-end-column="575" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="35">
+            <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
             <folding />
           </first_editor>
           <second_editor />

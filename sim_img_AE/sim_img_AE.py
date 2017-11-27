@@ -1,6 +1,6 @@
 '''
 
- similar_img_rec.py (author: Anson Wong / git: ankonzoid)
+ sim_img_AE.py (author: Anson Wong / git: ankonzoid)
  
  Image similarity recommender system using an autoencoder-clustering model.
  

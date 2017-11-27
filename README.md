@@ -1,14 +1,13 @@
-# artificio
+# artificio: Deep Learning Computer Vision algorithms
 
-We provide here a suite of deep learning algorithms that can be put to real-world use. 
+We provide here a suite of deep learning computer vision algorithms that can be easily be put to real-world use. 
 
 Currently we have:
 
-* [Similar image finder](https://github.com/ankonzoid/artificio/tree/master/similar_img_rec)
+* [Similar image finder (autoencoder)](https://github.com/ankonzoid/artificio/tree/master/sim_img_AE)
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_img_rec/answer/result_burger.png" width="80%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/sim_img_AE/output/result_burger.png" width="80%" align="center">
 
+* [Similar image finder (transfer learning)](https://github.com/ankonzoid/artificio/tree/master/sim_img_TL)
 
-* [RNN time-series predictions for sinewaves and TSLA stock prices](https://github.com/ankonzoid/artificio/tree/master/rnn_timeseries)
-
-<img src="https://github.com/ankonzoid/artificio/blob/master/rnn_timeseries/plots/timeseries_stocks.png" width="50%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/sim_img_TL/output/tsne.png" width="80%" align="center">

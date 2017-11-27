@@ -1,4 +1,4 @@
-# Similar image recommendations
+# Similar images finder (using Autoencoders)
 
 Given a set of query images and a set of store inventory images, we find the top-k similar inventory images that are the most 'similar' to the set of query images in an unsupervised way of using an encoder to embed the images, then performing kNN in this embedding space to search for 'similar' images. For this code sample, we query for similar steakhouse food images:
 
@@ -22,7 +22,11 @@ The model performs fairly well as a vanilla model with minimal fine-tuned traini
 
 ### Usage:
 
-The code can be run immediately by executing `python sim_img_AE.py` using our pre-existing trained models. This run will output your query answer images into the `output` directory. The full procedure for this is:
+The code can be run immediately by executing 
+
+> python sim_img_AE.py 
+
+using our pre-existing trained models. This run will output your query answer images into the `output` directory. The full procedure for this is:
 
 1) Place your query images into the `test` directory, database images into the `db` directory. We already have default steakhouse food item images for you to use already.
 

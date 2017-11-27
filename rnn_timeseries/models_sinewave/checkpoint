@@ -1,2 +1,0 @@
-model_checkpoint_path: "RNN_timeseries_sinewave"
-all_model_checkpoint_paths: "RNN_timeseries_sinewave"
