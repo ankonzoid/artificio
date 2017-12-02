@@ -15,6 +15,9 @@ from keras.preprocessing import image
 from keras.models import Model
 from imagenet_utils import preprocess_input
 from tSNE import run_tsne
+from KNN import KNearestNeighbours
+from plot_utilities import PlotUtils
+from sort_utilities import find_topk_unique
 
 def main():
     # Set model
@@ -52,15 +55,46 @@ def main():
         features = model.predict(img).flatten()  # features
         X.append(features)  # append feature extractor
 
+    # Find forced resized pixels
+    n_imgs = len(imgs_plot)
+    ypixels = imgs_plot[0].shape[0]
+    xpixels = imgs_plot[0].shape[1]
+
     # Convert
-    X = np.array(X)
-    imgs_plot = np.array(imgs_plot)
+    X = np.array(X)  # feature vectors
+    imgs_plot = np.array(imgs_plot)  # images
     print(" X_features = {}".format(X.shape))
     print(" imgs_plot = {}".format(imgs_plot.shape))
+
+    # Train kNN
+    n_neighbours = 5
+    knn = KNearestNeighbours()
+    knn.compile(n_neighbors=n_neighbours,
+                algorithm="brute",
+                metric="cosine")
+    knn.fit(X)
+
+    # Predict
+    for ind_query in range(n_imgs):
+        print("Plotting similar images to image {}".format(ind_query))
+        distances, indices = knn.predict(np.array([X[ind_query]]))
+        distances = distances.flatten()
+        indices = indices.flatten()
+        indices, distances = find_topk_unique(indices, distances, n_neighbours)
+
+        # Plot recommendations
+        PU = PlotUtils()
+        result_filename = os.path.join("output", "sim_imgs", "imgrec_{}.png".format(ind_query))
+        x_query_plot = imgs_plot[ind_query].reshape((-1, ypixels, xpixels, 3))
+        x_answer_plot = imgs_plot[indices].reshape((-1, ypixels, xpixels, 3))
+        PU.plot_query_answer(x_query=x_query_plot,
+                             x_answer=x_answer_plot,
+                             filename=result_filename)
 
     # Plot tSNE
     print("Plotting tSNE to output/tsne.png...")
     run_tsne(imgs_plot, X, "output/tsne.png")
+
 
 # Driver
 if __name__ == "__main__":
