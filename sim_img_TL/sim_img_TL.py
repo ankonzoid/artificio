@@ -26,11 +26,11 @@ def main():
     print()
     if 0:
         # Remove last layer, to get multiple filters
-        print("Using VGG16 pre-trained model...")
+        print("Loading VGG16 pre-trained model...")
         model = VGG16(weights='imagenet',
                       include_top=False)  # remove output layer
     else:
-        print("Using VGG19 pre-trained model...")
+        print("Loading VGG19 pre-trained model...")
         base_model = VGG19(weights='imagenet')
         model = Model(input=base_model.input,
                       output=base_model.get_layer('block4_pool').output)
@@ -42,6 +42,7 @@ def main():
     path = "db"
     print("Reading images from '{}'...".format(path))
     for f in os.listdir(path):
+
         # Process filename
         filename = os.path.splitext(f)  # filename in directory
         filename_full = os.path.join(path,f)  # full path filename
@@ -61,12 +62,6 @@ def main():
         features = model.predict(img).flatten()  # features
         X.append(features)  # append feature extractor
 
-    # Find forced resized pixels
-    n_imgs = len(imgs_plot)
-    ypixels = imgs_plot[0].shape[0]
-    xpixels = imgs_plot[0].shape[1]
-
-    # Convert
     X = np.array(X)  # feature vectors
     imgs_plot = np.array(imgs_plot)  # images
     print(" X_features = {}".format(X.shape))
@@ -78,14 +73,16 @@ def main():
     # Train kNN
     n_neighbours = 5
     knn = KNearestNeighbours()
-    knn.compile(n_neighbors=n_neighbours,
-                algorithm="brute",
-                metric="cosine")
+    knn.compile(n_neighbors=n_neighbours, algorithm="brute", metric="cosine")
     knn.fit(X)
 
     # Plot
+    n_imgs = len(imgs_plot)
+    ypixels = imgs_plot[0].shape[0]
+    xpixels = imgs_plot[0].shape[1]
     PU = PlotUtils()
     for ind_query in range(n_imgs):
+
         # Find top-k closest images in the feature space database to each image
         print("[{}/{}] Plotting similar image recommendations for: {}".format(ind_query+1, n_imgs, heads_plot[ind_query]))
         distances, indices = knn.predict(np.array([X[ind_query]]))
@@ -94,7 +91,7 @@ def main():
         indices, distances = find_topk_unique(indices, distances, n_neighbours)
 
         # Plot recommendations
-        result_filename = os.path.join("output", "sim_imgs", "{}_rec.png".format(heads_plot[ind_query]))
+        result_filename = os.path.join("output", "recommendations", "{}_rec.png".format(heads_plot[ind_query]))
         x_query_plot = imgs_plot[ind_query].reshape((-1, ypixels, xpixels, 3))
         x_answer_plot = imgs_plot[indices].reshape((-1, ypixels, xpixels, 3))
         PU.plot_query_answer(x_query=x_query_plot,

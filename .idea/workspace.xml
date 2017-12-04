@@ -2,45 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_29.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_31.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_33.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_34.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_35.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_9.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus1_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus2_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus3_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus4_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus5_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus6_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger1_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger2_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger3_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger4_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger5_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger6_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries1_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries2_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries3_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries4_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries5_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries6_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato1_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato2_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato3_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato4_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato5_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato6_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad1_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad2_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad3_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad4_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad5_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad6_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak1_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak2_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak3_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak4_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak5_resized_rec.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak6_resized_rec.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" afterPath="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py" afterPath="$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,8 +53,8 @@
       <file leaf-file-name="sim_img_TL.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sim_img_TL/sim_img_TL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="105" column="33" lean-forward="false" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
+            <state relative-caret-position="64">
+              <caret line="93" column="65" lean-forward="false" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -505,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512208765677</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update">
+      <created>1512349154928</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1512349154928</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -724,8 +730,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sim_img_TL/sim_img_TL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="105" column="33" lean-forward="false" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
+        <state relative-caret-position="64">
+          <caret line="93" column="65" lean-forward="false" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
           <folding />
         </state>
       </provider>
