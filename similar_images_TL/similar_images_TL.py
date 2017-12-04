@@ -1,9 +1,11 @@
 """
 
- sim_img_TL.py  (author: Anson Wong / git: ankonzoid)
+ similar_images_TL.py  (author: Anson Wong / git: ankonzoid)
 
- Uses transfer learning on pre-trained VGG image classification models to
- get feature vectors and plot the tSNE of the feature vectors.
+ We find similar images in a database by using transfer learning
+ via a pre-trained VGG image classifier. We plot the 5 most similar
+ images for each image in the database, and plot the tSNE for all
+ our image feature vectors.
 
 """
 import sys, os
@@ -33,7 +35,7 @@ def main():
     # ================================================
     imgs, filename_heads, X = [], [], []
     path = "db"
-    print("Reading images from '{}'...".format(path))
+    print("Reading images from '{}' directory...".format(path))
     for f in os.listdir(path):
 
         # Process filename
@@ -57,8 +59,8 @@ def main():
 
     X = np.array(X)  # feature vectors
     imgs = np.array(imgs)  # images
-    print(" imgs = {}".format(imgs.shape))
-    print(" X_features = {}".format(X.shape))
+    print("imgs.shape = {}".format(imgs.shape))
+    print("X_features.shape = {}".format(X.shape))
 
     # ===========================
     # Find k-nearest images to each image
