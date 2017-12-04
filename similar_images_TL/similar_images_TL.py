@@ -66,7 +66,7 @@ def main():
     # Find k-nearest images to each image
     # ===========================
     # Train kNN model
-    n_neighbours = 5
+    n_neighbours = 5 + 1  # +1 as itself is most similar
     knn = KNearestNeighbours()
     knn.compile(n_neighbors=n_neighbours, algorithm="brute", metric="cosine")
     knn.fit(X)
@@ -88,7 +88,7 @@ def main():
         x_query_plot = imgs[ind_query].reshape((-1, ypixels, xpixels, 3))
         x_answer_plot = imgs[indices].reshape((-1, ypixels, xpixels, 3))
         plot_query_answer(x_query=x_query_plot,
-                          x_answer=x_answer_plot,
+                          x_answer=x_answer_plot[1:],  # remove itself
                           filename=rec_filename)
 
     # ===========================
