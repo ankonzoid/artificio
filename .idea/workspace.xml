@@ -2,49 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_images_AE/test/asparagus.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_images_AE/test/burger.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_images_AE/test/salad.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus1_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus1_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus2_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus2_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus3_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus3_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus4_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus4_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus5_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus5_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus6_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/asparagus6_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger1_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger1_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger2_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger2_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger3_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger3_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger4_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger4_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger5_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger5_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger6_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/burger6_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries1_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries1_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries2_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries2_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries3_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries3_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries4_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries4_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries5_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries5_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries6_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/fries6_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato1_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato1_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato2_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato2_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato3_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato3_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato4_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato4_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato5_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato5_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato6_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/potato6_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad1_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad1_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad2_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad2_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad3_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad3_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad4_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad4_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad5_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad5_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad6_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/salad6_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak1_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak1_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak2_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak2_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak3_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak3_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak4_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak4_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak5_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak5_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak6_resized_rec.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/recommendations/steak6_resized_rec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/output/tsne.png" afterPath="$PROJECT_DIR$/similar_images_TL/output/tsne.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_images_AE/output/result_asparagus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_images_AE/output/result_burger.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_images_AE/output/result_salad.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/similar_images_TL.py" afterPath="$PROJECT_DIR$/similar_images_TL/similar_images_TL.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,12 +17,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="157">
-                <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <first_editor relative-caret-position="181">
+                <caret line="12" column="80" lean-forward="false" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -68,10 +30,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="similar_images_TL.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="similar_images_TL.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/similar_images_TL/similar_images_TL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
+            <state relative-caret-position="485">
               <caret line="90" column="70" lean-forward="false" selection-start-line="90" selection-start-column="70" selection-end-line="90" selection-end-column="70" />
               <folding>
                 <element signature="e#299#313#0" expanded="true" />
@@ -142,8 +104,8 @@
         <option value="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" />
         <option value="$PROJECT_DIR$/sim_img_TL/similar_images_TL.py" />
         <option value="$PROJECT_DIR$/sim_img_AE/similar_images_AE.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/similar_images_TL/similar_images_TL.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -177,20 +139,13 @@
             <path>
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="similar_images_TL" type="462c0819:PsiDirectoryNode" />
+              <item name="similar_images_AE" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="similar_images_TL" type="462c0819:PsiDirectoryNode" />
+              <item name="similar_images_AE" type="462c0819:PsiDirectoryNode" />
               <item name="output" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="similar_images_TL" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -534,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512364478881</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="update">
+      <created>1512366482652</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1512366482652</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -750,24 +712,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="157">
-            <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/similar_images_TL/similar_images_TL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
+        <state relative-caret-position="485">
           <caret line="90" column="70" lean-forward="false" selection-start-line="90" selection-start-column="70" selection-end-line="90" selection-end-column="70" />
           <folding>
             <element signature="e#299#313#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="181">
+            <caret line="12" column="80" lean-forward="false" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
