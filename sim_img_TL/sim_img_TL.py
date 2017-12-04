@@ -20,7 +20,9 @@ from plot_utilities import PlotUtils
 from sort_utilities import find_topk_unique
 
 def main():
-    # Set model
+    # ================================================
+    # Set pre-trained model
+    # ================================================
     print()
     if 0:
         # Remove last layer, to get multiple filters
@@ -33,20 +35,24 @@ def main():
         model = Model(input=base_model.input,
                       output=base_model.get_layer('block4_pool').output)
 
-    # Import images and features
-    imgs_plot, X = [], []
+    # ================================================
+    # Read images and convert them to feature vectors
+    # ================================================
+    imgs_plot, heads_plot, X = [], [], []
     path = "db"
     print("Reading images from '{}'...".format(path))
-    valid_image_formats = [".jpg", ".jpeg"]
     for f in os.listdir(path):
-        ext = os.path.splitext(f)[1]
-        if ext.lower() not in valid_image_formats:
+        # Process filename
+        filename = os.path.splitext(f)  # filename in directory
+        filename_full = os.path.join(path,f)  # full path filename
+        head, ext = filename[0], filename[1]
+        if ext.lower() not in [".jpg", ".jpeg"]:
             continue
 
         # Read image file
-        filename = os.path.join(path,f)  # filename
-        img = image.load_img(filename, target_size=(224, 224))  # load
-        imgs_plot.append(np.array(img))  # append original (resized) image array
+        img = image.load_img(filename_full, target_size=(224, 224))  # load
+        imgs_plot.append(np.array(img))  # image
+        heads_plot.append(head)  # filename head
 
         # Pre-process for model input
         img = image.img_to_array(img)  # convert to array
@@ -66,6 +72,9 @@ def main():
     print(" X_features = {}".format(X.shape))
     print(" imgs_plot = {}".format(imgs_plot.shape))
 
+    # ===========================
+    # Find k-nearest images to each image
+    # ===========================
     # Train kNN
     n_neighbours = 5
     knn = KNearestNeighbours()
@@ -74,27 +83,29 @@ def main():
                 metric="cosine")
     knn.fit(X)
 
-    # Predict
+    # Plot
+    PU = PlotUtils()
     for ind_query in range(n_imgs):
-        print("Plotting similar images to image {}".format(ind_query))
+        # Find top-k closest images in the feature space database to each image
+        print("[{}/{}] Plotting similar image recommendations for: {}".format(ind_query+1, n_imgs, heads_plot[ind_query]))
         distances, indices = knn.predict(np.array([X[ind_query]]))
         distances = distances.flatten()
         indices = indices.flatten()
         indices, distances = find_topk_unique(indices, distances, n_neighbours)
 
         # Plot recommendations
-        PU = PlotUtils()
-        result_filename = os.path.join("output", "sim_imgs", "imgrec_{}.png".format(ind_query))
+        result_filename = os.path.join("output", "sim_imgs", "{}_rec.png".format(heads_plot[ind_query]))
         x_query_plot = imgs_plot[ind_query].reshape((-1, ypixels, xpixels, 3))
         x_answer_plot = imgs_plot[indices].reshape((-1, ypixels, xpixels, 3))
         PU.plot_query_answer(x_query=x_query_plot,
                              x_answer=x_answer_plot,
                              filename=result_filename)
 
+    # ===========================
     # Plot tSNE
+    # ===========================
     print("Plotting tSNE to output/tsne.png...")
     run_tsne(imgs_plot, X, "output/tsne.png")
-
 
 # Driver
 if __name__ == "__main__":

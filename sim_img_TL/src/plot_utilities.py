@@ -13,6 +13,7 @@ class PlotUtils(object):
     def plot_query_answer(self, x_query=None, x_answer=None, filename=None, gray_scale=False, n=5):
 
         # n = maximum number of answer images to provide
+        plt.clf()
         plt.figure(figsize=(2*n, 4))
 
         # Plot query images
@@ -50,3 +51,5 @@ class PlotUtils(object):
             plt.show()
         else:
             plt.savefig(filename)
+
+        plt.close()

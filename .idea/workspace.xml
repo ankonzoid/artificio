@@ -2,12 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sim_img_AE/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sim_img_TL/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sim_img_TL/src/sort_utilities.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/imgrec_9.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" afterPath="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py" afterPath="$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,18 +54,8 @@
       <file leaf-file-name="sim_img_TL.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sim_img_TL/sim_img_TL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="95" column="45" lean-forward="false" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sim_img_AE.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sim_img_AE/sim_img_AE.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="117" column="6" lean-forward="false" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="6" />
+            <state relative-caret-position="219">
+              <caret line="105" column="33" lean-forward="false" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -41,8 +64,8 @@
       <file leaf-file-name="plot_utilities.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="15" />
+            <state relative-caret-position="148">
+              <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -71,6 +94,7 @@
       <find>KNear</find>
       <find>algorithm</find>
       <find>PU</find>
+      <find>imgs_plot</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -100,6 +124,7 @@
         <option value="$PROJECT_DIR$/sim_img_AE/README.md" />
         <option value="$PROJECT_DIR$/sim_img_TL/README.md" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py" />
         <option value="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" />
       </list>
     </option>
@@ -124,7 +149,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -161,10 +185,17 @@
               <item name="sim_img_TL" type="462c0819:PsiDirectoryNode" />
               <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="sim_img_TL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -467,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511762989925</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="update">
+      <created>1512208765677</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1512208765677</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -476,16 +514,16 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2907916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2956381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -652,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-523">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -660,7 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -668,15 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-406">
           <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,14 +711,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39">
           <caret line="117" column="6" lean-forward="false" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sim_img_TL/sim_img_TL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="95" column="45" lean-forward="false" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
+        <state relative-caret-position="219">
+          <caret line="105" column="33" lean-forward="false" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
           <folding />
         </state>
       </provider>
