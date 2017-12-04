@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_images_AE/output/result_asparagus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_images_AE/output/result_burger.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/similar_images_AE/output/result_salad.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_AE/README.md" afterPath="$PROJECT_DIR$/similar_images_AE/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/README.md" afterPath="$PROJECT_DIR$/similar_images_TL/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,12 +15,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/similar_images_AE/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="181">
-                <caret line="12" column="80" lean-forward="false" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
+              <first_editor relative-caret-position="227">
+                <caret line="4" column="104" lean-forward="false" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -30,14 +28,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="similar_images_TL.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/similar_images_TL/similar_images_TL.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="90" column="70" lean-forward="false" selection-start-line="90" selection-start-column="70" selection-end-line="90" selection-end-column="70" />
-              <folding>
-                <element signature="e#299#313#0" expanded="true" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-98">
+                <caret line="6" column="104" lean-forward="false" selection-start-line="6" selection-start-column="104" selection-end-line="6" selection-end-column="104" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -106,6 +105,8 @@
         <option value="$PROJECT_DIR$/sim_img_AE/similar_images_AE.py" />
         <option value="$PROJECT_DIR$/similar_images_TL/similar_images_TL.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/similar_images_AE/README.md" />
+        <option value="$PROJECT_DIR$/similar_images_TL/README.md" />
       </list>
     </option>
   </component>
@@ -146,6 +147,11 @@
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
               <item name="similar_images_AE" type="462c0819:PsiDirectoryNode" />
               <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="similar_images_TL" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -496,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512366482652</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="update">
+      <created>1512366548574</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1512366548574</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -619,26 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_AE/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="44" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="167">
-            <caret line="2" column="575" lean-forward="false" selection-start-line="2" selection-start-column="575" selection-end-line="2" selection-end-column="575" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/similar_images_TL/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -722,11 +715,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_AE/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="227">
+            <caret line="4" column="104" lean-forward="false" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="181">
-            <caret line="12" column="80" lean-forward="false" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
+          <first_editor relative-caret-position="92">
+            <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="150" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-98">
+            <caret line="6" column="104" lean-forward="false" selection-start-line="6" selection-start-column="104" selection-end-line="6" selection-end-column="104" />
             <folding />
           </first_editor>
           <second_editor />

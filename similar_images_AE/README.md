@@ -2,7 +2,7 @@
 
 Given a set of query images and a set of store inventory images, we find the top-k similar inventory images that are the most 'similar' to the set of query images in an unsupervised way of using an encoder to embed the images, then performing kNN in this embedding space to search for 'similar' images. For this code sample, we query for similar steakhouse food images:
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/sim_img_AE/output/result_burger.png" width="80%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="80%" align="center">
 
 ### Algorithm:
 
