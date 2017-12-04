@@ -1,6 +1,6 @@
 '''
 
- KNN.py (author: Anson Wong / github: ankonzoid)
+ kNN.py (author: Anson Wong / github: ankonzoid)
  
  General kNN model class object using sklearn library.
 

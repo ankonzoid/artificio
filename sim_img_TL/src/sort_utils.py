@@ -1,20 +1,9 @@
 """
- find_first_unique_k.py  (author: Anson Wong / github: ankonzoid)
- 
- Find the lowest distance top-k unique indices.
+
+ sort_utils.py  (author: Anson Wong / github: ankonzoid)
+
 """
 import numpy as np
-
-def main():
-    # Example usage
-    indices = np.array([1, 2, 3, 2, 3, 4, 3, 3, 2, 1, 5], dtype=int)
-    distances = np.array([0.8, 0.5, 0.055, 0.4, 0.5, 0.2, 0.1, 0.8, 0.9, 1.0, 0.05], dtype=float)
-
-    n_neighbors = 4
-    indices, distances = find_topk_unique(indices, distances, n_neighbors)
-
-    print(indices)
-    print(distances)
 
 """
  Finds the first unique k elements (based on lowest distance) of lists 'indices' and 'distances'
@@ -59,6 +48,17 @@ def is_unique(vec):
     n_vec_unique = len(np.unique(vec))
     return (n_vec == n_vec_unique)
 
+
+def main():
+    # Example usage
+    indices = np.array([1, 2, 3, 2, 3, 4, 3, 3, 2, 1, 5], dtype=int)
+    distances = np.array([0.8, 0.5, 0.055, 0.4, 0.5, 0.2, 0.1, 0.8, 0.9, 1.0, 0.05], dtype=float)
+
+    n_neighbors = 4
+    indices, distances = find_topk_unique(indices, distances, n_neighbors)
+
+    print(indices)
+    print(distances)
 
 # Main driver
 if __name__ == "main":

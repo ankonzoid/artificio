@@ -2,44 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus1_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus2_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus3_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus4_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus5_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/asparagus6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/asparagus6_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger1_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger2_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger3_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger4_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger5_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/burger6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/burger6_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries1_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries2_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries3_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries4_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries5_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/fries6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/fries6_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato1_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato2_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato3_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato4_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato5_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/potato6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/potato6_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad1_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad2_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad3_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad4_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad5_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/salad6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/salad6_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak1_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak1_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak2_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak2_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak3_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak3_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak4_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak4_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak5_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak5_resized_rec.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/output/sim_imgs/steak6_resized_rec.png" afterPath="$PROJECT_DIR$/sim_img_TL/output/recommendations/steak6_resized_rec.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sim_img_TL/src/plot_utils.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/output/tsne.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_img_TL/src/vgg16.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/src/KNN.py" afterPath="$PROJECT_DIR$/sim_img_TL/src/kNN.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sim_img_TL/src/sort_utilities.py" afterPath="$PROJECT_DIR$/sim_img_TL/src/sort_utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" afterPath="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sim_img_TL/src/imagenet_utils.py" afterPath="$PROJECT_DIR$/sim_img_TL/src/imagenet_utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,18 +24,30 @@
       <file leaf-file-name="sim_img_TL.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sim_img_TL/sim_img_TL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="93" column="65" lean-forward="false" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
+            <state relative-caret-position="467">
+              <caret line="94" column="28" lean-forward="true" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+              <folding>
+                <element signature="e#202#216#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sort_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sim_img_TL/src/sort_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plot_utilities.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py">
+      <file leaf-file-name="plot_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sim_img_TL/src/plot_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+            <state relative-caret-position="133">
+              <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -94,6 +77,7 @@
       <find>algorithm</find>
       <find>PU</find>
       <find>imgs_plot</find>
+      <find>image</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,7 +107,12 @@
         <option value="$PROJECT_DIR$/sim_img_AE/README.md" />
         <option value="$PROJECT_DIR$/sim_img_TL/README.md" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/sim_img_TL/src/sort_utilities.py" />
         <option value="$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py" />
+        <option value="$PROJECT_DIR$/sim_img_TL/src/plot_utils.py" />
+        <option value="$PROJECT_DIR$/sim_img_TL/src/sort_utils.py" />
+        <option value="$PROJECT_DIR$/sim_img_TL/src/imagenet_utils.py" />
+        <option value="$PROJECT_DIR$/sim_img_TL/src/KNN.py" />
         <option value="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" />
       </list>
     </option>
@@ -511,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512349154928</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update">
+      <created>1512358782511</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1512358782511</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -576,7 +572,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -616,13 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="599" column="0" lean-forward="false" selection-start-line="599" selection-start-column="0" selection-end-line="599" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/imagenet_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -696,20 +685,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-523">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/sort_utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/KNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-406">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -717,22 +693,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39">
           <caret line="117" column="6" lean-forward="false" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/plot_utilities.py">
+    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/sort_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        <state relative-caret-position="38">
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/plot_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/imagenet_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-269">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sim_img_TL/src/kNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sim_img_TL/sim_img_TL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="93" column="65" lean-forward="false" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
-          <folding />
+        <state relative-caret-position="467">
+          <caret line="94" column="28" lean-forward="true" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+          <folding>
+            <element signature="e#202#216#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
