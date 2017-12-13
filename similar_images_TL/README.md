@@ -4,7 +4,10 @@ Given a set of database images, we take an pre-existing trained image classifica
 
 The biggest benefit of transfer learning is that, unlike our household similar image autoencoder implementation, we only need to feed-forward our images into the model network (no training is needed at all).
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/coverart/coverart.jpg" width="80%" align="center">
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/coverart/coverart.jpg" width="80%">
+</p>
+
 
 
 #### Most similar images to a query burger image:
