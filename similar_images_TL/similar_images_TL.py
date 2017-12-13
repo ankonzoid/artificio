@@ -18,8 +18,8 @@ from vgg19 import VGG19
 from imagenet_utils import preprocess_input
 from plot_utils import plot_query_answer
 from sort_utils import find_topk_unique
-from kNN import KNearestNeighbours
-from tSNE import run_tsne
+from kNN import kNN
+from tSNE import plot_tsne
 
 def main():
     # ================================================
@@ -65,18 +65,22 @@ def main():
     # ===========================
     # Find k-nearest images to each image
     # ===========================
-    # Train kNN model
     n_neighbours = 5 + 1  # +1 as itself is most similar
-    knn = KNearestNeighbours()
+    knn = kNN()  # kNN model
     knn.compile(n_neighbors=n_neighbours, algorithm="brute", metric="cosine")
     knn.fit(X)
 
-    # Plot
+    # ==================================================
+    # Plot recommendations for each image in database
+    # ==================================================
+    output_rec_dir = os.path.join("output", "rec")
+    if not os.path.exists(output_rec_dir):
+        os.makedirs(output_rec_dir)
     n_imgs = len(imgs)
     ypixels, xpixels = imgs[0].shape[0], imgs[0].shape[1]
     for ind_query in range(n_imgs):
 
-        # Find top-k closest images in the feature space database to each image
+        # Find top-k closest image feature vectors to each vector
         print("[{}/{}] Plotting similar image recommendations for: {}".format(ind_query+1, n_imgs, filename_heads[ind_query]))
         distances, indices = knn.predict(np.array([X[ind_query]]))
         distances = distances.flatten()
@@ -84,7 +88,7 @@ def main():
         indices, distances = find_topk_unique(indices, distances, n_neighbours)
 
         # Plot recommendations
-        rec_filename = os.path.join("output", "recommendations", "{}_rec.png".format(filename_heads[ind_query]))
+        rec_filename = os.path.join(output_rec_dir, "{}_rec.png".format(filename_heads[ind_query]))
         x_query_plot = imgs[ind_query].reshape((-1, ypixels, xpixels, 3))
         x_answer_plot = imgs[indices].reshape((-1, ypixels, xpixels, 3))
         plot_query_answer(x_query=x_query_plot,
@@ -94,8 +98,12 @@ def main():
     # ===========================
     # Plot tSNE
     # ===========================
-    print("Plotting tSNE to output/tsne.png...")
-    run_tsne(imgs, X, "output/tsne.png")
+    output_tsne_dir = os.path.join("output")
+    if not os.path.exists(output_tsne_dir):
+        os.makedirs(output_tsne_dir)
+    tsne_filename = os.path.join(output_tsne_dir, "tsne.png")
+    print("Plotting tSNE to {}...".format(tsne_filename))
+    plot_tsne(imgs, X, tsne_filename)
 
 # Driver
 if __name__ == "__main__":

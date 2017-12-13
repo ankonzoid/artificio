@@ -1,10 +1,22 @@
 # Similar images finder (using transfer learning on VGG)
 
-Given a set of database images, we take an pre-existing trained image classification model such as VGG, and apply transfer learning by removing its last layers and using the stripped model as a feature extractor on images. Doing so allows us to convert images into a set of feature vectors. Although these feature vectors by themselves are still not feasible for interpretation by inspection, they can be mapped onto a 2-dimensional manifold using t-SNE to have much better intuition about how far the database images are in this feature space. The biggest benefit of transfer learning is that, unlike our household similar image autoencoder implementation, we only need to feed-forward our images into the model network (no training is needed at all).
+Given a set of database images, we take an pre-existing trained image classification model such as VGG, and apply transfer learning by removing its last layers and using the stripped model as a feature extractor on images. Doing so allows us to convert images into a set of feature vectors. 
+
+The biggest benefit of transfer learning is that, unlike our household similar image autoencoder implementation, we only need to feed-forward our images into the model network (no training is needed at all).
+
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/coverart/coverart.jpg" width="80%" align="center">
+
+
+#### Most similar images to a query burger image:
+
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/tsne.png" width="60%" align="center">
+
+#### t-SNE of our small steakhouse food image database:
+
+Although our image feature vectors by themselves are not easily interpretable by inspection, they can be mapped onto a 2-dimensional manifold via the t-SNE algorithm for visualization. 
 
 <img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/recommendations/burger_test_rec.png" width="80%" align="center">
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/tsne.png" width="60%" align="center">
 
 ### Usage:
 

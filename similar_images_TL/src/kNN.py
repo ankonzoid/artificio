@@ -7,7 +7,7 @@
 '''
 from sklearn.neighbors import NearestNeighbors
 
-class KNearestNeighbours(object):
+class kNN(object):
 
     def __init__(self):
         # Parameters from training/test data set
