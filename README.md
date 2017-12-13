@@ -6,10 +6,16 @@ Currently we have:
 
 * [Similar image finder (using transfer learning)](https://github.com/ankonzoid/artificio/tree/master/similar_images_TL)
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/recommendations/burger_test_rec.png" width="80%" align="center">
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/burger_test_rec.png" width="80%">
+</p>
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/tsne.png" width="50%" align="center">
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/tsne.png" width="50%">
+</p>
 
 * [Similar image finder (using autoencoders)](https://github.com/ankonzoid/artificio/tree/master/similar_images_AE)
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="80%" align="center">
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="80%">
+</p>
