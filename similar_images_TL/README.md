@@ -1,15 +1,15 @@
 # Similar images finder (using transfer learning on VGG)
 
-Given a set of database images, we take VGG (a trained image classification model), remove its last layers, and use it to convert our raw images into feature vectors.
-
-Note that no training is needed, we only need to feed-forward our images into our dissected VGG model
-
-<p align="center"> 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/burger_test_rec.png" width="60%">
-</p>
+Given a set of database images, we take VGG (a trained image classification model), remove its last layers, and use it to convert our raw images into feature vectors. Note that no training is needed, we only need to feed-forward our images into our dissected VGG model
 
 <p align="center"> 
 <img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/coverart/coverart.jpg" width="80%">
+</p>
+
+In this code, we query for similar steakhouse food images and can achieve a result of:
+
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/burger_test_rec.png" width="60%">
 </p>
 
 
