@@ -1,11 +1,11 @@
 # Similar images finder (using transfer learning on VGG)
 
-Given a set of database images, we take an pre-existing trained image classification model such as VGG, and apply transfer learning by removing its last layers and using the stripped model as a feature extractor on images. Doing so allows us to convert images into a set of feature vectors. 
+Given a set of database images, we take VGG (a trained image classification model), remove its last layers, and use it to convert our raw images into feature vectors.
 
-The biggest benefit of transfer learning is that, unlike our household similar image autoencoder implementation, we only need to feed-forward our images into the model network (no training is needed at all).
+Note that no training is needed, we only need to feed-forward our images into our dissected VGG model
 
 <p align="center"> 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/coverart/coverart.jpg" width="80%">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/coverart/coverart.jpg" width="60%">
 </p>
 
 

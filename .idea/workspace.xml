@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_AE/coverart/coverart.sketch" afterPath="$PROJECT_DIR$/similar_images_AE/coverart/coverart.sketch" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_AE/README.md" afterPath="$PROJECT_DIR$/similar_images_AE/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/README.md" afterPath="$PROJECT_DIR$/similar_images_TL/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +16,11 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
+        <entry file="file://$PROJECT_DIR$/similar_images_AE/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="609">
-                <caret line="23" column="89" lean-forward="false" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="89" />
+              <first_editor relative-caret-position="249">
+                <caret line="4" column="96" lean-forward="false" selection-start-line="4" selection-start-column="96" selection-end-line="4" selection-end-column="96" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -29,11 +29,11 @@
         </entry>
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+        <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="428">
-                <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+              <first_editor relative-caret-position="-272">
+                <caret line="7" column="65" lean-forward="false" selection-start-line="7" selection-start-column="65" selection-end-line="8" selection-end-column="4" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -104,13 +104,13 @@
         <option value="$PROJECT_DIR$/sim_img_TL/sim_img_TL.py" />
         <option value="$PROJECT_DIR$/sim_img_TL/similar_images_TL.py" />
         <option value="$PROJECT_DIR$/sim_img_AE/similar_images_AE.py" />
-        <option value="$PROJECT_DIR$/similar_images_AE/README.md" />
         <option value="$PROJECT_DIR$/similar_images_TL/src/tSNE.py" />
         <option value="$PROJECT_DIR$/similar_images_TL/src/imagenet_utils.py" />
         <option value="$PROJECT_DIR$/similar_images_TL/src/kNN.py" />
         <option value="$PROJECT_DIR$/similar_images_TL/similar_images_TL.py" />
-        <option value="$PROJECT_DIR$/similar_images_TL/README.md" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/similar_images_TL/README.md" />
+        <option value="$PROJECT_DIR$/similar_images_AE/README.md" />
       </list>
     </option>
   </component>
@@ -158,6 +158,19 @@
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
               <item name="similar_images_TL" type="462c0819:PsiDirectoryNode" />
               <item name="coverart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="similar_images_TL" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="similar_images_TL" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+              <item name="rec" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
@@ -569,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513313406770</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="update">
+      <created>1513314346903</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1513314346903</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -706,16 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_AE/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="227">
-            <caret line="4" column="104" lean-forward="false" selection-start-line="4" selection-start-column="104" selection-end-line="4" selection-end-column="104" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/similar_images_TL/src/vgg19.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -787,22 +797,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="609">
-            <caret line="23" column="89" lean-forward="false" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="89" />
+          <first_editor relative-caret-position="428">
+            <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/similar_images_AE/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="428">
-            <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <first_editor relative-caret-position="249">
+            <caret line="4" column="96" lean-forward="false" selection-start-line="4" selection-start-column="96" selection-end-line="4" selection-end-column="96" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-272">
+            <caret line="7" column="65" lean-forward="false" selection-start-line="7" selection-start-column="65" selection-end-line="8" selection-end-column="4" />
             <folding />
           </first_editor>
           <second_editor />
