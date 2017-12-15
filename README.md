@@ -16,9 +16,8 @@ Currently we have:
 * [Similar image finder (using autoencoders)](https://github.com/ankonzoid/artificio/tree/master/similar_images_AE)
 
 <p align="center"> 
+<p float="left">
 <img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="30%">
-</p>
-
-<p align="center"> 
 <img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/coverart/coverart.jpg" width="30%">
+</p>
 </p>
