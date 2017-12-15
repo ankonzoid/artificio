@@ -5,15 +5,22 @@ Given a set of database images, we take VGG (a trained image classification mode
 Note that no training is needed, we only need to feed-forward our images into our dissected VGG model
 
 <p align="center"> 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/coverart/coverart.jpg" width="60%">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/burger_test_rec.png" width="60%">
 </p>
 
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/coverart/coverart.jpg" width="80%">
+</p>
 
 
 #### Most similar images to a query burger image:
 
 <p align="center"> 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/tsne.png" width="60%">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/salad_test_rec.png" width="60%">
+</p>
+
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/asparagus_test_rec.png" width="60%">
 </p>
 
 #### t-SNE of our small steakhouse food image database:
@@ -21,8 +28,9 @@ Note that no training is needed, we only need to feed-forward our images into ou
 Although our image feature vectors by themselves are not easily interpretable by inspection, they can be mapped onto a 2-dimensional manifold via the t-SNE algorithm for visualization. 
 
 <p align="center"> 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/burger_test_rec.png" width="80%">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/tsne.png" width="50%">
 </p>
+
 
 ### Usage:
 

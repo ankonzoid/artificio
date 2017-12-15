@@ -2,7 +2,7 @@
 
 Given a set of query images and a set of store inventory images, we find the top-k similar inventory images that are the most 'similar' to the set of query images in an unsupervised way of using an encoder to embed the images, then performing kNN in this embedding space to search for 'similar' images. For this code sample, we query for similar steakhouse food images:
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/rec/burger_test_rec.png" width="60%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/burger_test_rec.png" width="60%" align="center">
 
 <p align="center"> 
 <img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/coverart/coverart.jpg" width="60%">
@@ -18,9 +18,9 @@ Given a set of query images and a set of store inventory images, we find the top
 
 Particularly for our example code, we train a convolutional autoencoder on 36 steakhouse food images (6 of each of steak, potato, french fries, salads, burger, asparagus), and make similar image food recommendations based on the above algorithm. Below are more results of querying test images of salad and asparagus:
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/rec/salad_test_rec.png" width="60%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/salad_test_rec.png" width="60%" align="center">
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/rec/asparagus_test_rec.png" width="60%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/asparagus_test_rec.png" width="60%" align="center">
 
 The model performs fairly well as a vanilla model with minimal fine-tuned training, in the sense that the top similar recommended images tend to be in same food category as the query image (i.e. querying a burger gives mostly burgers, and querying a salad gives mostly salads, ...). There is still much room for improvement in terms different neural network architectures, more/different training images, hyperparameter tuning to improve the generality of this model. 
 
