@@ -12,10 +12,13 @@ We provide here a suite of deep learning computer vision algorithms that are rea
 #### * [Similar image finder (using autoencoders)](https://github.com/ankonzoid/artificio/tree/master/similar_images_AE)
 
 <p align="center"> 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="30%">
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/coverart/coverart.jpg" width="30%">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="40%">
 </p>
 
-#### Author
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/coverart/coverart.jpg" width="40%">
+</p>
+
+#### Authors:
 
 Anson Wong

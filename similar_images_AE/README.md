@@ -6,24 +6,25 @@ Given a set of query images and a set of store inventory images, we find the top
 <img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/coverart/coverart.jpg" width="60%">
 </p>
 
-In this code, we query for similar steakhouse food images and can achieve a result of:
+In this code, we train a convolutional autoencoder on 36 steakhouse food images (6 of each of steak, potato, french fries, salads, burger, asparagus), and make similar image food recommendations based on the above algorithm to achieve a result of:
 
 <p align="center"> 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="48%">
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_salad_test.png" width="48%">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="40%">
 </p>
 
-The algorithm used:
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_salad_test.png" width="40%">
+</p>
+
+The model performs fairly well as a vanilla model with minimal fine-tuned training, in the sense that the top similar recommended images tend to be in same food category as the query image (i.e. querying a burger gives mostly burgers, and querying a salad gives mostly salads, ...). There is still much room for improvement in terms different neural network architectures, more/different training images, hyperparameter tuning to improve the generality of this model. 
+
+The algorithm:
 
 1) Train an autoencoder with training images in the same domain as the inventory images
 
 2) Use the trained encoder to embed both the query images and the inventory images
 
 3) Perform kNN (euclidean/cosine similarity) to find the inventory nearest neighbour image embeddings to the query image embeddings, and keep the k closest embeddings as the top-k recommendations
-
-Particularly for our example code, we train a convolutional autoencoder on 36 steakhouse food images (6 of each of steak, potato, french fries, salads, burger, asparagus), and make similar image food recommendations based on the above algorithm. 
-
-The model performs fairly well as a vanilla model with minimal fine-tuned training, in the sense that the top similar recommended images tend to be in same food category as the query image (i.e. querying a burger gives mostly burgers, and querying a salad gives mostly salads, ...). There is still much room for improvement in terms different neural network architectures, more/different training images, hyperparameter tuning to improve the generality of this model. 
 
 ### Usage:
 
@@ -50,3 +51,7 @@ However, if you would like to train the model from scratch then:
 ### Required libraries:
 
 * numpy, matplotlib, pylab, sklearn, keras, h5py, pillow
+
+### Authors:
+
+Anson Wong
