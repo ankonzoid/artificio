@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="update">
+    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_AE/README.md" afterPath="$PROJECT_DIR$/similar_images_AE/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/similar_images_TL/README.md" afterPath="$PROJECT_DIR$/similar_images_TL/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +28,8 @@
         <entry file="file://$PROJECT_DIR$/similar_images_AE/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="233">
-                <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <first_editor relative-caret-position="115">
+                <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -705,7 +703,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513382447098</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="update">
+      <created>1513382709620</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1513382709620</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -942,8 +947,8 @@
     <entry file="file://$PROJECT_DIR$/similar_images_AE/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="233">
-            <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <first_editor relative-caret-position="115">
+            <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
             <folding />
           </first_editor>
           <second_editor />

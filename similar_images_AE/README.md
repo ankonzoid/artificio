@@ -28,13 +28,13 @@ The algorithm:
 
 ### Usage:
 
-To make sure our similar images finder (trained on steakhouse food images) works on our given steakhouse test images, run the command:
+To make sure our similar images finder (trained on steakhouse food images) works on our test images, 
 
-> python similar_images_AE.py
+1. Run the command:
     
-When the run is complete, your answer images can be found in the `output` directory.
+    > python similar_images_AE.py
 
-However, if you would like to train the model from scratch then:
+When the run is complete, your answer images can be found in the `output` directory. However, if you would like to train the model from scratch then:
  
 1. In `similar_images_AE.py`, set:
      
