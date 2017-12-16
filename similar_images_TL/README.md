@@ -9,10 +9,11 @@ Given a set of database images, we take the trained image classification VGG net
 As an example of its utility, we show that we can find similar food items in a small steakhouse food database by querying a burger and a salad below:
 
 <p align="center"> 
-<p float="left">
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/burger_test_rec.png" width="48%">
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/salad_test_rec.png" width="48%">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/burger_test_rec.png" width="50%">
 </p>
+
+<p align="center"> 
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_TL/output/rec/salad_test_rec.png" width="50%">
 </p>
 
 In addition to making similar image recommendations, we can also visualize the image feature vectors by mapping the high-dimensional vectors onto a 2-dimensional manifold via the t-SNE algorithm to get a sense of how "far away" images are from each other in the feature space: 
