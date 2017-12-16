@@ -49,4 +49,4 @@ class PlotUtils(object):
         if filename == None:
             plt.show()
         else:
-            plt.savefig(filename)
+            plt.savefig(filename, bbox_inches='tight')

@@ -9,9 +9,8 @@ Given a set of query images and a set of store inventory images, we find the top
 In this code, we query for similar steakhouse food images and can achieve a result of:
 
 <p align="center"> 
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="30%" align="center">
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_salad_test.png" width="30%" align="center">
-<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_asparagus_test.png" width="30%" align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_burger_test.png" width="48%">
+<img src="https://github.com/ankonzoid/artificio/blob/master/similar_images_AE/output/result_salad_test.png" width="48%">
 </p>
 
 The algorithm used:

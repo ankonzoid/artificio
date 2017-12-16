@@ -45,6 +45,6 @@ def plot_query_answer(x_query=None, x_answer=None, filename=None, gray_scale=Fal
     if filename == None:
         plt.show()
     else:
-        plt.savefig(filename)
+        plt.savefig(filename, bbox_inches='tight')
 
     plt.close()
