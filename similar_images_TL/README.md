@@ -37,15 +37,15 @@ The steps towards building our similar images finder:
 
 ### Usage:
 
-1. Place your database of imades in the `db` directory.
+1. Place your database of images into the `db` directory.
 
 2. Run the command:
 
     > python similar_images_TL.py 
 
-    All output from running this code will be in the `output` directory. There will be a `tsne.png` plot for the t-SNE visualization, as well as a `rec` directory containing the top k=5 similar images to every image in your image database.
+    All output from running this code will be placed in the `output` directory. There will be a `tsne.png` plot for the t-SNE visualization of your database image embeddings, as well as a `rec` directory containing the top `k = 5` similar image recommendations for each image in your database.
 
-If the run is working well, you should see something of the form of:
+If the program is running properly, you should see something of the form:
 
 ```
 Loading VGG19 pre-trained model...
