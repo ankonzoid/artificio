@@ -16,14 +16,30 @@
   7) Make k-recommendations by cloning top-k inventory images into 'answer'
   
 '''
-import sys, os, shutil
+import sys
+import os
+import shutil
 import numpy as np
+import pandas as pd
+# import csv
 sys.path.append("src")
 from autoencoders.AE import AE
 from clustering.KNN import KNearestNeighbours
 from utilities.image_utilities import ImageUtils
 from utilities.sorting import find_topk_unique
 from utilities.plot_utilities import PlotUtils
+from numpy import array
+import asyncio
+
+from package import settings
+from sqlalchemy import create_engine
+from sqlalchemy.engine.url import URL
+
+result = {}
+# sem = asyncio.Semaphore(20)
+table = "image_similarity"
+engine = create_engine(URL(**settings.DATABASE))
+
 
 def main():
     # ========================================
@@ -60,14 +76,12 @@ def main():
 
     save_reconstruction_on_load_model = True
 
-
     ###   KNN training parameters   ###
     n_neighbors = 5  # number of nearest neighbours
     metric = "cosine"  # kNN metric (cosine only compatible with brute force)
     algorithm = "brute"  # search algorithm
     recommendation_method = 2  # 1 = centroid kNN, 2 = all points kNN
     output_mode = 1  # 1 = output plot, 2 = output inventory db image clones
-
 
     # ========================================
     # Generate expected file/folder paths and settings
@@ -135,7 +149,6 @@ def main():
                                  processed_dir=img_inventory_dir,
                                  img_shape=img_shape)
 
-
     # ========================================
     #
     # Train autoencoder
@@ -183,7 +196,8 @@ def main():
         MODEL.append_arch_report(dictfn)  # append to report
 
         # Train model
-        MODEL.append_message_report(dictfn, "Start training")  # append to report
+        MODEL.append_message_report(
+            dictfn, "Start training")  # append to report
         MODEL.train(x_data_train, x_data_test,
                     n_epochs=n_epochs, batch_size=batch_size)
         MODEL.append_message_report(dictfn, "End training")  # append to report
@@ -192,7 +206,8 @@ def main():
         MODEL.save_model(dictfn)
 
         # Save reconstructions to file
-        MODEL.plot_save_reconstruction(x_data_test, img_shape, dictfn, n_plot=10)
+        MODEL.plot_save_reconstruction(
+            x_data_test, img_shape, dictfn, n_plot=10)
 
     else:
 
@@ -208,10 +223,12 @@ def main():
         # Save reconstructions to file
         if save_reconstruction_on_load_model:
             x_data_all, all_filenames = \
-                IU.raw2resizednorm_load(raw_dir=img_train_dir, img_shape=img_shape)
+                IU.raw2resizednorm_load(
+                    raw_dir=img_train_dir, img_shape=img_shape)
             if flatten_before_encode:
                 x_data_all = IU.flatten_img_data(x_data_all)
-            MODEL.plot_save_reconstruction(x_data_all, img_shape, dictfn, n_plot=10)
+            MODEL.plot_save_reconstruction(
+                x_data_all, img_shape, dictfn, n_plot=10)
 
     # ========================================
     #
@@ -240,15 +257,14 @@ def main():
 
     print("\nx_train_kNN.shape = {0}\n".format(x_train_kNN.shape))
 
-
     # =================================
     # Train kNN model
     # =================================
     print("Performing kNN to locate nearby items to user centroid points...")
     EMB = KNearestNeighbours()  # initialize embedding kNN class
-    EMB.compile(n_neighbors=n_neighbors, algorithm=algorithm, metric=metric)  # compile kNN model
+    EMB.compile(n_neighbors=n_neighbors, algorithm=algorithm,
+                metric=metric)  # compile kNN model
     EMB.fit(x_train_kNN)  # fit kNN
-
 
     # =================================
     # Perform kNN on query images
@@ -269,85 +285,154 @@ def main():
         x_data_query = IU.flatten_img_data(x_data_query)
 
     # Perform kNN on each query image
-    for ind_query in range(n_query):
+    result_dict = {}
+    result_dict["Query"] = []
+    result_dict["index"] = []
 
-        # Encode query image (and flatten if needed)
-        newshape = (1,) + x_data_query[ind_query].shape
-        x_query_i_use = x_data_query[ind_query].reshape(newshape)
-        x_test_kNN = encoder.predict(x_query_i_use)
-        query_filename = query_filenames[ind_query]
+    for i in range(n_neighbors):
+        result_dict["filename_%s" % (i)] = []
+        result_dict["distance_%s" % (i)] = []
 
-        name, tag = IU.extract_name_tag(query_filename)  # extract name and tag
-        print("({0}/{1}) Performing kNN on query '{2}'...".format(ind_query+1, n_query, name))
+    tasks = [perform_knn(n_query, ind_query, x_data_query, encoder,
+                         query_filenames, IU, flatten_after_encode,
+                         recommendation_method, EMB, n_neighbors,
+                         all_filenames, output_mode, answer_dir,
+                         img_shape, x_data_inventory, PU,
+                         inventory_filenames, result_dict)
+             for ind_query in range(n_query)]
+    # name, result, indices_list, distances_list
+    loop = asyncio.get_event_loop()
+    # result_dict =
+    loop.run_until_complete(
+        asyncio.gather(*tasks))  # [-1]
+    loop.close()
+    # print("*" * 100)
+    # print(result_dict)
+    # print("*" * 100)
 
-        if flatten_after_encode:  # Flatten the data after encoder prediction
-            x_test_kNN = IU.flatten_img_data(x_test_kNN)
+    # with open('dict.csv', 'w') as f:
+    #     writer = csv.writer(f)
+    #     writer.writerow(result_dict.keys())
+    #     writer.writerows(zip(*result_dict.values()))
 
-        # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        # Compute distances and indices for recommendation
-        # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        if recommendation_method == 1:  # kNN centroid transactions
+async def perform_knn(n_query, ind_query, x_data_query, encoder,
+                      query_filenames, IU, flatten_after_encode,
+                      recommendation_method, EMB, n_neighbors,
+                      all_filenames, output_mode, answer_dir,
+                      img_shape, x_data_inventory, PU,
+                      inventory_filenames, result_dict):
 
-            # Compute centroid point of the query encoding vectors (equal weights)
-            x_test_kNN_centroid = np.mean(x_test_kNN, axis = 0)
-            # Find nearest neighbours to centroid point
-            distances, indices = EMB.predict(np.array([x_test_kNN_centroid]))
+    # Encode query image (and flatten if needed)
+    newshape = (1,) + x_data_query[ind_query].shape
+    x_query_i_use = x_data_query[ind_query].reshape(newshape)
+    x_test_kNN = encoder.predict(x_query_i_use)
+    query_filename = query_filenames[ind_query]
 
-        elif recommendation_method == 2:  # kNN all transactions
+    name, tag = IU.extract_name_tag(query_filename)  # extract name and tag
+    print(
+        "({0}/{1}) Performing kNN on query '{2}'...".format(ind_query+1, n_query, name))
 
-            # Find k nearest neighbours to all transactions, then flatten the distances and indices
-            distances, indices = EMB.predict(x_test_kNN)
-            distances = distances.flatten()
-            indices = indices.flatten()
-            # Pick k unique training indices which have the shortest distances any transaction point
-            indices, distances = find_topk_unique(indices, distances, n_neighbors)
+    if flatten_after_encode:  # Flatten the data after encoder prediction
+        x_test_kNN = IU.flatten_img_data(x_test_kNN)
 
-        else:
-            raise Exception("Invalid method for making recommendations")
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # Compute distances and indices for recommendation
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    if recommendation_method == 1:  # kNN centroid transactions
 
+        # Compute centroid point of the query encoding vectors (equal weights)
+        x_test_kNN_centroid = np.mean(x_test_kNN, axis=0)
+        # Find nearest neighbours to centroid point
+        distances, indices = EMB.predict(np.array([x_test_kNN_centroid]))
 
-        print("  x_test_kNN.shape = {0}".format(x_test_kNN.shape))
-        print("  distances = {0}".format(distances))
-        print("  indices = {0}\n".format(indices))
+    elif recommendation_method == 2:  # kNN all transactions
 
-        # =============================================
-        #
-        # Output results
-        #
-        # =============================================
-        if output_mode == 1:
+        # Find k nearest neighbours to all transactions, then flatten the distances and indices
+        distances, indices = EMB.predict(x_test_kNN)
+        distances = distances.flatten()
+        indices = indices.flatten()
+        # Pick k unique training indices which have the shortest distances any transaction point
+        indices, distances = find_topk_unique(
+            indices, distances, n_neighbors)
 
-            result_filename = os.path.join(answer_dir, "result_" + name + ".png")
+    else:
+        raise Exception("Invalid method for making recommendations")
 
-            x_query_plot = x_data_query[ind_query].reshape((-1, img_shape[0], img_shape[1], 3))
-            x_answer_plot = x_data_inventory[indices].reshape((-1, img_shape[0], img_shape[1], 3))
-            PU.plot_query_answer(x_query=x_query_plot,
-                                 x_answer=x_answer_plot,
-                                 filename=result_filename)
+    print("  x_test_kNN.shape = {0}".format(x_test_kNN.shape))
+    print("  distances = {0}".format(distances))
+    print("  indices = {0}\n".format(indices))
+    distances_list = [x for x in array(distances).flat]
+    indices_list = [x for x in array(indices).flat]
+    j = 0
+    # print("%6s %50s %16s" % ("indice", "filename", "distance"))
+    result_dict = {}
+    for i in indices_list:
+        result_dict["Query"] = "full/%s" % (name)
+        result_dict["index"] = i
+        result_dict["filename_%s" %
+                    (j)] = all_filenames[i].replace("db/", "full/")
+        result_dict["distance_%s" %
+                    (j)] = distances_list[j]
+        j += 1
+        keys_list = list(result_dict.keys())
+    df = pd.DataFrame(result_dict, index=[0])[keys_list]
+    df.to_sql(table, engine, if_exists='append')
 
-        elif output_mode == 2:
+    # for i in indices_list:
+    #     result_dict["Query"].append("full/%s" % (name))
+    #     result_dict["index"].append(i)
+    #     result_dict["filename_%s" %
+    #                 (j)].append(all_filenames[i].replace("db/", "full/"))
+    #     result_dict["distance_%s" %
+    #                 (j)].append(distances_list[j])
+    #     j += 1
 
-            # Clone answer file to answer folder
-            # Make k-recommendations and clone most similar inventory images to answer dir
-            print("Cloning k-recommended inventory images to answer folder '{0}'...".format(answer_dir))
-            for i, (index, distance) in enumerate(zip(indices, distances)):
-                print("\n({0}): index = {1}".format(i, index))
-                print("({0}): distance = {1}\n".format(i, distance))
+    # =============================================
+    #
+    # Output results
+    #
+    # =============================================
+    if output_mode == 1:
+        pass
 
-                for k_rec, ind in enumerate(index):
+        result_filename = os.path.join(
+            answer_dir, "result_" + name + ".png")
 
-                    # Extract inventory filename
-                    inventory_filename = inventory_filenames[ind]
+        x_query_plot = x_data_query[ind_query].reshape(
+            (-1, img_shape[0], img_shape[1], 3))
+        x_answer_plot = x_data_inventory[indices].reshape(
+            (-1, img_shape[0], img_shape[1], 3))
+        PU.plot_query_answer(x_query=x_query_plot,
+                             x_answer=x_answer_plot,
+                             filename=result_filename)
 
-                    # Extract answer filename
-                    name, tag = IU.extract_name_tag(inventory_filename)
-                    answer_filename = os.path.join(answer_dir, name + '.' + tag)
+    elif output_mode == 2:
 
-                    print("Cloning '{0}' to answer directory...".format(inventory_filename))
-                    shutil.copy(inventory_filename, answer_filename)
+        # Clone answer file to answer folder
+        # Make k-recommendations and clone most similar inventory images to answer dir
+        print(
+            "Cloning k-recommended inventory images to answer folder '{0}'...".format(answer_dir))
+        for i, (index, distance) in enumerate(zip(indices, distances)):
+            print("\n({0}): index = {1}".format(i, index))
+            print("({0}): distance = {1}\n".format(i, distance))
 
-        else:
-            raise Exception("Invalid output mode given!")
+            for k_rec, ind in enumerate(index):
+
+                # Extract inventory filename
+                inventory_filename = inventory_filenames[ind]
+
+                # Extract answer filename
+                name, tag = IU.extract_name_tag(inventory_filename)
+                answer_filename = os.path.join(
+                    answer_dir, name + '.' + tag)
+
+                print("Cloning '{0}' to answer directory...".format(
+                    inventory_filename))
+                shutil.copy(inventory_filename, answer_filename)
+    else:
+        raise Exception("Invalid output mode given!")
+    return
+
 
 # Driver
 if __name__ == "__main__":
