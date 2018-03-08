@@ -50,3 +50,4 @@ class PlotUtils(object):
             plt.show()
         else:
             plt.savefig(filename, bbox_inches='tight')
+        plt.close()
