@@ -1,6 +1,6 @@
-# Scrape Google Images
+# Google Images Scraper
 
-Google images scraper for downloading the top _k_ images of your choice given user query text (written in Python). For example, we have scraped pictures of "apartments", "tesla car", "drake", and "new york sattelite" to the `output` directory.
+Google images scraper for downloading the top _k_ images of your choice given query text (written in Python).
 
 <p align="center">
 <img src="https://github.com/ankonzoid/artificio/blob/master/scrape_google_images/coverart/coverart.jpg" width="80%">
