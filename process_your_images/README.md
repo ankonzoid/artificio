@@ -1,6 +1,8 @@
 # Image Processing Tools
 
-<img src="https://github.com/ankonzoid/artificio/blob/master/process_your_images/coverart/coverart.jpg" width="45%" align="center">
+<p align="center">
+<img src="https://github.com/ankonzoid/artificio/blob/master/process_your_images/coverart/coverart.jpg" width="90%">
+</p>
 
 Here we provide tools for you for processing your image dataset. All you need to do is place your .jpg or .jpeg images into the `input` directory, run the code, then pick up your processed images in the `output` directory.
 

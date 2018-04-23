@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="update">
-      <change afterPath="$PROJECT_DIR$/process_your_images/src/img2greyscale.py" afterDir="false" />
+    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_your_images/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/process_your_images/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scrape_google_images/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/scrape_google_images/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrape_google_images/coverart/coverart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/scrape_google_images/coverart/coverart.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrape_google_images/coverart/coverart.sketch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_AE/coverart/coverart.sketch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/coverart/coverart.sketch" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,32 +19,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/process_your_images/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="912">
-              <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="img2edges.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_your_images/src/img2edges.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="17" column="102" selection-start-line="17" selection-start-column="102" selection-end-line="17" selection-end-column="102" />
-              <folding>
-                <element signature="e#63#80#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="img2resize.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_your_images/src/img2resize.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="44" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="9" selection-end-column="44" />
-              <folding>
-                <element signature="e#31#49#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="52">
+              <caret line="3" column="112" selection-start-line="3" selection-start-column="112" selection-end-line="3" selection-end-column="112" />
             </state>
           </provider>
         </entry>
@@ -127,7 +99,6 @@
         <option value="$PROJECT_DIR$/similar_images_TL/similar_images_TL.py" />
         <option value="$PROJECT_DIR$/similar_images_TL/README.md" />
         <option value="$PROJECT_DIR$/scrape_google_images/scrape_google_images.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/process_your_images/src/utils.py" />
         <option value="$PROJECT_DIR$/process_your_images/src/read_img_utils.py" />
         <option value="$PROJECT_DIR$/process_your_images/src/img2resize.py" />
@@ -136,6 +107,7 @@
         <option value="$PROJECT_DIR$/process_your_images/src/img2edges.py" />
         <option value="$PROJECT_DIR$/process_your_images/process_your_images.py" />
         <option value="$PROJECT_DIR$/scrape_google_images/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/process_your_images/README.md" />
       </list>
     </option>
@@ -162,6 +134,12 @@
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
               <item name="process_your_images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="process_your_images" type="462c0819:PsiDirectoryNode" />
+              <item name="coverart" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
@@ -334,20 +312,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1499456021392</updated>
-    </task>
-    <task id="LOCAL-00005" summary="food image rec updates">
-      <created>1504846825287</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1504846825287</updated>
-    </task>
-    <task id="LOCAL-00006" summary="food image rec updates">
-      <created>1504846829778</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1504846829778</updated>
     </task>
     <task id="LOCAL-00007" summary="food image rec updates">
       <created>1505022660378</created>
@@ -678,7 +642,21 @@
       <option name="project" value="LOCAL" />
       <updated>1524370387812</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="update">
+      <created>1524455583949</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1524455583949</updated>
+    </task>
+    <task id="LOCAL-00055" summary="update">
+      <created>1524455803172</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1524455803172</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -690,8 +668,8 @@
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32852563" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32852563" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32852563" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -862,13 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scrape_google_images/scrape_google_images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_your_images/src/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -924,28 +895,8 @@
         <state relative-caret-position="-603" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_your_images/src/img2resize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="44" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="9" selection-end-column="44" />
-          <folding>
-            <element signature="e#31#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_your_images/output/squirrel_edges.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_your_images/process_your_images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-          <folding>
-            <element signature="e#621#630#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_your_images/src/img2edges.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -957,24 +908,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/process_your_images/src/img2resize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        <state relative-caret-position="171">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="9" selection-end-column="44" />
+          <folding>
+            <element signature="e#31#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_your_images/process_your_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding>
+            <element signature="e#621#630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_your_images/coverart/coverart.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape_google_images/scrape_google_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-768">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scrape_google_images/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="45" selection-start-line="45" selection-end-line="47" selection-end-column="10" />
+        <state relative-caret-position="108">
+          <caret line="37" column="119" selection-start-line="37" selection-start-column="119" selection-end-line="37" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="21" column="113" selection-start-line="21" selection-start-column="113" selection-end-line="21" selection-end-column="113" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_your_images/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="42" column="2" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
+        <state relative-caret-position="52">
+          <caret line="3" column="112" selection-start-line="3" selection-start-column="112" selection-end-line="3" selection-end-column="112" />
         </state>
       </provider>
     </entry>

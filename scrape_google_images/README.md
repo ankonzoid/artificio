@@ -35,7 +35,7 @@ Querying Google Images for 'drake'  ->  saving top 5 images into 'output'
 with the scraped images saved to the `output` directory.
 
 <p align="center">
-<img src="https://github.com/ankonzoid/artificio/blob/master/scrape_google_images/coverart/drake_examples.jpg" width="70%">
+<img src="https://github.com/ankonzoid/artificio/blob/master/scrape_google_images/coverart/drake_examples.jpg" width="90%">
 </p>
 
 ### Libraries
