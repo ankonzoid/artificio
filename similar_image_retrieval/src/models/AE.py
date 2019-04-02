@@ -1,10 +1,10 @@
 """
+
  AE.py  (author: Anson Wong / git: ankonzoid)
 
- Autoencoder class (for both simple & convolutional)
-"""
-from .AE_base import AEBase
+ Auto-encoder class (FC & Conv)
 
+"""
 import datetime, os, platform, pylab, time
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,7 +13,7 @@ from keras.layers import Input, Dense
 from keras.layers import Conv2D, MaxPooling2D, UpSampling2D
 from keras.models import Model, load_model
 
-class AE(AEBase):
+class AE():
 
     def __init__(self):
 
@@ -273,27 +273,13 @@ class AE(AEBase):
         self.decoder = decoder  # untrained
 
         # Set model input/output dimensions
-        # We provide two options for getting these numbers:
-        # - via the individual layers
-        # - via the models
-        if 1:
-            self.autoencoder_input_shape = input_autoencoder_shape
-            self.autoencoder_output_shape = output_autoencoder_shape
-            self.encoder_input_shape = input_encoder_shape
-            self.encoder_output_shape = output_encoder_shape
-            self.decoder_input_shape = input_decoder_shape
-            self.decoder_output_shape = output_decoder_shape
-        else:
-            self.autoencoder_input_shape = autoencoder.input_shape
-            self.autoencoder_output_shape = autoencoder.output_shape
-            self.encoder_input_shape = encoder.input_shape
-            self.encoder_output_shape = encoder.output_shape
-            self.decoder_input_shape = decoder.input_shape
-            self.decoder_output_shape = decoder.output_shape
+        self.autoencoder_input_shape = input_autoencoder_shape
+        self.autoencoder_output_shape = output_autoencoder_shape
+        self.encoder_input_shape = input_encoder_shape
+        self.encoder_output_shape = output_encoder_shape
+        self.decoder_input_shape = input_decoder_shape
+        self.decoder_output_shape = output_decoder_shape
 
-    """
-     Compile the model before training
-    """
     def compile(self, loss="binary_crossentropy", optimizer="adam"):
         self.autoencoder.compile(optimizer=optimizer, loss=loss)
         self.is_compiled = True
@@ -303,9 +289,7 @@ class AE(AEBase):
     ### Naming conventions
     ###
     ### ====================================================================
-    """
-     Naming conventions of filenames
-    """
+
     def generate_naming_conventions(self, model_name, output_dir):
 
         autoencoder_filename = os.path.join(output_dir, model_name + "_autoencoder.h5")

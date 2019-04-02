@@ -1,6 +1,6 @@
 """
 
- process_your_images.py (author: Anson Wong / git: ankonzoid)
+ process_images.py (author: Anson Wong / git: ankonzoid)
 
  Process your images in the `input` directory using any of the following techniques.
  The results

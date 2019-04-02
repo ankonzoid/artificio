@@ -2,7 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artificio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artificio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_your_images/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/process_your_images/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_your_images/process_your_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_your_images/process_your_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrape_google_images/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/scrape_google_images/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/coverart/coverart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/coverart/coverart.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/asparagus1_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/asparagus1_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/asparagus2_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/asparagus2_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/asparagus3_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/asparagus3_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/asparagus4_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/asparagus4_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/asparagus5_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/asparagus5_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/asparagus6_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/asparagus6_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/burger1_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/burger1_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/burger2_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/burger2_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/burger3_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/burger3_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/burger4_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/burger4_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/burger5_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/burger5_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/burger6_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/burger6_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/fries1_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/fries1_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/fries2_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/fries2_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/fries3_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/fries3_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/fries4_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/fries4_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/fries5_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/fries5_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/fries6_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/fries6_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/potato1_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/potato1_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/potato2_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/potato2_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/potato3_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/potato3_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/potato4_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/potato4_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/potato5_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/potato5_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/potato6_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/potato6_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/salad1_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/salad1_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/salad2_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/salad2_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/salad3_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/salad3_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/salad4_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/salad4_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/salad5_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/salad5_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/salad6_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/salad6_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/steak1_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/steak1_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/steak2_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/steak2_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/steak3_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/steak3_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/steak4_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/steak4_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/steak5_resized.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/steak5_resized.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/db/steak6_resized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/db/steak6_resized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/models/convAE_autoencoder.h5" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_autoencoder.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/models/convAE_decoder.h5" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_decoder.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/models/convAE_encoder.h5" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_encoder.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/models/convAE_plot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_plot.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/models/convAE_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/models/convAE_report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/output/result_asparagus_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/result_asparagus_test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/output/result_burger_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/result_burger_test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/output/result_salad_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/result_salad_test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/similar_images_AE.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/similar_images_AE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/src/autoencoders/AE.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/src/models/AE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/src/autoencoders/AE_base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/src/clustering/KNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/src/models/KNN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/src/utilities/image_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/src/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/src/utilities/plot_utilities.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/src/utilities/sorting.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/test/asparagus_test.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/test/asparagus_test.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/test/burger_test.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/test/burger_test.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_AE/test/salad_test.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/test/salad_test.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_TL/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/similar_images_TL/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_TL/src/kNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_images_TL/src/models/kNN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_TL/src/tSNE.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_images_TL/src/models/tSNE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similar_images_TL/src/vgg19.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_images_TL/src/models/vgg19.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,14 +79,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/similar_image_retrieval/src/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/similar_images_TL/src/imagenet_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/similar_images_TL/src/plot_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/similar_images_TL/src/sort_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="245">
-                <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/process_your_images/process_your_images.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+              <folding>
+                <element signature="e#621#630#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,10 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/image_rec/algo/utilities/plot_utilities.py" />
-        <option value="$PROJECT_DIR$/image_rec/algo/utilities/image_utilities.py" />
-        <option value="$PROJECT_DIR$/image_rec/image_rec.py" />
-        <option value="$PROJECT_DIR$/image_rec/README.md" />
         <option value="$PROJECT_DIR$/timeseries_prediction/RNN_timeseries.py" />
         <option value="$PROJECT_DIR$/rnn_timeseries/rnn_timeseries.py" />
         <option value="$PROJECT_DIR$/similar_img_rec/similar_img_rec.py" />
@@ -94,9 +193,7 @@
         <option value="$PROJECT_DIR$/similar_images_TL/src/kNN.py" />
         <option value="$PROJECT_DIR$/similar_images_TL/src/plot_utils.py" />
         <option value="$PROJECT_DIR$/similar_images_AE/src/utilities/plot_utilities.py" />
-        <option value="$PROJECT_DIR$/similar_images_AE/README.md" />
         <option value="$PROJECT_DIR$/similar_images_TL/similar_images_TL.py" />
-        <option value="$PROJECT_DIR$/similar_images_TL/README.md" />
         <option value="$PROJECT_DIR$/scrape_google_images/scrape_google_images.py" />
         <option value="$PROJECT_DIR$/process_your_images/src/utils.py" />
         <option value="$PROJECT_DIR$/process_your_images/src/read_img_utils.py" />
@@ -104,11 +201,19 @@
         <option value="$PROJECT_DIR$/process_your_images/src/img2greyscale.py" />
         <option value="$PROJECT_DIR$/process_your_images/src/img2kmeans.py" />
         <option value="$PROJECT_DIR$/process_your_images/src/img2edges.py" />
-        <option value="$PROJECT_DIR$/process_your_images/process_your_images.py" />
-        <option value="$PROJECT_DIR$/scrape_google_images/README.md" />
-        <option value="$PROJECT_DIR$/process_your_images/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/similar_images_AE/README.md" />
+        <option value="$PROJECT_DIR$/scrape_google_images/README.md" />
+        <option value="$PROJECT_DIR$/process_your_images/README.md" />
+        <option value="$PROJECT_DIR$/similar_images_TL/README.md" />
+        <option value="$PROJECT_DIR$/similar_images_AE/src/autoencoders/AE.py" />
+        <option value="$PROJECT_DIR$/similar_images_AE/src/models/AE.py" />
+        <option value="$PROJECT_DIR$/similar_images_AE/src/utilities/image_utilities.py" />
+        <option value="$PROJECT_DIR$/similar_images_AE/src/plot_utilities.py" />
+        <option value="$PROJECT_DIR$/similar_images_AE/src/sorting.py" />
+        <option value="$PROJECT_DIR$/similar_images_AE/src/utils.py" />
+        <option value="$PROJECT_DIR$/process_your_images/process_your_images.py" />
       </list>
     </option>
   </component>
@@ -138,12 +243,35 @@
             <path>
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="process_your_images" type="462c0819:PsiDirectoryNode" />
+              <item name="coverart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="process_your_images" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="process_your_images" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
               <item name="scrape_google_images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="similar_images_AE" type="462c0819:PsiDirectoryNode" />
+              <item name="similar_image_retrieval" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="artificio" type="462c0819:PsiDirectoryNode" />
+              <item name="similar_images_TL" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -171,11 +299,11 @@
       <recent name="$PROJECT_DIR$/sim_img_TL" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/sim_img_AE" />
-      <recent name="$PROJECT_DIR$/similar_images_TL/src" />
       <recent name="$PROJECT_DIR$/similar_images_TL" />
-      <recent name="$PROJECT_DIR$/similar_img_finder_TL/src" />
-      <recent name="$PROJECT_DIR$/similar_img_finder_TL" />
+      <recent name="$PROJECT_DIR$/similar_image_retrieval" />
+      <recent name="$PROJECT_DIR$/similar_images_TL/src/models" />
+      <recent name="$PROJECT_DIR$/similar_images_AE/output" />
+      <recent name="$PROJECT_DIR$/similar_images_AE/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -203,7 +331,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process_your_images/process_your_images.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process_your_images/process_images.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -594,7 +722,7 @@
     <frame x="0" y="23" width="1280" height="721" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2835218" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19709209" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -606,7 +734,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32750398" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.14308426" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -648,14 +776,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/image_rec/algo/utilities/plot_utilities.py" />
-    <entry file="file://$PROJECT_DIR$/image_rec/algo/utilities/image_utilities.py" />
-    <entry file="file://$PROJECT_DIR$/image_rec/algo/autoencoders/AE.py" />
-    <entry file="file://$PROJECT_DIR$/image_rec/image_rec.py" />
-    <entry file="file://$PROJECT_DIR$/image_rec/README.md" />
-    <entry file="file://$PROJECT_DIR$/rnn_timeseries/rnn_timeseries.py" />
-    <entry file="file://$PROJECT_DIR$/similar_img_finder_AE/similar_img_rec.py" />
-    <entry file="file://$PROJECT_DIR$/similar_img_finder_AE/README.md" />
     <entry file="file://$PROJECT_DIR$/similar_img_finder_TL/VGG_features_arbitrary.py" />
     <entry file="file://$PROJECT_DIR$/similar_img_finder_TL/src/LICENSE" />
     <entry file="file://$PROJECT_DIR$/similar_img_finder_TL/ResNet_classifier.py" />
@@ -684,13 +804,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rnn_timeseries/README.md" />
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/imagenet_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/matplotlib/backends/backend_agg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -698,24 +811,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/tSNE.py">
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/models/tSNE.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/kNN.py">
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/models/kNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/sort_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-783">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -726,39 +832,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_AE/src/utilities/plot_utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/plot_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_AE/similar_images_AE.py">
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/similar_images_AE.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="78" column="29" lean-forward="true" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_AE/README.md" />
     <entry file="file://$PROJECT_DIR$/similar_images_TL/similar_images_TL.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="100" column="44" lean-forward="true" selection-start-line="100" selection-start-column="44" selection-end-line="100" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -815,16 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_your_images/process_your_images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding>
-            <element signature="e#621#630#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_your_images/coverart/coverart.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -832,13 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-768">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape_google_images/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="37" column="119" selection-start-line="37" selection-start-column="119" selection-end-line="37" selection-end-column="119" />
         </state>
       </provider>
     </entry>
@@ -856,10 +923,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/coverart/coverart.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape_google_images/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="114">
+            <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="37" column="119" selection-start-line="37" selection-start-column="119" selection-end-line="37" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/process_your_images/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="101">
+            <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          </first_editor>
           <second_editor />
         </state>
       </provider>
@@ -869,14 +956,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/coverart/coverart.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="245">
-            <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <first_editor relative-caret-position="318">
+            <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           </first_editor>
           <second_editor />
         </state>
@@ -884,6 +968,123 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="21" column="113" selection-start-line="21" selection-start-column="113" selection-end-line="21" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="171">
+            <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/models/vgg19.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/output/result_salad_test.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/output/result_burger_test.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/output/result_asparagus_test.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_AE/src/models/AE_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/src/models/AE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <folding>
+            <element signature="e#108#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/src/models/KNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_AE/src/plot_utilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_AE/src/sorting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/src/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/imagenet_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/plot_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="25" selection-start-column="25" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/similar_images_TL/src/sort_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_your_images/process_your_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding>
+            <element signature="e#621#630#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

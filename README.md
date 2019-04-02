@@ -2,21 +2,21 @@
 
 We provide here a suite of deep learning computer vision algorithms that are ready for real-world use:
 
-### [Similar Image Finder (using Transfer Learning)](https://github.com/ankonzoid/artificio/tree/master/similar_images_TL)
+### [Similar Image Retrieval (using Transfer Learning)](similar_images_TL)
 
 <p align="center"> 
 <img src="similar_images_TL/output/rec/burger_test_rec.png" width="35%">
 <img src="similar_images_TL/coverart/coverart.jpg" width="35%">
 </p>
 
-### [Similar Image Finder (using Autoencoders)](https://github.com/ankonzoid/artificio/tree/master/similar_images_AE)
+### [Similar Image Retrieval (using Autoencoders)](similar_image_retrieval)
 
 <p align="center"> 
 <img src="similar_images_AE/output/result_burger_test.png" width="35%">
 <img src="similar_images_AE/coverart/coverart.jpg" width="35%">
 </p>
 
-### [Image Processing Tools](https://github.com/ankonzoid/artificio/tree/master/process_images)
+### [Image Processing Tools](process_images)
 
 <p align="center"> 
 <img src="process_images/coverart/coverart.jpg" width="75%">

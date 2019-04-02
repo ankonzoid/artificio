@@ -3,14 +3,16 @@
 Google images scraper for downloading the top _k_ images of your choice given query text (written in Python).
 
 <p align="center">
-<img src="https://github.com/ankonzoid/artificio/blob/master/scrape_google_images/coverart/coverart.jpg" width="80%">
+<img src="coverart/coverart.jpg" width="80%">
 </p>
 
 ### Example usage
 
-Running
+Run
 
-> python3 scrape_google_images.py
+```
+python3 scrape_google_images.py
+```
 
 with parameters
 
@@ -35,7 +37,7 @@ Querying Google Images for 'drake'  ->  saving top 5 images into 'output'
 with the scraped images saved to the `output` directory.
 
 <p align="center">
-<img src="https://github.com/ankonzoid/artificio/blob/master/scrape_google_images/coverart/drake_examples.jpg" width="90%">
+<img src="coverart/drake_examples.jpg" width="90%">
 </p>
 
 ### Libraries
