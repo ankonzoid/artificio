@@ -22,7 +22,7 @@ We provide here a suite of deep learning computer vision algorithms that are rea
 <img src="process_images/coverart/coverart.jpg" width="75%">
 </p>
 
-### [Google Images Scraper](https://github.com/ankonzoid/artificio/tree/master/scrape_google_images)
+### [Google Images Scraper](scrape_google_images)
 
 <p align="center"> 
 <img src="scrape_google_images/coverart/coverart.jpg" width="50%">
