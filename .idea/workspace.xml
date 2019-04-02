@@ -1,108 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/coverart/coverart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/coverart/AE.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_autoencoder.h5" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/AE/models/convAE_autoencoder.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_decoder.h5" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/AE/models/convAE_decoder.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_encoder.h5" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/AE/models/convAE_encoder.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_plot.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/AE/models/convAE_plot.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/AE/models/convAE_plot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/output/models/convAE_report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/AE/models/convAE_report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/output/result_asparagus_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/AE/result_asparagus_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/output/result_burger_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/AE/result_burger_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_image_retrieval/output/result_salad_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/AE/result_salad_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/similar_images_TL/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/coverart/coverart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/coverart/TL.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/asparagus1_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/asparagus2_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/asparagus3_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/asparagus4_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/asparagus5_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/asparagus6_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/asparagus_test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/burger1_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/burger2_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/burger3_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/burger4_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/burger5_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/burger6_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/burger_test.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/fries1_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/fries2_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/fries3_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/fries4_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/fries5_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/fries6_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/potato1_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/potato2_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/potato3_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/potato4_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/potato5_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/potato6_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/salad1_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/salad2_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/salad3_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/salad4_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/salad5_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/salad6_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/salad_test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/steak1_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/steak2_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/steak3_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/steak4_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/steak5_resized.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/db/steak6_resized.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/asparagus1_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/asparagus1_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/asparagus2_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/asparagus2_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/asparagus3_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/asparagus3_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/asparagus4_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/asparagus4_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/asparagus5_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/asparagus5_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/asparagus6_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/asparagus6_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/asparagus_test_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/asparagus_test_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/burger1_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/burger1_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/burger2_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/burger2_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/burger3_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/burger3_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/burger4_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/burger4_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/burger5_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/burger5_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/burger6_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/burger6_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/burger_test_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/burger_test_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/fries1_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/fries1_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/fries2_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/fries2_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/fries3_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/fries3_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/fries4_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/fries4_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/fries5_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/fries5_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/fries6_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/fries6_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/potato1_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/potato1_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/potato2_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/potato2_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/potato3_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/potato3_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/potato4_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/potato4_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/potato5_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/potato5_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/potato6_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/potato6_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/salad1_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/salad1_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/salad2_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/salad2_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/salad3_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/salad3_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/salad4_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/salad4_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/salad5_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/salad5_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/salad6_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/salad6_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/salad_test_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/salad_test_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/steak1_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/steak1_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/steak2_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/steak2_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/steak3_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/steak3_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/steak4_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/steak4_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/steak5_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/steak5_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/rec/steak6_resized_rec.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/rec/steak6_resized_rec.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/tsne.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/tsne.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/output/tsne.png" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/output/TL/tsne.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/src/imagenet_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/src/imagenet_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/src/models/kNN.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/src/models/tSNE.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/src/models/tSNE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/src/models/vgg19.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/src/models/vgg19.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/src/plot_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/src/plot_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similar_images_TL/src/sort_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/similar_image_retrieval/src/sort_utils.py" afterDir="false" />
-    </list>
+    <list default="true" id="31d7fa95-a27c-4535-954b-4aa63c8a3b21" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,13 +11,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/similar_image_retrieval/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="437">
-                <caret line="136" column="10" selection-start-line="136" selection-start-column="10" selection-end-line="136" selection-end-column="10" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/similar_image_retrieval/similar_images_TL.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -268,37 +164,13 @@
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
               <item name="similar_image_retrieval" type="462c0819:PsiDirectoryNode" />
-              <item name="coverart" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="similar_image_retrieval" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
               <item name="artificio" type="462c0819:PsiDirectoryNode" />
               <item name="similar_image_retrieval" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="similar_image_retrieval" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="similar_image_retrieval" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artificio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artificio" type="462c0819:PsiDirectoryNode" />
-              <item name="similar_images_TL" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -326,11 +198,11 @@
       <recent name="$PROJECT_DIR$/sim_img_TL" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/similar_image_retrieval" />
+      <recent name="$PROJECT_DIR$/similar_image_retrieval/coverart" />
       <recent name="$PROJECT_DIR$/similar_image_retrieval/src" />
       <recent name="$PROJECT_DIR$/similar_image_retrieval/src/models" />
       <recent name="$PROJECT_DIR$/similar_image_retrieval/output/TL" />
-      <recent name="$PROJECT_DIR$/similar_image_retrieval/output/AE" />
-      <recent name="$PROJECT_DIR$/similar_image_retrieval/coverart" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -747,7 +619,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="721" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19709209" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1004,13 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_images_TL/similar_images_TL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1119">
-          <caret line="100" column="44" selection-start-line="100" selection-start-column="44" selection-end-line="100" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/similar_image_retrieval/similar_images_AE.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5018">
@@ -1090,6 +954,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="209">
+            <caret line="124" column="32" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/similar_images_TL/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1103,13 +977,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="437">
-            <caret line="136" column="10" selection-start-line="136" selection-start-column="10" selection-end-line="136" selection-end-column="10" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/similar_image_retrieval/similar_images_TL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>
