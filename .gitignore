@@ -1,0 +1,14 @@
+/target/
+.settings/org.scala*
+*.log
+.cache*
+.idea
+*.iml
+log.txt
+.DS_Store
+*.pyc
+__pycache__/
+*.swp
+*.swo
+.ipynb_checkpoints/
+*.pyc
