@@ -1,6 +1,6 @@
 """
 
- cv_plot_utils.py  (author: Anson Wong / git: ankonzoid)
+ CV_plot_utils.py  (author: Anson Wong / git: ankonzoid)
 
 """
 import numpy as np
@@ -90,7 +90,7 @@ def plot_tsne(X, imgs, outFile):
     plt.close()
 
 # Plot
-def plot_save_reconstruction(x_data_test, img_shape, dictfn, n_plot=10):
+def plot_save_reconstruction(x_data_test, img_shape, n_plot=10):
 
     ypixels = img_shape[0]
     xpixels = img_shape[1]

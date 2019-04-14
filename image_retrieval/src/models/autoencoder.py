@@ -1,210 +1,89 @@
 """
 
- AE.py  (author: Anson Wong / git: ankonzoid)
-
- Auto-encoder class (FC & Conv)
+ autoencoder.py  (author: Anson Wong / git: ankonzoid)
 
 """
-import datetime, os, platform, time
+import numpy as np
+import tensorflow as tf
+from src.utils import split
 
-from keras.layers import Input, Dense
-from keras.layers import Conv2D, MaxPooling2D, UpSampling2D
-from keras.models import Model, load_model
+class AutoEncoder():
 
-class AE():
-
-    def __init__(self):
-        # For model architecture and weights (used for load/save)
+    def __init__(self, modelName, info):
+        self.modelName = modelName
+        self.info = info
         self.autoencoder = None
-        self.autoencoder_input_shape = None
-        self.autoencoder_output_shape = None
-
         self.encoder = None
-        self.encoder_input_shape = None
-        self.encoder_output_shape = None
-
         self.decoder = None
-        self.decoder_input_shape = None
-        self.decoder_output_shape = None
 
-        # Some sanity parameters to be used in the middle of the run
-        self.is_compiled = None
-
-        # Encoding/decoding functions
-        self.encode = None
-        self.decode = None
-        self.encoder_decode = None
-
-        # Report text
-        self.start_time = None
-        self.current_time = None
-
-        # ======================================
-        # Parameters for architecture
-        # ======================================
-        self.model_name = None
-
-        super().__init__()
-
-    """
-     Train the autoencoder
-    """
-    def train(self, x_train, x_test, n_epochs=50, batch_size=256):
-        self.autoencoder.fit(x_train, x_train,
+    # Train
+    def fit(self, X, n_epochs=50, batch_size=256):
+        indices_fracs = split(fracs=[0.9, 0.1], N=len(X), seed=0)
+        X_train, X_valid = X[indices_fracs[0]], X[indices_fracs[1]]
+        self.autoencoder.fit(X_train, X_train,
                              epochs = n_epochs,
                              batch_size = batch_size,
                              shuffle = True,
-                             validation_data = (x_test, x_test))
+                             validation_data = (X_valid, X_valid))
 
-    """
-     Encode the image (using trained encoder)
-    """
-    def encode(self, img):
-        if not self.is_compiled:
-            raise Exception("Not compiled yet!")
-        x_encoded = self.encoder.predict(img)
-        return x_encoded
+    # Inference
+    def predict(self, X):
+        return self.encoder.predict(X)
 
-    """
-     Decode the encoded image (using trained decoder)
-    """
-    def decode(self, x_encoded):
-        if not self.is_compiled:
-            raise Exception("Not compiled yet!")
-        img_decoded = self.decoder.predict(x_encoded)
-        return img_decoded
+    # Set neural network architecture
+    def set_arch(self):
 
-    """
-     Encode then decode 
-    """
-    def encode_decode(self, img):
-        if not self.is_compiled:
-            raise Exception("Not compiled yet!")
-        x_encoded = self.encoder.predict(img)
-        img_decoded = self.decoder.predict(x_encoded)
-        return img_decoded
+        shape_img = self.info["shape_img"]
+        shape_img_flattened = (np.prod(list(shape_img)),)
 
-    """
-     Load model architecture and weights of autoencoder, encoder, and decoded
-    """
-    def load_model(self, dictfn):
+        # Set encoder and decoder graphs
+        if self.modelName == "simpleAE":
+            encode_dim = 128
 
-        print("Loading models...")
-        # Set model filenames
-        autoencoder_filename = dictfn["autoencoder_filename"]
-        encoder_filename = dictfn["encoder_filename"]
-        decoder_filename = dictfn["decoder_filename"]
+            input_img = tf.keras.Input(shape=shape_img_flattened)
+            encoded = tf.keras.layers.Dense(encode_dim, activation='relu')(input_img)
 
-        # Load autoencoder architecture + weights + shapes
-        self.autoencoder = load_model(autoencoder_filename)
-        self.autoencoder_input_shape = self.autoencoder.input_shape  # set input shape from loaded model
-        self.autoencoder_output_shape = self.autoencoder.output_shape  # set output shape from loaded model
+            decoded = tf.keras.layers.Dense(shape_img_flattened[0], activation='sigmoid')(encoded)
 
-        # Load encoder architecture + weights + shapes
-        self.encoder = load_model(encoder_filename)
-        self.encoder_input_shape = self.encoder.input_shape  # set input shape from loaded model
-        self.encoder_output_shape = self.encoder.output_shape  # set output shape from loaded model
+        elif self.modelName == "convAE":
+            n_hidden_1, n_hidden_2, n_hidden_3 = 16, 8, 8
+            convkernel = (3, 3)  # convolution kernel
+            poolkernel = (2, 2)  # pooling kernel
 
-        # Load decoder architecture + weights + shapes
-        self.decoder = load_model(decoder_filename)
-        self.decoder_input_shape = self.decoder.input_shape  # set input shape from loaded model
-        self.decoder_output_shape = self.decoder.output_shape  # set output shape from loaded model
+            input_img = tf.keras.layers.Input(shape=shape_img)
+            x = tf.keras.layers.Conv2D(n_hidden_1, convkernel, activation='relu', padding='same')(input_img)
+            x = tf.keras.layers.MaxPooling2D(poolkernel, padding='same')(x)
+            x = tf.keras.layers.Conv2D(n_hidden_2, convkernel, activation='relu', padding='same')(x)
+            x = tf.keras.layers.MaxPooling2D(poolkernel, padding='same')(x)
+            x = tf.keras.layers.Conv2D(n_hidden_3, convkernel, activation='relu', padding='same')(x)
+            encoded = tf.keras.layers.MaxPooling2D(poolkernel, padding='same')(x)
 
-    """
-     Save model architecture and weights to file
-    """
-    def save_model(self, dictfn):
-        print("Saving models...")
-        self.autoencoder.save(dictfn["autoencoder_filename"])
-        self.encoder.save(dictfn["encoder_filename"])
-        self.decoder.save(dictfn["decoder_filename"])
-
-    """
-     Set name
-    """
-    def configure(self, model_name=None):
-        self.model_name = model_name
-
-    """
-     Set neural network architecture
-    """
-    def set_arch(self, input_shape=None, output_shape=None):
-
-        ###
-        ### Create layers based on model name
-        ###
-
-        if self.model_name == "simpleAE":
-
-            encode_dim = 128  # only single hidden layer
-
-            ### Encoding hidden layers ###
-            input_img = Input(shape=input_shape)
-            encoded = Dense(encode_dim, activation='relu')(input_img)
-
-            ### Decoding hidden layers ###
-            decoded = Dense(output_shape[0], activation='sigmoid')(encoded)
-
-        elif self.model_name == "convAE":
-
-            n_hidden_1 = 16  # 1st hidden layer
-            n_hidden_2 = 8  # 2nd hidden layer
-            n_hidden_3 = 8  # 3rd hidden layer
-
-            convkernel = (3, 3)  # convolution (uses filters): n_filters_1 -> n_filters_2
-            poolkernel = (2, 2)  # pooling (down/up samples image): ypix -> ypix/ypoolkernel, xpix -> xpix/ypoolkernel
-
-            ### Encoding hidden layers ###
-            input_img = Input(shape=input_shape)  # input layer (ypixels, xpixels, n_channels)
-            x = Conv2D(n_hidden_1, convkernel, activation='relu', padding='same')(input_img)
-            x = MaxPooling2D(poolkernel, padding='same')(x)
-            x = Conv2D(n_hidden_2, convkernel, activation='relu', padding='same')(x)
-            x = MaxPooling2D(poolkernel, padding='same')(x)
-            x = Conv2D(n_hidden_3, convkernel, activation='relu', padding='same')(x)
-            encoded = MaxPooling2D(poolkernel, padding='same')(x)  # encoding layer
-
-            ### Decoding hidden layers ###
-            x = Conv2D(n_hidden_3, convkernel, activation='relu', padding='same')(encoded)
-            x = UpSampling2D(poolkernel)(x)
-            x = Conv2D(n_hidden_2, convkernel, activation='relu', padding='same')(x)
-            x = UpSampling2D(poolkernel)(x)
-            x = Conv2D(n_hidden_1, convkernel, activation='relu')(x)
-            x = UpSampling2D(poolkernel)(x)
-            decoded = Conv2D(output_shape[2], convkernel, activation='sigmoid', padding='same')(x)  # output layer
+            x = tf.keras.layers.Conv2D(n_hidden_3, convkernel, activation='relu', padding='same')(encoded)
+            x = tf.keras.layers.UpSampling2D(poolkernel)(x)
+            x = tf.keras.layers.Conv2D(n_hidden_2, convkernel, activation='relu', padding='same')(x)
+            x = tf.keras.layers.UpSampling2D(poolkernel)(x)
+            x = tf.keras.layers.Conv2D(n_hidden_1, convkernel, activation='relu')(x)
+            x = tf.keras.layers.UpSampling2D(poolkernel)(x)
+            decoded = tf.keras.layers.Conv2D(shape_img[2], convkernel, activation='sigmoid', padding='same')(x)
 
         else:
             raise Exception("Invalid model name given!")
 
-
-        ###
-        ### Create models
-        ###
-
-        ### Create autoencoder model ###
-        autoencoder = Model(input_img, decoded)
-        print("\n\nautoencoder.summary():")
-        print(autoencoder.summary())
-
-        # Set encoder input/output dimensions
+        # Create autoencoder model
+        autoencoder = tf.keras.Model(input_img, decoded)
         input_autoencoder_shape = autoencoder.layers[0].input_shape[1:]
         output_autoencoder_shape = autoencoder.layers[-1].output_shape[1:]
 
-
-        ### Create encoder model ###
-        encoder = Model(input_img, encoded)  # set encoder
-        print("\n\nencoder.summary():")
-        print(encoder.summary())
-
-        # Set encoder input/output dimensions
+        # Create encoder model
+        encoder = tf.keras.Model(input_img, encoded)  # set encoder
         input_encoder_shape = encoder.layers[0].input_shape[1:]
         output_encoder_shape = encoder.layers[-1].output_shape[1:]
 
-
-        ### Create decoder model ###
-        decoded_input = Input(shape=output_encoder_shape)
-        if self.model_name == 'simpleAE':
+        # Create decoder model
+        decoded_input = tf.keras.Input(shape=output_encoder_shape)
+        if self.modelName == 'simpleAE':
             decoded_output = autoencoder.layers[-1](decoded_input)  # single layer
-        elif self.model_name == 'convAE':
+        elif self.modelName == 'convAE':
             decoded_output = autoencoder.layers[-7](decoded_input)  # Conv2D
             decoded_output = autoencoder.layers[-6](decoded_output)  # UpSampling2D
             decoded_output = autoencoder.layers[-5](decoded_output)  # Conv2D
@@ -214,127 +93,46 @@ class AE():
             decoded_output = autoencoder.layers[-1](decoded_output)  # Conv2D
         else:
             raise Exception("Invalid model name given!")
-        decoder = Model(decoded_input, decoded_output)
-        print("\n\ndecoder.summary():")
+        decoder = tf.keras.Model(decoded_input, decoded_output)
+        decoder_input_shape = decoder.layers[0].input_shape[1:]
+        decoder_output_shape = decoder.layers[-1].output_shape[1:]
+
+        # Generate summaries
+        print("\nautoencoder.summary():")
+        print(autoencoder.summary())
+        print("\nencoder.summary():")
+        print(encoder.summary())
+        print("\ndecoder.summary():")
         print(decoder.summary())
 
-        # Set encoder input/output dimensions
-        input_decoder_shape = decoder.layers[0].input_shape[1:]
-        output_decoder_shape = decoder.layers[-1].output_shape[1:]
+        # Assign models
+        self.autoencoder = autoencoder
+        self.encoder = encoder
+        self.decoder = decoder
 
-
-        ###
-        ### Assign models
-        ###
-
-        self.autoencoder = autoencoder  # untrained
-        self.encoder = encoder  # untrained
-        self.decoder = decoder  # untrained
-
-        # Set model input/output dimensions
+        # Extract model input + output dimensions
         self.autoencoder_input_shape = input_autoencoder_shape
         self.autoencoder_output_shape = output_autoencoder_shape
         self.encoder_input_shape = input_encoder_shape
         self.encoder_output_shape = output_encoder_shape
-        self.decoder_input_shape = input_decoder_shape
-        self.decoder_output_shape = output_decoder_shape
+        self.decoder_input_shape = decoder_input_shape
+        self.decoder_output_shape = decoder_output_shape
 
+    # Compile
     def compile(self, loss="binary_crossentropy", optimizer="adam"):
         self.autoencoder.compile(optimizer=optimizer, loss=loss)
-        self.is_compiled = True
 
-    def generate_naming_conventions(self, model_name, output_dir):
+    # Load model architecture and weights
+    def load_models(self):
+        print("Loading models...")
+        self.autoencoder = tf.keras.models.load_model(self.info["autoencoderFile"])
+        self.encoder = tf.keras.models.load_model(self.info["encoderFile"])
+        self.decoder = tf.keras.models.load_model(self.info["decoderFile"])
+        self.compile()
 
-        autoencoder_filename = os.path.join(output_dir, model_name + "_autoencoder.h5")
-        encoder_filename = os.path.join(output_dir, model_name + "_encoder.h5")
-        decoder_filename = os.path.join(output_dir, model_name + "_decoder.h5")
-        plot_filename_pdf = os.path.join(output_dir, model_name + "_plot.pdf")
-        plot_filename_png = os.path.join(output_dir, model_name + "_plot.png")
-        report_filename = os.path.join(output_dir, model_name + "_report.txt")
-
-        dictfn = {
-            "autoencoder_filename": autoencoder_filename,
-            "encoder_filename": encoder_filename,
-            "decoder_filename": decoder_filename,
-            "plot_filename_pdf": plot_filename_pdf,
-            "plot_filename_png": plot_filename_png,
-            "report_filename": report_filename
-        }
-
-        return dictfn
-
-    """
-     Clean start the report
-    """
-    def start_report(self, dictfn):
-        report_filename = dictfn["report_filename"]
-        self.start_time = time.time()
-        self.current_time = self.start_time
-
-        # Start report
-        report = open(report_filename, "w")
-        report.write(datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y"))
-        report.write("\n\n")
-        report.write("Start time = {0}\n".format(0))
-        report.write("\n")
-        report.write("  platform: {0}\n".format(platform.machine()))
-        report.write("  version: {0}\n".format(platform.version()))
-        report.write("  system: {0}\n".format(platform.system()))
-        report.write("  processor: {0}\n".format(platform.processor()))
-        report.write("\n")
-        report.write("  autoencoder_filename: {0}\n".format(dictfn["autoencoder_filename"]))
-        report.write("  encoder_filename: {0}\n".format(dictfn["encoder_filename"]))
-        report.write("  decoder_filename: {0}\n".format(dictfn["decoder_filename"]))
-        report.write("  plot_filename_png: {0}\n".format(dictfn["plot_filename_png"]))
-        report.write("  plot_filename_pdf: {0}\n".format(dictfn["plot_filename_pdf"]))
-        report.write("  report_filename: {0}".format(dictfn["report_filename"]))
-        report.close()
-
-    """
-     Append architecture to report
-    """
-    def append_arch_report(self, dictfn):
-        report_filename = dictfn["report_filename"]
-        if self.start_time == None or self.current_time == None:
-            raise Exception("Start report before appending!")
-
-        report = open(report_filename, "a")  # append report
-        report.write("\n\n")
-        report.write("  autoencoder_input_shape: {0}\n".format(self.autoencoder_input_shape))
-        report.write("  autoencoder_output_shape: {0}\n".format(self.autoencoder_output_shape))
-        for i in range(len(self.autoencoder.layers)):
-            report.write("    autoencoder.layers[{0}]: input={1}, output={2}\n".format(i,
-                self.autoencoder.layers[i].input_shape[1:],
-                self.autoencoder.layers[i].output_shape[1:]))
-        report.write("\n")
-
-        report.write("  encoder_input_shape: {0}\n".format(self.encoder_input_shape))
-        report.write("  encoder_output_shape: {0}\n".format(self.encoder_output_shape))
-        for i in range(len(self.encoder.layers)):
-            report.write("    encoder.layers[{0}]: input={1}, output={2}\n".format(i,
-                self.encoder.layers[i].input_shape[1:],
-                self.encoder.layers[i].output_shape[1:]))
-        report.write("\n")
-
-        report.write("  decoder_input_shape: {0}\n".format(self.decoder_input_shape))
-        report.write("  decoder_output_shape: {0}\n".format(self.decoder_output_shape))
-        for i in range(len(self.decoder.layers)):
-            report.write("    decoder.layers[{0}]: input={1}, output={2}\n".format(i,
-                self.decoder.layers[i].input_shape[1:],
-                self.decoder.layers[i].output_shape[1:]))
-
-        report.close()
-
-
-    """
-     Append custom message to report
-    """
-    def append_message_report(self, dictfn, custom_message):
-        report_filename = dictfn["report_filename"]
-        if self.start_time == None or self.current_time == None:
-            raise Exception("Start report before appending!")
-        self.current_time = time.time()  # record new current time
-
-        report = open(report_filename, "a")  # append report
-        report.write("\n{0} = {1}\n\n".format(custom_message, self.current_time - self.start_time))
-        report.close()
+    # Save model architecture and weights to file
+    def save_models(self):
+        print("Saving models...")
+        self.autoencoder.save(self.info["autoencoderFile"])
+        self.encoder.save(self.info["encoderFile"])
+        self.decoder.save(self.info["decoderFile"])

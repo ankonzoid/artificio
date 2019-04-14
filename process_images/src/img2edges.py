@@ -1,10 +1,5 @@
-"""
-
- img2edges.py  (author: Anson Wong / git: ankonzoid)
-
-"""
-import scipy.misc
 import numpy as np
+import skimage.io
 from PIL import Image
 import cv2
 
@@ -28,7 +23,7 @@ def img2edges(input_filename, output_filename):
     img_edges = edges_zeroed
 
     # Save
-    scipy.misc.imsave(output_filename, img_edges)
+    skimage.io.imsave(output_filename, img_edges)
 
 # edgedetect:
 def edgedetect(channel):

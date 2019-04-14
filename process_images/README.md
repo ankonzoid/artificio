@@ -51,6 +51,7 @@ python3 process_images.py
 * Pillow
 * matplotlib
 * opencv
+* skimage
 
 ### Authors
 

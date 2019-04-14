@@ -1,6 +1,6 @@
 """
 
- CV_io_utils.py  (author: Anson Wong / git: ankonzoid)
+ CV_IO_utils.py  (author: Anson Wong / git: ankonzoid)
 
 """
 import os

@@ -1,13 +1,7 @@
-"""
-
- img2kmeans.py  (author: Anson Wong / git: ankonzoid)
-
-"""
 import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.utils import shuffle
-
-import scipy.misc
+import skimage.io
 from PIL import Image
 
 def img2kmeans(input_filename, output_filename,
@@ -45,7 +39,7 @@ def img2kmeans(input_filename, output_filename,
     img_kmeans = recreate_image(cluster_colors, y_pred, w, h)
 
     # Save image
-    scipy.misc.imsave(output_filename, img_kmeans)
+    skimage.io.imsave(output_filename, img_kmeans)
 
 def choose_cluster_colors(model, custom_colors, sort=True):
 

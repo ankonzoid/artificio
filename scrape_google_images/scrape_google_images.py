@@ -5,20 +5,6 @@
  Scrapes the top k images from Google Images for a particular query.
 
 """
-def main():
-    query_text = "drake"  # google images query text
-    k = 5  # top k images will be scraped
-    output_dir = "output"  # output directory to save images
-    dt_wait = 1  # number of seconds to wait between image scrapes
-    scrape_google_images(query_text=query_text, k=k,
-                         output_dir=output_dir, dt_wait=dt_wait)
-
-
-# ***************************
-#
-# Functions
-#
-# ***************************
 from bs4 import BeautifulSoup
 import urllib.request as urllibreq
 import os, json, time
@@ -59,6 +45,9 @@ def scrape_google_images(query_text="deepmind",
         except Exception as error_message:
             print("  -> Failed download".format(image_url))
 
-# Driver
-if __name__ == '__main__':
-    main()
+query_text = "drake"  # google images query text
+k = 5  # top k images will be scraped
+output_dir = "output"  # output directory to save images
+dt_wait = 1  # number of seconds to wait between image scrapes
+scrape_google_images(query_text=query_text, k=k,
+                     output_dir=output_dir, dt_wait=dt_wait)

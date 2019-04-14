@@ -26,3 +26,7 @@ def resize_img(img, shape_resized):
     img_resized = resize(img, shape_resized, anti_aliasing=True)
     assert img_resized.shape == shape_resized
     return img_resized
+
+# Flatten image
+def flatten_img(img):
+    return img.flatten("C")

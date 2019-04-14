@@ -11,25 +11,17 @@ import os
 import numpy as np
 import tensorflow as tf
 from sklearn.neighbors import NearestNeighbors
-from image_retrieval.src.utils import makeDir
-from image_retrieval.src.CV_io_utils import read_imgs_dir
-from image_retrieval.src.CV_transform_utils import apply_transformer
-from image_retrieval.src.CV_transform_utils import normalize_img, resize_img
-from image_retrieval.src.CV_plot_utils import plot_query_retrieval, plot_tsne
+from src.models.autoencoder import AutoEncoder
+from src.utils import makeDir
+from src.CV_IO_utils import read_imgs_dir
+from src.CV_transform_utils import apply_transformer
+from src.CV_transform_utils import resize_img, normalize_img, flatten_img
+from src.CV_plot_utils import plot_query_retrieval, plot_tsne
 
 # Run mode
-modelName = "simpleAE"
-if modelName == "simpleAE": # autoencoder
-    trainModel = True
-
-elif modelName == "convAE": # autoencoder
-    trainModel = True
-
-elif modelName == "vgg19": # transfer learning
-    trainModel = False
-
-else:
-    raise Exception("modelName of '{}' given!".format(modelName))
+modelName = "vgg19" # simpleAE, convAE, vgg19
+trainModel = True
+saveModels = False
 
 # Make paths
 dataTrainPath = os.path.join(os.getcwd(), "data", "train")
@@ -42,15 +34,57 @@ print("Reading train images from '{}'...".format(dataTrainPath))
 imgs_train = read_imgs_dir(dataTrainPath, extensions, parallel=True)
 print("Reading test images from '{}'...".format(dataTestPath))
 imgs_test = read_imgs_dir(dataTestPath, extensions, parallel=True)
+shape_img = imgs_train[0].shape
+print("Image shape = {}".format(shape_img))
 
-# Load pre-trained VGG19 model + higher level layers
-print("Loading VGG19 pre-trained model...")
-model = tf.keras.applications.VGG19(weights='imagenet', include_top=False,
-                                    input_shape=(224, 224, 3))
-input_shape_model = tuple([int(x) for x in model.input.shape[1:]])
-output_shape_model = tuple([int(x) for x in model.output.shape[1:]])
+# Build models
+if modelName in ["simpleAE", "convAE"]:
 
-# Apply transformations
+    info = {
+        "shape_img": shape_img,
+        "autoencoderFile": os.path.join(outPath, "{}_autoecoder.h5".format(modelName)),
+        "encoderFile": os.path.join(outPath, "{}_encoder.h5".format(modelName)),
+        "decoderFile": os.path.join(outPath, "{}_decoder.h5".format(modelName)),
+    }
+
+    # Set up autoencoder base class
+    model = AutoEncoder(modelName, info)
+    model.set_arch()
+
+    if modelName == "simpleAE":
+        shape_img_resize = shape_img
+        input_shape_model = (model.encoder.input.shape[1],)
+        output_shape_model = (model.encoder.output.shape[1],)
+        n_epochs = 100
+    elif modelName == "convAE":
+        shape_img_resize = shape_img
+        input_shape_model = tuple([int(x) for x in model.encoder.input.shape[1:]])
+        output_shape_model = tuple([int(x) for x in model.encoder.output.shape[1:]])
+        n_epochs = 200
+    else:
+        raise Exception("Invalid modelName!")
+
+elif modelName in ["vgg19"]:
+
+    # Load pre-trained VGG19 model + higher level layers
+    print("Loading VGG19 pre-trained model...")
+    model = tf.keras.applications.VGG19(weights='imagenet', include_top=False,
+                                        input_shape=shape_img)
+    model.summary()
+
+    shape_img_resize = tuple([int(x) for x in model.input.shape[1:]])
+    input_shape_model = tuple([int(x) for x in model.input.shape[1:]])
+    output_shape_model = tuple([int(x) for x in model.output.shape[1:]])
+    n_epochs = None
+
+else:
+    raise Exception("Invalid modelName!")
+
+# Print some model info
+print("input_shape_model = {}".format(input_shape_model))
+print("output_shape_model = {}".format(output_shape_model))
+
+# Apply transformations to all images
 class ImageTransformer(object):
 
     def __init__(self, shape_resize):
@@ -61,28 +95,34 @@ class ImageTransformer(object):
         img_transformed = normalize_img(img_transformed)
         return img_transformed
 
-transformer = ImageTransformer(input_shape_model)
+transformer = ImageTransformer(shape_img_resize)
 print("Applying image transformer to training images...")
 imgs_train_transformed = apply_transformer(imgs_train, transformer, parallel=True)
 print("Applying image transformer to test images...")
 imgs_test_transformed = apply_transformer(imgs_test, transformer, parallel=True)
 
-# Convert images to data for neural nets
+# Convert images to numpy array
 X_train = np.array(imgs_train_transformed).reshape((-1,) + input_shape_model)
 X_test = np.array(imgs_test_transformed).reshape((-1,) + input_shape_model)
 print(" -> X_train.shape = {}".format(X_train.shape))
 print(" -> X_test.shape = {}".format(X_test.shape))
 
-# Train embedding model
-if trainModel:
-    model.fit(X_train)
+# Train (if necessary)
+if modelName in ["simpleAE", "convAE"]:
+    if trainModel:
+        model.compile(loss="binary_crossentropy", optimizer="adam")
+        model.fit(X_train, n_epochs=300, batch_size=256)
+        if saveModels:
+            model.save_models()
+    else:
+        model.load_models()
 
-# Create embeddings using pre-trained model
+# Create embeddings using model
 print("Inferencing embeddings using pre-trained model...")
 E_train = model.predict(X_train).reshape((-1, np.prod(list(output_shape_model))))
 E_test = model.predict(X_test).reshape((-1, np.prod(list(output_shape_model))))
-print(" -> EMB_train.shape = {}".format(E_train.shape))
-print(" -> EMB_test.shape = {}".format(E_test.shape))
+print(" -> E_train.shape = {}".format(E_train.shape))
+print(" -> E_test.shape = {}".format(E_test.shape))
 
 # Fit kNN model on training images
 print("Fitting k-nearest-neighbour model on training images...")

@@ -1,4 +1,4 @@
-# Similar images finder (using Autoencoders)
+# Image Retrieval (via Autoencoders & Transfer Learning)
 
 Given a set of query images and a set of store inventory images, we find the top-k similar inventory images that are the most 'similar' to the set of query images in an unsupervised way of training an autoencoder, then using its encoder to embed the images and perform kNN in to find 'similar' images. 
 

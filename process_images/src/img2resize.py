@@ -1,12 +1,7 @@
-"""
- convert_img2resize.py
-"""
-import numpy as np
-import scipy.misc
-from PIL import Image
+import skimage.io
+from skimage.transform import resize
 
 def img2resize(input_filename, output_filename, ypixels=100, xpixels=100):
-    img_pil = Image.open(input_filename)  # PIL object
-    img = np.asarray(img_pil)  # numpy array
-    img_resized = scipy.misc.imresize(img, (ypixels, xpixels))  # resize
-    scipy.misc.imsave(output_filename, img_resized)  # save
+    img = skimage.io.imread(input_filename, as_gray=False)
+    img_resized = resize(img, (ypixels, xpixels), anti_aliasing=True)
+    skimage.io.imsave(output_filename, img_resized)
