@@ -25,14 +25,17 @@ from src.img2edges import img2edges
 def process_your_images(settings, inPath, outPath):
 
     # Check input and output directories exist
-    if not os.path.isdir(inPath):
-        exit("err: could not find input directory '{}'".format(inPath))
-    if not os.path.isdir(outPath):
-        exit("err: could not find output directory '{}'".format(outPath))
+    if not os.path.exists(inPath):
+        os.makedirs(inPath)
+    if not os.path.exists(outPath):
+        os.makedirs(outPath)
 
     # Process each image in the input directory
     files_input_dir = os.listdir(inPath)
     n_files = len(files_input_dir)
+    if n_files == 0:
+        print("No input files found in input directory '{}'!".format(inPath))
+        exit()
     for i, file in enumerate(files_input_dir):  # extract local filenames
 
         # Consider only files that end with .jpg and .jpeg

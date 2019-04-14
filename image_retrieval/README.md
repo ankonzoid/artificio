@@ -64,7 +64,7 @@ Run
 python3 image_retrieval.py
 ```    
 
-after adjusting parameters (`simpleAE` is simple FC autoencoder, `convAE` is multi-layer convolutional autoencoder, `vgg19` is pre-trained VGG19)
+after adjusting parameters in `image_retrieval.py` to your purpose (`simpleAE` is simple FC autoencoder, `convAE` is multi-layer convolutional autoencoder, `vgg19` is pre-trained VGG19)
 
 ```
 modelName = "convAE"  # try: "simpleAE", "convAE", "vgg19"
@@ -72,7 +72,7 @@ trainModel = True
 saveModel = False
 ```
 
-in `image_retrieval.py` to your purpose. All retrieval visualizations can be found in the `output` directory.
+All retrieval visualizations can be found in the `output` directory.
 
 ### Example output
 
