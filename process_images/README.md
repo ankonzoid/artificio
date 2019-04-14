@@ -6,7 +6,7 @@
 
 Here we provide tools for you for processing your image dataset. All you need to do is place your .jpg or .jpeg images into the `input` directory, run the code, then pick up your processed images in the `output` directory.
 
-Currently we provide 4 processing techniques for you to apply to your images:
+Currently we provide 4 common image processing techniques:
 
 1) Greyscaling
 
@@ -17,10 +17,7 @@ Currently we provide 4 processing techniques for you to apply to your images:
 4) Edge detection (Gaussian blur + Sobel)
 
 
-
 ### Usage
-
-Run
 
 ```
 python3 process_images.py

@@ -8,8 +8,6 @@ Google images scraper for downloading the top _k_ images of your choice given qu
 
 ### Example usage
 
-Run
-
 ```
 python3 scrape_google_images.py
 ```
