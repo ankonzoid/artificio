@@ -10,19 +10,19 @@ We provide two unsupervised methods of doing this:
 <img src="coverart/TL_concept.jpg" width="60%">
 </p>
 
-2) **Training an autoencoder** (fully-connected or convolutional) on our database images to minimize the reconstruction loss. After sufficient training, we extract the encoder part of the autoencoder and use it during inference to generate flattened embeddings.
+2) **Training an Autoencoder (fully-connected or convolutional)** on our database images to minimize the reconstruction loss. After sufficient training, we extract the encoder part of the autoencoder and use it during inference to generate flattened embeddings.
 
 <p align="center"> 
 <img src="coverart/AE_concept.jpg" width="60%">
 </p>
 
 <p align="center"> 
-<img src="coverart/AE_reconstruction.png" width="60%">
+<img src="coverart/AE_reconstruction.png" width="80%">
 </p>
 
 We also provide visualizations of the image retrievals:
 
-1) Transfer learning
+1) **Transfer Learning**
 
 <p align="center"> 
 <img src="coverart/TL_rec_test_asparagus.png" width="50%">
@@ -36,7 +36,7 @@ We also provide visualizations of the image retrievals:
 <img src="coverart/TL_rec_test_burger.png" width="50%">
 </p>
 
-1) Autoencoders
+2) **Autoencoders**
 
 <p align="center"> 
 <img src="coverart/AE_rec_test_asparagus.png" width="50%">
