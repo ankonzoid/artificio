@@ -1,139 +1,105 @@
-# Image Retrieval (via Autoencoders & Transfer Learning)
+# Image Retrieval (via Autoencoders / Transfer Learning)
 
-Given a set of query images and a set of store inventory images, we find the top-k similar inventory images that are the most 'similar' to the set of query images in an unsupervised way of training an autoencoder, then using its encoder to embed the images and perform kNN in to find 'similar' images. 
+Given a set of query images and database images, we perform image retrieval on database images to get the top-k most similar database images using kNN on the image embeddings with cosine similarity as the distance metric. As an example, we provide 36 steakhouse food images (6 of each food class: steak, potato, french fries, salads, burger, asparagus) and make similar image food recommendations for 3 unseen test images.
 
-<p align="center"> 
-<img src="coverart/coverart.jpg" width="60%">
-</p>
+We provide two unsupervised methods of doing this: 
 
-In this code, we train a convolutional autoencoder on 36 steakhouse food images (6 of each of steak, potato, french fries, salads, burger, asparagus), and make similar image food recommendations based on the above algorithm to achieve a result of:
+1) **Transfer learning** by performing generating image embeddings using a pre-trained network such as VGG19. This is done by removing its last few layers, and performing inference on our images vectors for the generation of flattened embeddings. No training is needed throughout this entire processing, only the loading of the pre-trained weights.
 
 <p align="center"> 
-<img src="output/result_burger_test.png" width="50%">
+<img src="coverart/TL_concept.jpg" width="60%">
+</p>
+
+2) **Training an autoencoder** (fully-connected or convolutional) on our database images to minimize the reconstruction loss. After sufficient training, we extract the encoder part of the autoencoder and use it during inference to generate flattened embeddings.
+
+<p align="center"> 
+<img src="coverart/AE_concept.jpg" width="60%">
 </p>
 
 <p align="center"> 
-<img src="output/result_salad_test.png" width="50%">
+<img src="coverart/AE_reconstruction.png" width="60%">
 </p>
 
-The model performs fairly well as a vanilla model with minimal fine-tuned training, in the sense that the top similar recommended images tend to be in same food category as the query image (i.e. querying a burger gives mostly burgers, and querying a salad gives mostly salads, ...). There is still much room for improvement in terms different neural network architectures, more/different training images, hyperparameter tuning to improve the generality of this model. 
+We also provide visualizations of the image retrievals:
 
-The algorithm:
+1) Transfer learning
 
-1) Train an autoencoder with training images in the same domain as the inventory images
+<p align="center"> 
+<img src="coverart/TL_rec_test_asparagus.png" width="50%">
+</p>
 
-2) Use the trained encoder to embed both the query images and the inventory images
+<p align="center"> 
+<img src="coverart/TL_rec_test_salad.png" width="50%">
+</p>
 
-3) Perform kNN (euclidean/cosine similarity) to find the inventory nearest neighbour image embeddings to the query image embeddings, and keep the k closest embeddings as the top-k recommendations
+<p align="center"> 
+<img src="coverart/TL_rec_test_burger.png" width="50%">
+</p>
 
-### Usage:
+1) Autoencoders
 
-To make sure our similar images finder (trained on steakhouse food images) works on our test images, run
+<p align="center"> 
+<img src="coverart/AE_rec_test_asparagus.png" width="50%">
+</p>
+
+<p align="center"> 
+<img src="coverart/AE_rec_test_salad.png" width="50%">
+</p>
+
+<p align="center"> 
+<img src="coverart/AE_rec_test_burger.png" width="50%">
+</p>
+
+As well as t-SNE visualizations of the database image embeddings:
+
+<p align="center"> 
+<img src="coverart/TL_tsne.png" width="45%">
+</p> 
+
+### Usage
+
+Run
 
 ```
-python3 similar_images_AE.py
+python3 image_retrieval.py
 ```    
 
-When the run is complete, your answer images can be found in the `output` directory. However, if you would like to train the model from scratch then:
- 
-1. In `similar_images_AE.py`, set:
-     
-    * `model_name` to either `"simpleAE"` (1 FC hidden layer) or `"convAE"` (CNN)
-
-    * `process_and_save_images = True` to perform the proper pre-processing of the images
-
-    * `train_model = True` to instruct the program to train the model from scratch (it also saves it once the training is complete)
-
-2. Run
+after adjusting parameters (`simpleAE` is simple FC autoencoder, `convAE` is multi-layer convolutional autoencoder, `vgg19` is pre-trained VGG19)
 
 ```
-python3 image_retrieval_AE.py
+modelName = "convAE"  # try: "simpleAE", "convAE", "vgg19"
+trainModel = True
+saveModel = False
+```
+
+in `image_retrieval.py` to your purpose. All retrieval visualizations can be found in the `output` directory.
+
+### Example output
+
+```
+Reading train images...
+Reading test images...
+Image shape = (100, 100, 3)
+Loading VGG19 pre-trained model...
+input_shape_model = (100, 100, 3)
+output_shape_model = (3, 3, 512)
+Applying image transformer to training images...
+Applying image transformer to test images...
+ -> X_train.shape = (36, 100, 100, 3)
+ -> X_test.shape = (3, 100, 100, 3)
+Inferencing embeddings using pre-trained model...
+ -> E_train.shape = (36, 4608)
+ -> E_test.shape = (3, 4608)
+Fitting k-nearest-neighbour model on training images...
+Performing image retrieval on test images...
+Visualizing t-SNE on training images...
 ```
 
 ### Libraries
 
-* numpy, matplotlib, skimage, sklearn, tensorflow, multiprocessing
+* tensorflow, skimage, sklearn, multiprocessing, numpy, matplotlib
 
 ### Authors
 
 Anson Wong
 
-
-
-# Similar Image Retrieval (using transfer learning)
-
-Given a set of database images, we take the trained image classification VGG network, remove its last layers, and use the dissected model to convert our raw images into feature vectors for similarity comparison to produce similar image recommendations. No training is needed as we are re-using the low-level weight layers in the VGG network. A schematic for our implementation is shown here:
-
-<p align="center"> 
-<img src="coverart/coverart.jpg" width="80%">
-</p>
-
-As an example of its utility, we show that we can find similar food items in a small steakhouse food database by querying a burger and a salad below:
-
-<p align="center"> 
-<img src="output/rec/burger_test_rec.png" width="50%">
-</p>
-
-<p align="center"> 
-<img src="output/rec/salad_test_rec.png" width="50%">
-</p>
-
-In addition to making similar image recommendations, we can also visualize the image feature vectors by mapping the high-dimensional vectors onto a 2-dimensional manifold via the t-SNE algorithm to get a sense of how "far away" images are from each other in the feature space: 
-
-<p align="center"> 
-<img src="output/tsne.png" width="45%">
-</p>
-
-The steps towards building our similar images finder:
-
-1. Prepare our image database. We prepared by default a 36 images database of common steakhouse foods (6 classes).
-
-2. Take the VGG model and remove its last layers.
-
-3. Convert our image database into feature vectors using our dissected VGG model. If the output layer of the dissected model are convolutional filters then flatten the filters and append them make a single vector.
-
-4. Compute similarities between our image feature vectors using an inner-product such as cosine similarity or euclidean distance
-
-5. For each image, select the top-k images that have the highest similarity scores to build the recommendation
-
-
-### Usage:
-
-1. Place your database of images into the `db` directory.
-
-2. Run the command:
-
-```
-python similar_images_TL.py 
-```
-
-All output from running this code will be placed in the `output` directory. There will be a `tsne.png` plot for the t-SNE visualization of your database image embeddings, as well as a `rec` directory containing the top `k = 5` similar image recommendations for each image in your database.
-
-If the program is running properly, you should see something of the form:
-
-```
-Loading VGG19 pre-trained model...
-Reading images from 'db' directory...
-
-imgs.shape = (39, 224, 224, 3)
-X_features.shape = (39, 100352)
-
-[1/39] Plotting similar image recommendations for: steak2_resized
-[2/39] Plotting similar image recommendations for: asparagus5_resized
-[3/39] Plotting similar image recommendations for: steak4_resized
-...
-...
-...
-[38/39] Plotting similar image recommendations for: salad4_resized
-[39/39] Plotting similar image recommendations for: burger_test
-Plotting tSNE to output/tsne.png...
-Computing t-SNE embedding
-```
-
-### Required libraries:
-
-* keras, numpy, matplotlib, sklearn, h5py, pillow
-
-### Authors:
-
-Anson Wong
