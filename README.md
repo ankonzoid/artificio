@@ -5,15 +5,15 @@ We provide here a suite of deep learning computer vision algorithms that are rea
 ### [Similar Image Retrieval (using Transfer Learning)](similar_images_TL)
 
 <p align="center"> 
-<img src="similar_images_TL/output/rec/burger_test_rec.png" width="35%">
-<img src="similar_images_TL/coverart/coverart.jpg" width="35%">
+<img src="image_retrieval/coverart/TL_rec_test_burger.png" width="35%">
+<img src="image_retrieval/coverart/TL_concept.jpg" width="35%">
 </p>
 
-### [Similar Image Retrieval (using Autoencoders)](similar_image_retrieval)
+### [Similar Image Retrieval (using Autoencoders)](image_retrieval)
 
 <p align="center"> 
-<img src="similar_images_AE/output/result_burger_test.png" width="35%">
-<img src="similar_images_AE/coverart/coverart.jpg" width="35%">
+<img src="image_retrieval/coverart/AE_rec_test_burger.png" width="35%">
+<img src="image_retrieval/coverart/AE_concept.jpg" width="35%">
 </p>
 
 ### [Image Processing Tools](process_images)
