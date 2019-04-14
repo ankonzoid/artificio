@@ -47,16 +47,19 @@ def process_your_images(settings, inPath, outPath):
         print("[{}/{}] Processing '{}'...".format(i+1, n_files, file))
 
         if settings["img2resize"]["use"]:
+            print("Resizing image...")
             output_filename = os.path.join(outPath, nametag + "_resized.jpg")
             img2resize(img_filename, output_filename,
                        ypixels=settings["img2resize"]["ypixels"],
                        xpixels=settings["img2resize"]["xpixels"])
 
         if settings["img2greyscale"]["use"]:
+            print("Greyscaling image...")
             output_filename = os.path.join(outPath, nametag + "_greyscale.jpg")
             img2greyscale(img_filename, output_filename)
 
         if settings["img2kmeans"]["use"]:
+            print("k-means quantizing image...")
             output_filename = os.path.join(outPath, nametag + "_kmeans.jpg")
             img2kmeans(img_filename, output_filename,
                        k=settings["img2kmeans"]["k"],
@@ -64,6 +67,7 @@ def process_your_images(settings, inPath, outPath):
                        custom_colors=settings["img2kmeans"]["custom_colors"])
 
         if settings["img2edges"]["use"]:
+            print("Sobel edge detecting image...")
             output_filename = os.path.join(outPath, nametag + "_edges.jpg")
             img2edges(img_filename, output_filename)
 
@@ -72,7 +76,7 @@ settings = {
                    "ypixels": 100,
                    "xpixels": 100},
     "img2greyscale": {"use": True},
-    "img2kmeans": {"use": False,
+    "img2kmeans": {"use": True,
                    "k": 5,
                    "use_custom_colors": False,
                    "custom_colors": [[1, 1, 1],

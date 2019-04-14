@@ -11,17 +11,17 @@ import os
 import numpy as np
 import tensorflow as tf
 from sklearn.neighbors import NearestNeighbors
-from src.models.autoencoder import AutoEncoder
 from src.utils import makeDir
 from src.CV_IO_utils import read_imgs_dir
 from src.CV_transform_utils import apply_transformer
 from src.CV_transform_utils import resize_img, normalize_img, flatten_img
 from src.CV_plot_utils import plot_query_retrieval, plot_tsne
+from src.models.autoencoder import AutoEncoder
 
 # Run mode
 modelName = "vgg19" # simpleAE, convAE, vgg19
 trainModel = True
-saveModels = False
+saveModel = False
 
 # Make paths
 dataTrainPath = os.path.join(os.getcwd(), "data", "train")
@@ -112,7 +112,7 @@ if modelName in ["simpleAE", "convAE"]:
     if trainModel:
         model.compile(loss="binary_crossentropy", optimizer="adam")
         model.fit(X_train, n_epochs=300, batch_size=256)
-        if saveModels:
+        if saveModel:
             model.save_models()
     else:
         model.load_models()

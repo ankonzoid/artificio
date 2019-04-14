@@ -1,12 +1,10 @@
 import numpy as np
 import skimage.io
-from PIL import Image
 import cv2
 
 def img2edges(input_filename, output_filename):
 
-    img_pil = Image.open(input_filename)  # PIL object
-    img = np.asarray(img_pil)  # numpy array
+    img = skimage.io.imread(input_filename, as_gray=False)
 
     # Blur the image with a Gaussian kernel
     kernel_size = (5, 5)

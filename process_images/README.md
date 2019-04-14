@@ -48,7 +48,6 @@ python3 process_images.py
 ### Libraries
 
 * numpy
-* Pillow
 * matplotlib
 * opencv
 * skimage

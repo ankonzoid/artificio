@@ -2,14 +2,12 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.utils import shuffle
 import skimage.io
-from PIL import Image
 
 def img2kmeans(input_filename, output_filename,
                k=5, use_custom_colors=None, custom_colors=None, sort=True):
 
     # Read image
-    img_pil = Image.open(input_filename)  # PIL object
-    img = np.asarray(img_pil)  # numpy array
+    img = skimage.io.imread(input_filename, as_gray=False)
 
     img_norm = np.array(img, dtype=np.float64) / 255  # normalize r,g,b values
     w, h, d = tuple(img_norm.shape)
