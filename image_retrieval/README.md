@@ -13,19 +13,22 @@ We provide two unsupervised methods here:
 2) **Training an Autoencoder (fully-connected or convolutional)** on our database images to minimize the reconstruction loss. After sufficient training, we extract the encoder part of the autoencoder and use it during inference to generate flattened embeddings.
 
 <p align="center"> 
-<img src="coverart/AE_concept.jpg" width="60%">
+<img src="coverart/AE_concept.jpg" width="45%">
 </p>
 
-<p align="center"> 
-<img src="coverart/simpleAE_reconstruct.png" width="60%">
-</p>
+### 1) **Convolutional Autoencoder**
 <p align="center"> 
 <img src="coverart/convAE_reconstruct.png" width="60%">
 </p>
 
-### Visualizations of image retrieval on query images
+### 2) **Simple Autoencoder**
+<p align="center"> 
+<img src="coverart/simpleAE_reconstruct.png" width="60%">
+</p>
 
-1) **Transfer Learning**
+## Visualizations of image retrieval on query images
+
+### 1) **Transfer Learning**
 
 <p align="center"> 
 <img src="coverart/vgg19_retrieval_2.png" width="50%">
@@ -39,7 +42,7 @@ We provide two unsupervised methods here:
 <img src="coverart/vgg19_retrieval_0.png" width="50%">
 </p>
 
-2) **Convolutional Autoencoders**
+### 2) **Convolutional Autoencoders**
 
 <p align="center"> 
 <img src="coverart/convAE_retrieval_2.png" width="50%">
@@ -53,20 +56,39 @@ We provide two unsupervised methods here:
 <img src="coverart/convAE_retrieval_0.png" width="50%">
 </p>
 
+### 3) **Simple Autoencoders**
 
-### t-SNE visualizations of database image embeddings
+<p align="center"> 
+<img src="coverart/simpleAE_retrieval_2.png" width="50%">
+</p>
 
-1) **Transfer Learning**
+<p align="center"> 
+<img src="coverart/simpleAE_retrieval_1.png" width="50%">
+</p>
+
+<p align="center"> 
+<img src="coverart/simpleAE_retrieval_0.png" width="50%">
+</p>
+
+## t-SNE visualizations of database image embeddings
+
+### 1) **Transfer Learning**
 <p align="center"> 
 <img src="coverart/vgg19_tsne.png" width="45%">
 </p> 
 
-2) **Convolutional Autoencoders**
+### 2) **Convolutional Autoencoders**
 <p align="center"> 
 <img src="coverart/convAE_tsne.png" width="45%">
 </p> 
 
-### Usage
+### 3) **Simple Autoencoders**
+<p align="center"> 
+<img src="coverart/simpleAE_tsne.png" width="45%">
+</p> 
+
+
+## Usage
 
 Run
 
@@ -83,7 +105,7 @@ trainModel = True
 
 All retrieval visualizations can be found in the `output` directory for each respective model.
 
-### Example output
+## Example output
 
 ```
 Reading train images...
@@ -106,11 +128,11 @@ Performing image retrieval on test images...
 Visualizing t-SNE on training images...
 ```
 
-### Libraries
+## Libraries
 
 * tensorflow, skimage, sklearn, multiprocessing, numpy, matplotlib
 
-### Authors
+## Authors
 
 Anson Wong
 
