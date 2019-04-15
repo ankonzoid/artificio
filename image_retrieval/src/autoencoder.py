@@ -40,8 +40,8 @@ class AutoEncoder():
         if self.modelName == "simpleAE":
             encode_dim = 128
 
-            input_img = tf.keras.Input(shape=shape_img_flattened)
-            encoded = tf.keras.layers.Dense(encode_dim, activation='relu')(input_img)
+            input = tf.keras.Input(shape=shape_img_flattened)
+            encoded = tf.keras.layers.Dense(encode_dim, activation='relu')(input)
 
             decoded = tf.keras.layers.Dense(shape_img_flattened[0], activation='sigmoid')(encoded)
 
@@ -50,8 +50,8 @@ class AutoEncoder():
             convkernel = (3, 3)  # convolution kernel
             poolkernel = (2, 2)  # pooling kernel
 
-            input_img = tf.keras.layers.Input(shape=shape_img)
-            x = tf.keras.layers.Conv2D(n_hidden_1, convkernel, activation='relu', padding='same')(input_img)
+            input = tf.keras.layers.Input(shape=shape_img)
+            x = tf.keras.layers.Conv2D(n_hidden_1, convkernel, activation='relu', padding='same')(input)
             x = tf.keras.layers.MaxPooling2D(poolkernel, padding='same')(x)
             x = tf.keras.layers.Conv2D(n_hidden_2, convkernel, activation='relu', padding='same')(x)
             x = tf.keras.layers.MaxPooling2D(poolkernel, padding='same')(x)
@@ -70,12 +70,12 @@ class AutoEncoder():
             raise Exception("Invalid model name given!")
 
         # Create autoencoder model
-        autoencoder = tf.keras.Model(input_img, decoded)
+        autoencoder = tf.keras.Model(input, decoded)
         input_autoencoder_shape = autoencoder.layers[0].input_shape[1:]
         output_autoencoder_shape = autoencoder.layers[-1].output_shape[1:]
 
         # Create encoder model
-        encoder = tf.keras.Model(input_img, encoded)  # set encoder
+        encoder = tf.keras.Model(input, encoded)  # set encoder
         input_encoder_shape = encoder.layers[0].input_shape[1:]
         output_encoder_shape = encoder.layers[-1].output_shape[1:]
 
@@ -110,25 +110,19 @@ class AutoEncoder():
         self.encoder = encoder
         self.decoder = decoder
 
-        # Extract model input + output dimensions
-        self.autoencoder_input_shape = input_autoencoder_shape
-        self.autoencoder_output_shape = output_autoencoder_shape
-        self.encoder_input_shape = input_encoder_shape
-        self.encoder_output_shape = output_encoder_shape
-        self.decoder_input_shape = decoder_input_shape
-        self.decoder_output_shape = decoder_output_shape
-
     # Compile
     def compile(self, loss="binary_crossentropy", optimizer="adam"):
         self.autoencoder.compile(optimizer=optimizer, loss=loss)
 
     # Load model architecture and weights
-    def load_models(self):
+    def load_models(self, loss="binary_crossentropy", optimizer="adam"):
         print("Loading models...")
         self.autoencoder = tf.keras.models.load_model(self.info["autoencoderFile"])
         self.encoder = tf.keras.models.load_model(self.info["encoderFile"])
         self.decoder = tf.keras.models.load_model(self.info["decoderFile"])
-        self.compile()
+        self.autoencoder.compile(optimizer=optimizer, loss=loss)
+        self.encoder.compile(optimizer=optimizer, loss=loss)
+        self.decoder.compile(optimizer=optimizer, loss=loss)
 
     # Save model architecture and weights to file
     def save_models(self):

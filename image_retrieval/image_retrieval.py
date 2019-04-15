@@ -14,14 +14,13 @@ from sklearn.neighbors import NearestNeighbors
 from src.utils import makeDir
 from src.CV_IO_utils import read_imgs_dir
 from src.CV_transform_utils import apply_transformer
-from src.CV_transform_utils import resize_img, normalize_img, flatten_img
-from src.CV_plot_utils import plot_query_retrieval, plot_tsne
-from src.models.autoencoder import AutoEncoder
+from src.CV_transform_utils import resize_img, normalize_img
+from src.CV_plot_utils import plot_query_retrieval, plot_tsne, plot_reconstructions
+from src.autoencoder import AutoEncoder
 
 # Run mode
-modelName = "vgg19" # simpleAE, convAE, vgg19
+modelName = "vgg19"  # try: "simpleAE", "convAE", "vgg19"
 trainModel = True
-saveModel = False
 
 # Make paths
 dataTrainPath = os.path.join(os.getcwd(), "data", "train")
@@ -40,14 +39,13 @@ print("Image shape = {}".format(shape_img))
 # Build models
 if modelName in ["simpleAE", "convAE"]:
 
+    # Set up autoencoder
     info = {
         "shape_img": shape_img,
         "autoencoderFile": os.path.join(outPath, "{}_autoecoder.h5".format(modelName)),
         "encoderFile": os.path.join(outPath, "{}_encoder.h5".format(modelName)),
         "decoderFile": os.path.join(outPath, "{}_decoder.h5".format(modelName)),
     }
-
-    # Set up autoencoder base class
     model = AutoEncoder(modelName, info)
     model.set_arch()
 
@@ -55,12 +53,12 @@ if modelName in ["simpleAE", "convAE"]:
         shape_img_resize = shape_img
         input_shape_model = (model.encoder.input.shape[1],)
         output_shape_model = (model.encoder.output.shape[1],)
-        n_epochs = 100
+        n_epochs = 500
     elif modelName == "convAE":
         shape_img_resize = shape_img
         input_shape_model = tuple([int(x) for x in model.encoder.input.shape[1:]])
         output_shape_model = tuple([int(x) for x in model.encoder.output.shape[1:]])
-        n_epochs = 200
+        n_epochs = 500
     else:
         raise Exception("Invalid modelName!")
 
@@ -111,34 +109,48 @@ print(" -> X_test.shape = {}".format(X_test.shape))
 if modelName in ["simpleAE", "convAE"]:
     if trainModel:
         model.compile(loss="binary_crossentropy", optimizer="adam")
-        model.fit(X_train, n_epochs=300, batch_size=256)
-        if saveModel:
-            model.save_models()
+        model.fit(X_train, n_epochs=n_epochs, batch_size=256)
+        model.save_models()
     else:
-        model.load_models()
+        model.load_models(loss="binary_crossentropy", optimizer="adam")
 
 # Create embeddings using model
 print("Inferencing embeddings using pre-trained model...")
-E_train = model.predict(X_train).reshape((-1, np.prod(list(output_shape_model))))
-E_test = model.predict(X_test).reshape((-1, np.prod(list(output_shape_model))))
+E_train = model.predict(X_train)
+E_train_flatten = E_train.reshape((-1, np.prod(output_shape_model)))
+E_test = model.predict(X_test)
+E_test_flatten = E_test.reshape((-1, np.prod(output_shape_model)))
 print(" -> E_train.shape = {}".format(E_train.shape))
 print(" -> E_test.shape = {}".format(E_test.shape))
+print(" -> E_train_flatten.shape = {}".format(E_train_flatten.shape))
+print(" -> E_test_flatten.shape = {}".format(E_test_flatten.shape))
+
+# Make reconstruction visualizations
+if modelName in ["simpleAE", "convAE"]:
+    print("Visualizing database image reconstructions...")
+    imgs_train_reconstruct = model.decoder.predict(E_train)
+    if modelName == "simpleAE":
+        imgs_train_reconstruct = imgs_train_reconstruct.reshape((-1,) + shape_img_resize)
+    plot_reconstructions(imgs_train, imgs_train_reconstruct,
+                         os.path.join(outPath, "{}_reconstruct.png".format(modelName)),
+                         range_imgs=[0, 255],
+                         range_imgs_reconstruct=[0, 1])
 
 # Fit kNN model on training images
 print("Fitting k-nearest-neighbour model on training images...")
 knn = NearestNeighbors(n_neighbors=5, metric="cosine")
-knn.fit(E_train)
+knn.fit(E_train_flatten)
 
 # Perform image retrieval on test images
 print("Performing image retrieval on test images...")
-for i, emb in enumerate(E_test):
-    _, indices = knn.kneighbors([emb]) # find k nearest train neighbours
+for i, emb_flatten in enumerate(E_test_flatten):
+    _, indices = knn.kneighbors([emb_flatten]) # find k nearest train neighbours
     img_query = imgs_test[i] # query image
     imgs_retrieval = [imgs_train[idx] for idx in indices.flatten()] # retrieval images
-    outFile = os.path.join(outPath, "retrieval_{}.png".format(i))
-    plot_query_retrieval(img_query, imgs_retrieval, outFile) # plot
+    outFile = os.path.join(outPath, "{}_retrieval_{}.png".format(modelName, i))
+    plot_query_retrieval(img_query, imgs_retrieval, outFile)
 
 # Plot t-SNE visualization
 print("Visualizing t-SNE on training images...")
-outFile = os.path.join(outPath, "tsne.png")
-plot_tsne(E_train, imgs_train, outFile)
+outFile = os.path.join(outPath, "{}_tsne.png".format(modelName))
+plot_tsne(E_train_flatten, imgs_train, outFile)

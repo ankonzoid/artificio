@@ -38,7 +38,7 @@ def scrape_google_images(query_text="deepmind",
         image_name = query_text + "-" + str(i+1) + ".jpg"
         image_filename = os.path.join(output_dir, image_name)
 
-        print("[{}/{}] Downloading image to: '{}'...".format(i+1, k, image_filename))
+        print("[{}/{}] Downloading image '{}'...".format(i+1, k, image_filename))
         try:
             urllibreq.urlretrieve(image_url, image_filename)
             time.sleep(dt_wait)  # force pause

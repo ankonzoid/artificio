@@ -10,12 +10,13 @@ from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 from sklearn import manifold
 
 # Plot image
-def plot_img(img):
-    plt.imshow(img)
+def plot_img(img, range=[0, 255]):
+    plt.imshow(img, vmin=range[0], vmax=range[1])
     plt.xlabel("xpixels")
     plt.ylabel("ypixels")
     plt.tight_layout()
     plt.show()
+    plt.close()
 
 # Plots images in 2 rows: top row is query, bottom row is answer
 def plot_query_retrieval(img_query, imgs_retrieval, outFile):
@@ -25,6 +26,7 @@ def plot_query_retrieval(img_query, imgs_retrieval, outFile):
     # Plot query image
     ax = plt.subplot(2, n_retrieval, 0 + 1)
     plt.imshow(img_query)
+    #plt.imshow(img_query, range=range)
     ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_visible(False)
     for axis in ['top', 'bottom', 'left', 'right']:
@@ -36,6 +38,7 @@ def plot_query_retrieval(img_query, imgs_retrieval, outFile):
     for i, img in enumerate(imgs_retrieval):
         ax = plt.subplot(2, n_retrieval, n_retrieval + i + 1)
         plt.imshow(img)
+        #plt.imshow(img, range=range)
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
         for axis in ['top', 'bottom', 'left', 'right']:
@@ -89,39 +92,35 @@ def plot_tsne(X, imgs, outFile):
         plt.savefig(outFile, bbox_inches='tight')
     plt.close()
 
-# Plot
-def plot_save_reconstruction(x_data_test, img_shape, n_plot=10):
-
-    ypixels = img_shape[0]
-    xpixels = img_shape[1]
-    n_channels = 3
-
-    # Extract the subset of test data to reconstruct and plot
-    n = min(len(x_data_test), n_plot)
-    x_data_test_plot = x_data_test[np.arange(n)]
-
-    # Perform reconstructions on test data
-    x_data_test_plot_reconstructed = self.encode_decode(x_data_test_plot)
+# Plot image reconstructions
+def plot_reconstructions(imgs, imgs_reconstruct, outFile,
+                         range_imgs=[0, 255],
+                         range_imgs_reconstruct=[0, 1]):
 
     # Create plot to save
+    assert len(imgs) == len(imgs_reconstruct)
     plt.figure(figsize=(20, 4))
+    n = min(len(imgs), 10)
     for i in range(n):
 
         # Plot original image
         ax = plt.subplot(2, n, i + 1)
-        img_show_test = \
-            x_data_test_plot[i].reshape((ypixels, xpixels, n_channels))
-        plt.imshow(img_show_test)
+        plt.imshow(imgs[i],
+                   vmin=range_imgs[0],
+                   vmax=range_imgs[1])
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
 
         # Plot reconstructed image
         ax = plt.subplot(2, n, n + i + 1)
-        img_show_test_reconstructed = \
-            x_data_test_plot_reconstructed[i].reshape((ypixels, xpixels, n_channels))
-        plt.imshow(img_show_test_reconstructed)
+        plt.imshow(imgs_reconstruct[i],
+                   vmin=range_imgs_reconstruct[0],
+                   vmax=range_imgs_reconstruct[1])
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
 
-    if 0:
+    if outFile is None:
         plt.show()
+    else:
+        plt.savefig(outFile, bbox_inches='tight')
+    plt.close()

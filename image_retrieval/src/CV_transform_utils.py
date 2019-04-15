@@ -19,11 +19,13 @@ def apply_transformer(imgs, transformer, parallel=True):
 
 # Normalize image data [0, 255] -> [0.0, 1.0]
 def normalize_img(img):
-    return img.astype('float32') / 255.
+    return img / 255.
 
 # Resize image
 def resize_img(img, shape_resized):
-    img_resized = resize(img, shape_resized, anti_aliasing=True)
+    img_resized = resize(img, shape_resized,
+                         anti_aliasing=True,
+                         preserve_range=True)
     assert img_resized.shape == shape_resized
     return img_resized
 

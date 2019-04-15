@@ -17,7 +17,10 @@ We provide two unsupervised methods of doing this:
 </p>
 
 <p align="center"> 
-<img src="coverart/AE_reconstruction.png" width="80%">
+<img src="coverart/simpleAE_reconstruction.png" width="60%">
+</p>
+<p align="center"> 
+<img src="coverart/convAE_reconstruction.png" width="60%">
 </p>
 
 We also provide visualizations of the image retrievals:
