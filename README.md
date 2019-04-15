@@ -2,7 +2,7 @@
 
 We provide here a suite of deep learning computer vision algorithms that are ready for real-world use:
 
-### [Similar Image Retrieval (via Transfer Learning)](image_retrieval)
+### [Image Retrieval (via Transfer Learning)](image_retrieval)
 
 <p align="center"> 
 <a href="image_retrieval">
@@ -13,7 +13,7 @@ We provide here a suite of deep learning computer vision algorithms that are rea
 </a>
 </p>
 
-### [Similar Image Retrieval (via Autoencoders)](image_retrieval)
+### [Image Retrieval (via Autoencoders)](image_retrieval)
 
 <p align="center"> 
 <a href="image_retrieval">
