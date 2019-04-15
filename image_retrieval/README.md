@@ -17,7 +17,11 @@ By performing generating image embeddings using a pre-trained network such as VG
 We train both a simple autoencoder and a convolutional autoencoder on our database images with the objective of minimizing reconstruction loss. After sufficient training, we extract the encoder part of the autoencoder and use it during inference to generate flattened embeddings.
 
 <p align="center"> 
-<img src="coverart/AE_concept.jpg" width="45%">
+<img src="coverart/AE_concept.jpg" width="60%">
+</p>
+
+<p align="center"> 
+<img src="coverart/convAE_tsne.png" width="60%">
 </p>
 
 ## Visualizations
@@ -74,14 +78,19 @@ Run
 python3 image_retrieval.py
 ```    
 
-after adjusting parameters in `image_retrieval.py` to your purpose (models to try include: `simpleAE` = simple FC autoencoder, `convAE` = multi-layer convolutional autoencoder, `vgg19` = pre-trained VGG19)
+after selecting the model you want to use by editing the model name in `image_retrieval.py` 
 
 ```
 modelName = "convAE"  # try: "simpleAE", "convAE", "vgg19"
 trainModel = True
 ```
 
-All retrieval visualizations can be found in the `output` directory for each respective model.
+There are 3 models to choose from: 
+* `"simpleAE"` = simple fully-connected autoencoder
+* `"convAE"` = multi-layer convolutional autoencoder 
+* `"vgg19"` = pre-trained VGG19)
+
+All output visualizations can be found in the `output` directory.
 
 ## Example output
 
