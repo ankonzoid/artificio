@@ -16,20 +16,28 @@ We provide here a suite of deep learning computer vision algorithms that are rea
 ### [Similar Image Retrieval (via Autoencoders)](image_retrieval)
 
 <p align="center"> 
+<a href="image_retrieval">
 <img src="image_retrieval/coverart/AE_rec_test_burger.png" width="35%">
+</a>
+<a href="image_retrieval">
 <img src="image_retrieval/coverart/AE_concept.jpg" width="35%">
+</a>
 </p>
 
 ### [Image Processing Tools](process_images)
 
 <p align="center"> 
+<a href="process_images">
 <img src="process_images/coverart/coverart.jpg" width="75%">
+</a>
 </p>
 
 ### [Google Images Scraper](scrape_google_images)
 
 <p align="center"> 
+<a href="scrape_google_images">
 <img src="scrape_google_images/coverart/coverart.jpg" width="50%">
+</a>
 </p>
 
 #### Authors
