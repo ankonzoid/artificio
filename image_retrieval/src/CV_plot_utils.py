@@ -43,6 +43,7 @@ def plot_query_retrieval(img_query, imgs_retrieval, outFile):
             ax.spines[axis].set_linewidth(1)  # set border thickness
             ax.spines[axis].set_color('black')  # set to black
         ax.set_title("retrieved #%d" % (i+1), fontsize=14)  # set subplot title
+    plt.title("Image Retrieval k={}".format(n_retrieval))
 
     if outFile is None:
         plt.show()
@@ -116,6 +117,7 @@ def plot_reconstructions(imgs, imgs_reconstruct, outFile,
                    vmax=range_imgs_reconstruct[1])
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
+    plt.title("Image reconstructions")
 
     if outFile is None:
         plt.show()
