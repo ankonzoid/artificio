@@ -26,7 +26,6 @@ def plot_query_retrieval(img_query, imgs_retrieval, outFile):
     # Plot query image
     ax = plt.subplot(2, n_retrieval, 0 + 1)
     plt.imshow(img_query)
-    #plt.imshow(img_query, range=range)
     ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_visible(False)
     for axis in ['top', 'bottom', 'left', 'right']:
@@ -38,7 +37,6 @@ def plot_query_retrieval(img_query, imgs_retrieval, outFile):
     for i, img in enumerate(imgs_retrieval):
         ax = plt.subplot(2, n_retrieval, n_retrieval + i + 1)
         plt.imshow(img)
-        #plt.imshow(img, range=range)
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
         for axis in ['top', 'bottom', 'left', 'right']:
@@ -62,7 +60,7 @@ def plot_tsne(X, imgs, outFile):
         artists = []
         for x0, y0, img0 in zip(x, y, images):
             im = OffsetImage(img0, zoom=zoom)
-            ab = AnnotationBbox(im, (x0, y0), xycoords='data', frameon=False)
+            ab = AnnotationBbox(im, (x0, y0), xycoords='data', frameon=True)
             artists.append(ax.add_artist(ab))
         ax.update_datalim(np.column_stack([x, y]))
         ax.autoscale()
@@ -77,7 +75,7 @@ def plot_tsne(X, imgs, outFile):
         for i in range(X.shape[0]):
             plt.text(X[i, 0], X[i, 1], ".", fontdict={'weight': 'bold', 'size': 9})
         if hasattr(offsetbox, 'AnnotationBbox'):
-            imscatter(X[:,0], X[:,1], imgs, zoom=0.1, ax=ax)
+            imscatter(X[:,0], X[:,1], imgs, zoom=0.3, ax=ax)
 
         plt.xticks([]), plt.yticks([])
         if title is not None:
