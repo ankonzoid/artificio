@@ -30,7 +30,7 @@ We train both a simple autoencoder and a convolutional autoencoder on our databa
 <img src="coverart/simpleAE_reconstruct.png" width="60%">
 </p>
 
-## Visualizations of image retrieval on query images
+## Visualizing image retrieval on query images
 
 **Transfer Learning**
 
@@ -40,7 +40,7 @@ We train both a simple autoencoder and a convolutional autoencoder on our databa
 <img src="coverart/vgg19_retrieval_0.png" width="30%">
 </p>
 
-**Convolutional Autoencoders**
+**Convolutional Autoencoder**
 
 <p align="center"> 
 <img src="coverart/convAE_retrieval_2.png" width="30%">
@@ -48,7 +48,7 @@ We train both a simple autoencoder and a convolutional autoencoder on our databa
 <img src="coverart/convAE_retrieval_0.png" width="30%">
 </p>
 
-#### **Simple Autoencoders**
+**Simple Autoencoder**
 
 <p align="center"> 
 <img src="coverart/simpleAE_retrieval_2.png" width="30%">
@@ -56,19 +56,19 @@ We train both a simple autoencoder and a convolutional autoencoder on our databa
 <img src="coverart/simpleAE_retrieval_0.png" width="30%">
 </p>
 
-## t-SNE visualizations of database image embeddings
+## Visualizing database image t-SNE embeddings 
 
 **Transfer Learning**
 <p align="center"> 
 <img src="coverart/vgg19_tsne.png" width="40%">
 </p> 
 
-**Convolutional Autoencoders**
+**Convolutional Autoencoder**
 <p align="center"> 
 <img src="coverart/convAE_tsne.png" width="40%">
 </p> 
 
-**Simple Autoencoders**
+**Simple Autoencoder**
 <p align="center"> 
 <img src="coverart/simpleAE_tsne.png" width="40%">
 </p> 
