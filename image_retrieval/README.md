@@ -4,24 +4,28 @@ Given a set of query images and database images, we perform image retrieval on d
 
 We provide two unsupervised methods here: 
 
-1) **Transfer learning** by performing generating image embeddings using a pre-trained network such as VGG19. This is done by removing its last few layers, and performing inference on our images vectors for the generation of flattened embeddings. No training is needed throughout this entire processing, only the loading of the pre-trained weights.
+### 1) **Transfer learning** 
+
+By performing generating image embeddings using a pre-trained network such as VGG19. This is done by removing its last few layers, and performing inference on our images vectors for the generation of flattened embeddings. No training is needed throughout this entire processing, only the loading of the pre-trained weights.
 
 <p align="center"> 
 <img src="coverart/TL_concept.jpg" width="70%">
 </p>
 
-2) **Training an Autoencoder (fully-connected or convolutional)** on our database images to minimize the reconstruction loss. After sufficient training, we extract the encoder part of the autoencoder and use it during inference to generate flattened embeddings.
+### 2) **Training Autoencoders** 
+
+We train both a simple autoencoder and a convolutional autoencoder on our database images with the objective of minimizing reconstruction loss. After sufficient training, we extract the encoder part of the autoencoder and use it during inference to generate flattened embeddings.
 
 <p align="center"> 
 <img src="coverart/AE_concept.jpg" width="45%">
 </p>
 
-### 1) **Convolutional Autoencoder**
+1) **Convolutional Autoencoder**
 <p align="center"> 
 <img src="coverart/convAE_reconstruct.png" width="60%">
 </p>
 
-### 2) **Simple Autoencoder**
+2) **Simple Autoencoder**
 <p align="center"> 
 <img src="coverart/simpleAE_reconstruct.png" width="60%">
 </p>
