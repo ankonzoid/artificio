@@ -19,6 +19,8 @@ Currently we provide 4 common image processing techniques:
 
 ### Usage
 
+Run
+
 ```
 python3 process_images.py
 ```
@@ -44,10 +46,7 @@ python3 process_images.py
 
 ### Libraries
 
-* numpy
-* matplotlib
-* opencv
-* skimage
+* opencv, skimage, numpy, matplotlib
 
 ### Authors
 
