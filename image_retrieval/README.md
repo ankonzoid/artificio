@@ -21,7 +21,7 @@ We train both a simple autoencoder and a convolutional autoencoder on our databa
 </p>
 
 <p align="center"> 
-<img src="coverart/convAE_tsne.png" width="60%">
+<img src="coverart/convAE_reconstruct.png" width="60%">
 </p>
 
 ## Visualizations
