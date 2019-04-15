@@ -5,8 +5,12 @@ We provide here a suite of deep learning computer vision algorithms that are rea
 ### [Similar Image Retrieval (via Transfer Learning)](image_retrieval)
 
 <p align="center"> 
+<a href="image_retrieval">
 <img src="image_retrieval/coverart/TL_rec_test_burger.png" width="35%">
+</a>
+<a href="image_retrieval">
 <img src="image_retrieval/coverart/TL_concept.jpg" width="35%">
+</a>
 </p>
 
 ### [Similar Image Retrieval (via Autoencoders)](image_retrieval)
