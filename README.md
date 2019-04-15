@@ -6,7 +6,7 @@ We provide here a suite of deep learning computer vision algorithms that are rea
 
 <p align="center"> 
 <a href="image_retrieval">
-<img src="image_retrieval/coverart/TL_rec_test_burger.png" width="35%">
+<img src="image_retrieval/coverart/vgg19_retrieval_0.png" width="35%">
 </a>
 <a href="image_retrieval">
 <img src="image_retrieval/coverart/TL_concept.jpg" width="35%">
@@ -17,7 +17,7 @@ We provide here a suite of deep learning computer vision algorithms that are rea
 
 <p align="center"> 
 <a href="image_retrieval">
-<img src="image_retrieval/coverart/AE_rec_test_burger.png" width="35%">
+<img src="image_retrieval/coverart/convAE_retrieval_2.png" width="35%">
 </a>
 <a href="image_retrieval">
 <img src="image_retrieval/coverart/AE_concept.jpg" width="35%">
