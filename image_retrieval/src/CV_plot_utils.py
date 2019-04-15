@@ -21,7 +21,8 @@ def plot_img(img, range=[0, 255]):
 # Plots images in 2 rows: top row is query, bottom row is answer
 def plot_query_retrieval(img_query, imgs_retrieval, outFile):
     n_retrieval = len(imgs_retrieval)
-    plt.figure(figsize=(2*n_retrieval, 4))
+    fig = plt.figure(figsize=(2*n_retrieval, 4))
+    fig.suptitle("Image Retrieval (k={})".format(n_retrieval), fontsize=25)
 
     # Plot query image
     ax = plt.subplot(2, n_retrieval, 0 + 1)
@@ -42,8 +43,7 @@ def plot_query_retrieval(img_query, imgs_retrieval, outFile):
         for axis in ['top', 'bottom', 'left', 'right']:
             ax.spines[axis].set_linewidth(1)  # set border thickness
             ax.spines[axis].set_color('black')  # set to black
-        ax.set_title("retrieved #%d" % (i+1), fontsize=14)  # set subplot title
-    plt.title("Image Retrieval k={}".format(n_retrieval))
+        ax.set_title("Rank #%d" % (i+1), fontsize=14)  # set subplot title
 
     if outFile is None:
         plt.show()
@@ -80,11 +80,11 @@ def plot_tsne(X, imgs, outFile):
 
         plt.xticks([]), plt.yticks([])
         if title is not None:
-            plt.title(title)
+            plt.title(title, fontsize=25)
 
     tsne = manifold.TSNE(n_components=2, init='pca', random_state=0)
     X_tsne = tsne.fit_transform(X)
-    plot_embedding(X_tsne, imgs, "t-SNE embedding of images")
+    plot_embedding(X_tsne, imgs, "t-SNE Embeddings")
     if outFile is None:
         plt.show()
     else:
@@ -95,10 +95,10 @@ def plot_tsne(X, imgs, outFile):
 def plot_reconstructions(imgs, imgs_reconstruct, outFile,
                          range_imgs=[0, 255],
                          range_imgs_reconstruct=[0, 1]):
-
     # Create plot to save
     assert len(imgs) == len(imgs_reconstruct)
-    plt.figure(figsize=(20, 4))
+    fig = plt.figure(figsize=(20, 4))
+    fig.suptitle("Image Reconstructions", fontsize=35)
     n = min(len(imgs), 10)
     for i in range(n):
 
@@ -117,7 +117,6 @@ def plot_reconstructions(imgs, imgs_reconstruct, outFile,
                    vmax=range_imgs_reconstruct[1])
         ax.get_xaxis().set_visible(False)
         ax.get_yaxis().set_visible(False)
-    plt.title("Image reconstructions")
 
     if outFile is None:
         plt.show()
