@@ -80,11 +80,11 @@ def plot_tsne(X, imgs, outFile):
 
         plt.xticks([]), plt.yticks([])
         if title is not None:
-            plt.title(title, fontsize=25)
+            plt.title(title, fontsize=18)
 
     tsne = manifold.TSNE(n_components=2, init='pca', random_state=0)
     X_tsne = tsne.fit_transform(X)
-    plot_embedding(X_tsne, imgs, "t-SNE Embeddings")
+    plot_embedding(X_tsne, imgs, "t-SNE embeddings")
     if outFile is None:
         plt.show()
     else:

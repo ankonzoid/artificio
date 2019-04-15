@@ -46,8 +46,6 @@ We train both a simple autoencoder and a convolutional autoencoder on our databa
 <img src="coverart/convAE_tsne.png" width="40%">
 </p> 
 
-Image Reconstructions
-
 <p align="center"> 
 <img src="coverart/convAE_reconstruct.png" width="60%">
 </p>
@@ -63,8 +61,6 @@ Image Reconstructions
 <p align="center"> 
 <img src="coverart/simpleAE_tsne.png" width="40%">
 </p> 
-
-Image Reconstructions
 
 <p align="center"> 
 <img src="coverart/simpleAE_reconstruct.png" width="60%">
