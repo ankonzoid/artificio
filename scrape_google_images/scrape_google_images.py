@@ -34,7 +34,6 @@ def scrape_google_images(query, k, outDir, dt_stall):
         imageFile = os.path.join(outDir, query + "-" + str(i+1) + ".jpg")
         print("[{}/{}] Downloading image {} to '{}'...".format(i+1, k, url, imageFile))
         try:
-            # urllibreq.urlretrieve(url, imageFile)
             with open(imageFile, 'wb') as handle:
                 response = requests.get(url, stream=True)
                 if not response.ok:
