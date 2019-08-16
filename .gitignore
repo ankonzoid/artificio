@@ -11,5 +11,4 @@ __pycache__/
 *.swp
 *.swo
 .ipynb_checkpoints/
-*.pyc
 **/output/*

@@ -17,21 +17,22 @@ python3 scrape_google_images.py
 with parameters
 
 ```
-query_text = "drake"  # google images query text
-k = 5  # top k images will be scraped
-output_dir = "output"  # output directory to save images
-dt_wait = 1  # number of seconds to wait between image scrapes
+query = "drake"  # google images query text
+k = 5  # top-k images will be scraped
+outDir = "output"  # output directory to save images
+dt_stall = 2  # number of seconds to stall between image scrapes
 ```
 
 gives
 
 ```
-Querying Google Images for 'drake'  ->  saving top 5 images into 'output'
-[1/10] Downloading image: 'output/drake-1.jpg'...
-[2/10] Downloading image: 'output/drake-2.jpg'...
-[3/10] Downloading image: 'output/drake-3.jpg'...
-[4/10] Downloading image: 'output/drake-4.jpg'...
-[5/10] Downloading image: 'output/drake-5.jpg'...
+Scraping top k=5 Google images for query: 'drake'
+Parsed 100 google image urls!
+[1/5] Downloading image to '/Users/ansonwong/Desktop/output/drake-1.jpg'...
+[2/5] Downloading image to '/Users/ansonwong/Desktop/output/drake-2.jpg'...
+[3/5] Downloading image to '/Users/ansonwong/Desktop/output/drake-3.jpg'...
+[4/5] Downloading image to '/Users/ansonwong/Desktop/output/drake-4.jpg'...
+[5/5] Downloading image to '/Users/ansonwong/Desktop/output/drake-5.jpg'...
 ```
 
 with the scraped images saved to the `output` directory.
@@ -42,7 +43,7 @@ with the scraped images saved to the `output` directory.
 
 ### Libraries
 
-* BeautifulSoup, urllib
+* bs4, urllib, requests
 
 ### Authors
 
