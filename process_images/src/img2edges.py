@@ -2,9 +2,9 @@ import numpy as np
 import skimage.io
 import cv2
 
-def img2edges(input_filename, output_filename):
+def img2edges(imgFile, outFile):
 
-    img = skimage.io.imread(input_filename, as_gray=False)
+    img = skimage.io.imread(imgFile, as_gray=False)
 
     # Blur the image with a Gaussian kernel
     kernel_size = (5, 5)
@@ -21,7 +21,7 @@ def img2edges(input_filename, output_filename):
     img_edges = edges_zeroed
 
     # Save
-    skimage.io.imsave(output_filename, img_edges)
+    skimage.io.imsave(outFile, img_edges)
 
 # edgedetect:
 def edgedetect(channel):

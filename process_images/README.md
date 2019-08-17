@@ -4,7 +4,7 @@
 <img src="coverart/coverart.jpg" width="90%">
 </p>
 
-Here we provide tools for you for processing your image dataset. All you need to do is place your .jpg or .jpeg images into the `input` directory, run the code, then pick up your processed images in the `output` directory.
+Here we provide tools for you for processing an image. Specify the image file, run the code, then pick up your processed images from the `output` directory.
 
 Currently we provide 4 common image processing techniques:
 
@@ -22,7 +22,7 @@ Currently we provide 4 common image processing techniques:
 Run
 
 ```
-python3 process_images.py
+python3 process_image.py
 ```
 
 ### Example output

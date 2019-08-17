@@ -13,9 +13,9 @@ from bs4 import BeautifulSoup
 def scrape_google_images(query, k, outDir, dt_stall):
     print("Scraping top k={} Google images for query: '{}'".format(k, query))
 
-    # Check output directory exists
+    # Create output directory
     if not os.path.exists(outDir):
-        raise Exception("Output directory '{}' does not exist!".format(outDir))
+        os.mkdir(outDir)
 
     # Construct image url to scrape from
     url = "https://www.google.co.in/search?q=" + \
@@ -31,10 +31,10 @@ def scrape_google_images(query, k, outDir, dt_stall):
 
     # Download top-k images
     for i, url in enumerate(urls[:min(k, len(urls))]):
-        imageFile = os.path.join(outDir, query + "-" + str(i+1) + ".jpg")
+        imgFile = os.path.join(outDir, query + "-" + str(i+1) + ".jpg")
         print("[{}/{}] Downloading image {} to '{}'...".format(i+1, k, url, imageFile))
         try:
-            with open(imageFile, 'wb') as handle:
+            with open(imgFile, 'wb') as handle:
                 response = requests.get(url, stream=True)
                 if not response.ok:
                     print(response)
@@ -48,6 +48,6 @@ def scrape_google_images(query, k, outDir, dt_stall):
 
 query = "drake"  # google images query text
 k = 5  # top-k images will be scraped
-outDir = "output"  # output directory to save images
+outDir = os.path.join(os.getcwd(), "output")  # output directory to save images
 dt_stall = 2  # number of seconds to stall between image scrapes
 scrape_google_images(query=query, k=k, outDir=outDir, dt_stall=dt_stall)

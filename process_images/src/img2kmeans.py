@@ -3,11 +3,11 @@ from sklearn.cluster import KMeans
 from sklearn.utils import shuffle
 import skimage.io
 
-def img2kmeans(input_filename, output_filename,
+def img2kmeans(imgFile, outFile,
                k=5, use_custom_colors=None, custom_colors=None, sort=True):
 
     # Read image
-    img = skimage.io.imread(input_filename, as_gray=False)
+    img = skimage.io.imread(imgFile, as_gray=False)
 
     img_norm = np.array(img, dtype=np.float64) / 255  # normalize r,g,b values
     w, h, d = tuple(img_norm.shape)
@@ -37,7 +37,7 @@ def img2kmeans(input_filename, output_filename,
     img_kmeans = recreate_image(cluster_colors, y_pred, w, h)
 
     # Save image
-    skimage.io.imsave(output_filename, img_kmeans)
+    skimage.io.imsave(outFile, img_kmeans)
 
 def choose_cluster_colors(model, custom_colors, sort=True):
 

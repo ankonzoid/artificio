@@ -24,11 +24,11 @@ We provide here a suite of deep learning computer vision algorithms that are rea
 </a>
 </p>
 
-### [Image Processing Tools](process_images)
+### [Image Processing Tools](process_image)
 
 <p align="center"> 
-<a href="process_images">
-<img src="process_images/coverart/coverart.jpg" width="75%">
+<a href="process_image">
+<img src="process_image/coverart/coverart.jpg" width="75%">
 </a>
 </p>
 
