@@ -88,7 +88,7 @@ trainModel = True
 There are 3 models to choose from: 
 * `"simpleAE"` = simple fully-connected autoencoder
 * `"convAE"` = multi-layer convolutional autoencoder 
-* `"vgg19"` = pre-trained VGG19)
+* `"vgg19"` = pre-trained VGG19 for transfer learning
 
 All output visualizations can be found in the `output` directory.
 
