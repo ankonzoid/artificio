@@ -11,28 +11,30 @@ import os
 import numpy as np
 import tensorflow as tf
 from sklearn.neighbors import NearestNeighbors
-from src.utils import makeDir
 from src.CV_IO_utils import read_imgs_dir
 from src.CV_transform_utils import apply_transformer
 from src.CV_transform_utils import resize_img, normalize_img
 from src.CV_plot_utils import plot_query_retrieval, plot_tsne, plot_reconstructions
 from src.autoencoder import AutoEncoder
 
-# Run mode
-modelName = "vgg19"  # try: "simpleAE", "convAE", "vgg19"
+# Run mode: (autoencoder -> simpleAE, convAE) or (transfer learning -> vgg19)
+modelName = "convAE"  # "simpleAE", "convAE", "vgg19"
 trainModel = True
+parallel = True  # use multicore processing
 
 # Make paths
-dataTrainPath = os.path.join(os.getcwd(), "data", "train")
-dataTestPath = os.path.join(os.getcwd(), "data", "test")
-outPath = makeDir(os.path.join(os.getcwd(), "output", modelName))
+dataTrainDir = os.path.join(os.getcwd(), "data", "train")
+dataTestDir = os.path.join(os.getcwd(), "data", "test")
+outDir = os.path.join(os.getcwd(), "output", modelName)
+if not os.path.exists(outDir):
+    os.makedirs(outDir)
 
 # Read images
 extensions = [".jpg", ".jpeg"]
-print("Reading train images from '{}'...".format(dataTrainPath))
-imgs_train = read_imgs_dir(dataTrainPath, extensions, parallel=True)
-print("Reading test images from '{}'...".format(dataTestPath))
-imgs_test = read_imgs_dir(dataTestPath, extensions, parallel=True)
+print("Reading train images from '{}'...".format(dataTrainDir))
+imgs_train = read_imgs_dir(dataTrainDir, extensions, parallel=parallel)
+print("Reading test images from '{}'...".format(dataTestDir))
+imgs_test = read_imgs_dir(dataTestDir, extensions, parallel=parallel)
 shape_img = imgs_train[0].shape
 print("Image shape = {}".format(shape_img))
 
@@ -42,9 +44,9 @@ if modelName in ["simpleAE", "convAE"]:
     # Set up autoencoder
     info = {
         "shape_img": shape_img,
-        "autoencoderFile": os.path.join(outPath, "{}_autoecoder.h5".format(modelName)),
-        "encoderFile": os.path.join(outPath, "{}_encoder.h5".format(modelName)),
-        "decoderFile": os.path.join(outPath, "{}_decoder.h5".format(modelName)),
+        "autoencoderFile": os.path.join(outDir, "{}_autoecoder.h5".format(modelName)),
+        "encoderFile": os.path.join(outDir, "{}_encoder.h5".format(modelName)),
+        "decoderFile": os.path.join(outDir, "{}_decoder.h5".format(modelName)),
     }
     model = AutoEncoder(modelName, info)
     model.set_arch()
@@ -53,7 +55,7 @@ if modelName in ["simpleAE", "convAE"]:
         shape_img_resize = shape_img
         input_shape_model = (model.encoder.input.shape[1],)
         output_shape_model = (model.encoder.output.shape[1],)
-        n_epochs = 500
+        n_epochs = 300
     elif modelName == "convAE":
         shape_img_resize = shape_img
         input_shape_model = tuple([int(x) for x in model.encoder.input.shape[1:]])
@@ -95,9 +97,9 @@ class ImageTransformer(object):
 
 transformer = ImageTransformer(shape_img_resize)
 print("Applying image transformer to training images...")
-imgs_train_transformed = apply_transformer(imgs_train, transformer, parallel=True)
+imgs_train_transformed = apply_transformer(imgs_train, transformer, parallel=parallel)
 print("Applying image transformer to test images...")
-imgs_test_transformed = apply_transformer(imgs_test, transformer, parallel=True)
+imgs_test_transformed = apply_transformer(imgs_test, transformer, parallel=parallel)
 
 # Convert images to numpy array
 X_train = np.array(imgs_train_transformed).reshape((-1,) + input_shape_model)
@@ -132,7 +134,7 @@ if modelName in ["simpleAE", "convAE"]:
     if modelName == "simpleAE":
         imgs_train_reconstruct = imgs_train_reconstruct.reshape((-1,) + shape_img_resize)
     plot_reconstructions(imgs_train, imgs_train_reconstruct,
-                         os.path.join(outPath, "{}_reconstruct.png".format(modelName)),
+                         os.path.join(outDir, "{}_reconstruct.png".format(modelName)),
                          range_imgs=[0, 255],
                          range_imgs_reconstruct=[0, 1])
 
@@ -147,10 +149,10 @@ for i, emb_flatten in enumerate(E_test_flatten):
     _, indices = knn.kneighbors([emb_flatten]) # find k nearest train neighbours
     img_query = imgs_test[i] # query image
     imgs_retrieval = [imgs_train[idx] for idx in indices.flatten()] # retrieval images
-    outFile = os.path.join(outPath, "{}_retrieval_{}.png".format(modelName, i))
+    outFile = os.path.join(outDir, "{}_retrieval_{}.png".format(modelName, i))
     plot_query_retrieval(img_query, imgs_retrieval, outFile)
 
 # Plot t-SNE visualization
 print("Visualizing t-SNE on training images...")
-outFile = os.path.join(outPath, "{}_tsne.png".format(modelName))
+outFile = os.path.join(outDir, "{}_tsne.png".format(modelName))
 plot_tsne(E_train_flatten, imgs_train, outFile)

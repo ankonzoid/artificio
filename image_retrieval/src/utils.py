@@ -3,14 +3,8 @@
  utils.py (author: Anson Wong / git: ankonzoid)
 
 """
-import os, random
+import random
 import numpy as np
-
-# Create directory (only if doesn't exist)
-def makeDir(dir):
-    if not os.path.exists(dir):
-        os.makedirs(dir)
-    return dir
 
 # Get split indices
 def split(fracs, N, seed):
