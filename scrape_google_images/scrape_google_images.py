@@ -32,7 +32,7 @@ def scrape_google_images(query, k, outDir, dt_stall):
     # Download top-k images
     for i, url in enumerate(urls[:min(k, len(urls))]):
         imgFile = os.path.join(outDir, query + "-" + str(i+1) + ".jpg")
-        print("[{}/{}] Downloading image {} to '{}'...".format(i+1, k, url, imageFile))
+        print("[{}/{}] Downloading image {} to '{}'...".format(i+1, k, url, imgFile))
         try:
             with open(imgFile, 'wb') as handle:
                 response = requests.get(url, stream=True)
