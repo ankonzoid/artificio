@@ -62,7 +62,7 @@ class AutoEncoder():
             x = tf.keras.layers.UpSampling2D(poolkernel)(x)
             x = tf.keras.layers.Conv2D(n_hidden_2, convkernel, activation='relu', padding='same')(x)
             x = tf.keras.layers.UpSampling2D(poolkernel)(x)
-            x = tf.keras.layers.Conv2D(n_hidden_1, convkernel, activation='relu')(x)
+            x = tf.keras.layers.Conv2D(n_hidden_1, convkernel, activation='relu', padding='same')(x)
             x = tf.keras.layers.UpSampling2D(poolkernel)(x)
             decoded = tf.keras.layers.Conv2D(shape_img[2], convkernel, activation='sigmoid', padding='same')(x)
 
